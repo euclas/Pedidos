@@ -1,0 +1,877 @@
+VERSION 5.00
+Object = "{532C2BF5-6B55-11D1-9AA5-00C04FAD5AEC}#1.0#0"; "MSCEGRID.DLL"
+Object = "{F7DEA2C9-BA8F-446E-A292-B4840F3BD661}#1.0#0"; "mscemenubar.dll"
+Begin VB.Form frmSistematica 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   Caption         =   "Sistemática de Visitação"
+   ClientHeight    =   5385
+   ClientLeft      =   1920
+   ClientTop       =   1830
+   ClientWidth     =   4725
+   ForeColor       =   &H00000000&
+   ScaleHeight     =   5385
+   ScaleWidth      =   4725
+   Begin VBCE.Frame fraLegenda 
+      Height          =   2370
+      Left            =   420
+      TabIndex        =   6
+      Top             =   630
+      Visible         =   0   'False
+      Width           =   2250
+      _cx             =   3969
+      _cy             =   4180
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   "Legenda"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.Label Label5 
+         Height          =   255
+         Left            =   540
+         TabIndex        =   10
+         Top             =   285
+         Width           =   1155
+         _cx             =   2037
+         _cy             =   450
+         AutoSize        =   0   'False
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Clientes"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label4 
+         Height          =   240
+         Left            =   735
+         TabIndex        =   9
+         Top             =   1890
+         Width           =   1350
+         _cx             =   2381
+         _cy             =   423
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Visitas Extras"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label3 
+         Height          =   240
+         Left            =   705
+         TabIndex        =   8
+         Top             =   1350
+         Width           =   915
+         _cx             =   1614
+         _cy             =   423
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Visitados"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label2 
+         Height          =   240
+         Left            =   705
+         TabIndex        =   7
+         Top             =   825
+         Width           =   855
+         _cx             =   1508
+         _cy             =   423
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "A visitar"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VB.Shape Shape3 
+         FillColor       =   &H000000FF&
+         FillStyle       =   0  'Solid
+         Height          =   300
+         Left            =   210
+         Top             =   795
+         Width           =   450
+      End
+      Begin VB.Shape Shape2 
+         FillColor       =   &H0000FFFF&
+         FillStyle       =   0  'Solid
+         Height          =   300
+         Left            =   195
+         Top             =   1305
+         Width           =   450
+      End
+      Begin VB.Shape Shape1 
+         BackColor       =   &H80000008&
+         FillColor       =   &H0000FF00&
+         FillStyle       =   0  'Solid
+         Height          =   300
+         Left            =   195
+         Top             =   1830
+         Width           =   450
+      End
+   End
+   Begin GRIDLibCtl.GridCtrl GridCtrl 
+      Height          =   3060
+      Left            =   0
+      TabIndex        =   0
+      Top             =   330
+      Width           =   3585
+      _cx             =   6324
+      _cy             =   5397
+      BackColor       =   16777215
+      BackColorBkg    =   8421504
+      BackColorSel    =   8388608
+      Cols            =   3
+      FillStyle       =   0
+      FocusRect       =   1
+      ForeColor       =   0
+      ForeColorSel    =   16777215
+      GridColor       =   12632256
+      GridLines       =   1
+      GridLineWidth   =   1
+      HighLight       =   1
+      Redraw          =   -1  'True
+      RowHeightMin    =   0
+      Rows            =   2
+      ScrollBars      =   3
+      ScrollTrack     =   0   'False
+      SelectionMode   =   1
+      TextStyle       =   0
+      WordWrap        =   0   'False
+      Enabled         =   -1  'True
+   End
+   Begin MenuBarLib.MenuBar MenuBar 
+      Left            =   0
+      Top             =   3735
+      _cx             =   6271
+      _cy             =   661
+      Enabled         =   -1  'True
+      NewButton       =   0   'False
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   300
+      Left            =   2790
+      TabIndex        =   5
+      Top             =   15
+      Width           =   765
+      _cx             =   1349
+      _cy             =   529
+      BackColor       =   65280
+      Caption         =   "Legenda"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton cmdVisitaExtra 
+      Height          =   255
+      Left            =   1830
+      TabIndex        =   4
+      Top             =   3390
+      Width           =   1695
+      _cx             =   2999
+      _cy             =   450
+      BackColor       =   255
+      Caption         =   "Visita Extra"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton cmdRoteiroPercorrido 
+      Height          =   255
+      Left            =   0
+      TabIndex        =   3
+      Top             =   3390
+      Width           =   1815
+      _cx             =   3201
+      _cy             =   450
+      BackColor       =   65535
+      Caption         =   "Roteiro Percorrido"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.ComboBox cboDiadaSemana 
+      Height          =   300
+      Left            =   330
+      TabIndex        =   2
+      Top             =   15
+      Width           =   2385
+      List            =   "frmSistematica.frx":0000
+      ItemData        =   "frmSistematica.frx":0028
+      _cx             =   4207
+      _cy             =   529
+      BackColor       =   16777215
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   "Combo1"
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label1 
+      Height          =   195
+      Left            =   45
+      TabIndex        =   1
+      Top             =   60
+      Width           =   315
+      _cx             =   556
+      _cy             =   344
+      AutoSize        =   -1  'True
+      BackColor       =   -2147483643
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Dia:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmSistematica"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Dim strSegunda As String
+Dim strTerca As String
+Dim strQuarta As String
+Dim strQuinta As String
+Dim strSexta As String
+Dim strSabado As String
+Dim strDomingo As String
+
+Private Sub cboDiadaSemana_Click()
+  '
+  Select Case frmSistematica.cboDiadaSemana.List(frmSistematica.cboDiadaSemana.ListIndex)
+  '
+  Case "1 - Domingo"
+       '
+       frmSistematica.cboDiadaSemana.ListIndex = 0
+       EncheSistematica frmSistematica.cboDiadaSemana.List(frmSistematica.cboDiadaSemana.ListIndex), strDomingo
+       '
+  Case "2 - Segunda-Feira"
+       '
+       frmSistematica.cboDiadaSemana.ListIndex = 1
+       EncheSistematica frmSistematica.cboDiadaSemana.List(frmSistematica.cboDiadaSemana.ListIndex), strSegunda
+       '
+  Case "3 - Terça-Feira"
+       '
+       frmSistematica.cboDiadaSemana.ListIndex = 2
+       EncheSistematica frmSistematica.cboDiadaSemana.List(frmSistematica.cboDiadaSemana.ListIndex), strTerca
+       '
+  Case "4 - Quarta-Feira"
+       '
+       frmSistematica.cboDiadaSemana.ListIndex = 3
+       EncheSistematica frmSistematica.cboDiadaSemana.List(frmSistematica.cboDiadaSemana.ListIndex), strQuarta
+       '
+  Case "5 - Quinta-Feira"
+       '
+       frmSistematica.cboDiadaSemana.ListIndex = 4
+       EncheSistematica frmSistematica.cboDiadaSemana.List(frmSistematica.cboDiadaSemana.ListIndex), strQuinta
+       '
+  Case "6 - Sexta-Feira"
+       '
+       frmSistematica.cboDiadaSemana.ListIndex = 5
+       EncheSistematica frmSistematica.cboDiadaSemana.List(frmSistematica.cboDiadaSemana.ListIndex), strSexta
+       '
+  Case "7 - Sabádo"
+       '
+       frmSistematica.cboDiadaSemana.ListIndex = 6
+       EncheSistematica frmSistematica.cboDiadaSemana.List(frmSistematica.cboDiadaSemana.ListIndex), strSabado
+       '
+  End Select
+  '
+End Sub
+
+Private Sub cmdRoteiroPercorrido_Click()
+  '
+  Screen.MousePointer = 11
+  '
+  Select Case cboDiadaSemana.List(cboDiadaSemana.ListIndex)
+  '
+  Case "1 - Domingo"
+       strTransfereDados = strDomingo
+  Case "2 - Segunda-Feira"
+       strTransfereDados = strSegunda
+  Case "3 - Terça-Feira"
+       strTransfereDados = strTerca
+  Case "4 - Quarta-Feira"
+       strTransfereDados = strQuarta
+  Case "5 - Quinta-Feira"
+       strTransfereDados = strQuinta
+  Case "6 - Sexta-Feira"
+       strTransfereDados = strSexta
+  Case "7 - Sabádo"
+       strTransfereDados = strSabado
+  Case Else
+       '
+       MsgBox "Selecione um dia pra cadastrar o roteiro percorrido.", vbOKOnly + vbCritical, App.Title
+       '
+       Screen.MousePointer = 0
+       '
+       Exit Sub
+       '
+  End Select
+  '
+  mRoteiroExtra = 1
+  '
+  If frmSistematica.GridCtrl.Row <= 0 Then
+     '
+     MsgBox "Selecione uma visita para poder cadastrar o roteiro.", vbOKOnly + vbCritical, App.Title
+     '
+     Screen.MousePointer = 0
+     '
+  Else
+     '
+     EncheFormularioRoteiroNE strTransfereDados
+     '
+     Screen.MousePointer = 0
+     '
+     frmRoteiro.cboMotivo.ListIndex = -1
+     '
+     frmRoteiro.Show
+     '
+  End If
+  '
+End Sub
+
+Private Sub cmdVisitaExtra_Click()
+  '
+  Screen.MousePointer = 11
+  '
+  Select Case cboDiadaSemana.List(cboDiadaSemana.ListIndex)
+  Case "1 - Domingo"
+       strTransfereDados = strDomingo
+  Case "2 - Segunda-Feira"
+       strTransfereDados = strSegunda
+  Case "3 - Terça-Feira"
+       strTransfereDados = strTerca
+  Case "4 - Quarta-Feira"
+       strTransfereDados = strQuarta
+  Case "5 - Quinta-Feira"
+       strTransfereDados = strQuinta
+  Case "6 - Sexta-Feira"
+       strTransfereDados = strSexta
+  Case "7 - Sabádo"
+       strTransfereDados = strSabado
+  Case Else
+       '
+       MsgBox "Selecione um dia pra cadastrar a visita extra.", vbOKOnly + vbCritical, App.Title
+       '
+       Screen.MousePointer = 0
+       '
+       Exit Sub
+       '
+  End Select
+  '
+  EncheFormularioRoteiroEE strTransfereDados
+  '
+  Screen.MousePointer = 0
+  '
+  frmRoteiro.cboMotivo.ListIndex = -1
+  '
+  mRoteiroExtra = 2
+  '
+  frmRoteiro.Show
+  '
+End Sub
+
+Private Sub Command1_Click()
+  '
+  If fraLegenda.Visible = False Then
+     '
+     fraLegenda.Visible = True
+     '
+     fraLegenda.ZOrder vbBringToFront ' vbSendToBack
+     '
+  Else
+     '
+     fraLegenda.Visible = False
+     '
+  End If
+  '
+End Sub
+
+Private Sub form_activate()
+  '
+  Screen.MousePointer = 0
+  '
+  Dim rsSistematica, rsClientes, rsJustificativa
+  '
+  Dim X As Integer
+  Dim MyDate As Date
+  Dim mAchouLinha As Boolean
+  '
+  Select Case Weekday(Now, vbSunday)
+  Case vbSunday
+       MyDate = Now
+       strDomingo = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSegunda = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strTerca = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuarta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuinta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSexta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSabado = RetornaDataString(MyDate)
+  Case vbMonday
+       MyDate = DateAdd("d", -1, Now)
+       strDomingo = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSegunda = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strTerca = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuarta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuinta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSexta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSabado = RetornaDataString(MyDate)
+  Case vbTuesday
+       MyDate = DateAdd("d", -2, Now)
+       strDomingo = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSegunda = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strTerca = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuarta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuinta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSexta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSabado = RetornaDataString(MyDate)
+  Case vbWednesday
+       MyDate = DateAdd("d", -3, Now)
+       strDomingo = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSegunda = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strTerca = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuarta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuinta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSexta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSabado = RetornaDataString(MyDate)
+  Case vbThursday
+       MyDate = DateAdd("d", -4, Now)
+       strDomingo = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSegunda = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strTerca = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuarta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuinta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSexta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSabado = RetornaDataString(MyDate)
+  Case vbFriday
+       MyDate = DateAdd("d", -5, Now)
+       strDomingo = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSegunda = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strTerca = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuarta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuinta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSexta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSabado = RetornaDataString(MyDate)
+  Case vbSaturday
+       MyDate = DateAdd("d", -6, Now)
+       strDomingo = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSegunda = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strTerca = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuarta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strQuinta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSexta = RetornaDataString(MyDate)
+       MyDate = DateAdd("d", 1, MyDate)
+       strSabado = RetornaDataString(MyDate)
+  End Select
+  '
+  If mRoteiroExtra = 1 Then
+     '
+     If frmSistematica.GridCtrl.Row > 0 Then
+        '
+        ' Coloca na coluna de descrição do motivo
+        '
+        ' MsgBox "Motivo:" & Mid(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex), 7, Len(Trim(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex))) - 6), vbOKOnly + vbCritical, App.Title
+        '
+        frmSistematica.GridCtrl.TextMatrix(frmSistematica.GridCtrl.Row, 2) = Mid(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex), 7, Len(Trim(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex))) - 6)
+        '
+        For I = 0 To 2
+            '
+            frmSistematica.GridCtrl.Col = I
+            '
+            ' &H0080FF80& - VerdeClaro
+            ' &H0080FFFF& - AmareloClaro
+            ' &H0080C0FF& - VermelhoClaro
+            '
+            frmSistematica.GridCtrl.CellBackColor = AmareloClaro
+            ' &HFF00&
+            '
+        Next
+        '
+        ' frmSistematica.GridCtrl.Col = 0
+        '
+     End If
+     '
+  End If
+  '
+  If mRoteiroExtra = 2 Then
+     '
+     If mLinhaGrid <> 0 Then
+        '
+        'MsgBox "Motivo:" & _
+        'Mid(Trim(frmSistematica.GridCtrl.TextMatrix(I, 0)), 9, Len(Trim(frmSistematica.GridCtrl.TextMatrix(I, 0))) - 8) & "***" & _
+        'Trim(frmRoteiro.cboCliente.List(frmRoteiro.cboCliente.ListIndex)) & "***", _
+        'vbOKOnly + vbCritical, App.Title
+        '
+        ' Coloca na coluna de descrição do motivo
+        '
+        frmSistematica.GridCtrl.Row = mLinhaGrid
+        '
+        ' MsgBox "Motivo:" & Mid(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex), 7, Len(Trim(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex))) - 6), vbOKOnly + vbCritical, App.Title
+        '
+        frmSistematica.GridCtrl.TextMatrix(frmSistematica.GridCtrl.Row, 2) = Mid(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex), 7, Len(Trim(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex))) - 6)
+        '
+        For X = 0 To 2
+            '
+            frmSistematica.GridCtrl.Col = X
+            '
+            frmSistematica.GridCtrl.CellBackColor = VerdeClaro
+            '
+        Next
+        '
+     Else
+        '
+        If frmSistematica.GridCtrl.Rows > 1 Then
+           '
+           mAchouLinha = False
+           '
+           For I = 1 To frmSistematica.GridCtrl.Rows - 1
+               '
+               'MsgBox "Motivo:" & _
+               'Mid(Trim(frmSistematica.GridCtrl.TextMatrix(I, 0)), 9, Len(Trim(frmSistematica.GridCtrl.TextMatrix(I, 0))) - 8) & "***" & _
+               'Trim(frmRoteiro.cboCliente.List(frmRoteiro.cboCliente.ListIndex)) & "***", _
+               'vbOKOnly + vbCritical, App.Title
+               '
+               If Mid(Trim(frmSistematica.GridCtrl.TextMatrix(I, 0)), 9, Len(Trim(frmSistematica.GridCtrl.TextMatrix(I, 0))) - 8) = _
+                  Trim(frmRoteiro.cboCliente.List(frmRoteiro.cboCliente.ListIndex)) Then
+                  '
+                  ' Coloca na coluna de descrição do motivo
+                  '
+                  ' MsgBox "Motivo:" & Mid(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex), 7, Len(Trim(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex))) - 6), vbOKOnly + vbCritical, App.Title
+                  '
+                  frmSistematica.GridCtrl.Row = I
+                  '
+                  frmSistematica.GridCtrl.TextMatrix(frmSistematica.GridCtrl.Row, 2) = Mid(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex), 7, Len(Trim(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex))) - 6)
+                  '
+                  For X = 0 To 2
+                      '
+                      frmSistematica.GridCtrl.Col = X
+                      '
+                      frmSistematica.GridCtrl.CellBackColor = VerdeClaro
+                      '
+                  Next
+                  '
+                  mAchouLinha = True
+                  '
+                  Exit For
+                  '
+               End If
+               '
+           Next
+           '
+           If mAchouLinha = False Then
+              '
+              connOpen
+              '
+              'Set rsJustificativa = CreateObject("ADOCE.Recordset.3.0")
+              'Set rsSistematica = CreateObject("ADOCE.Recordset.3.0")
+              '
+              Set rsClientes = CreateObject("ADOCE.Recordset.3.0")
+              '
+              ' MsgBox "Cliente:" & Trim(frmRoteiro.TxtCodigoCliente.Text), vbOKOnly + vbCritical, App.Title
+              '
+              rsClientes.Open "SELECT * FROM clientes WHERE codigo_cliente='" & Trim(frmRoteiro.TxtCodigoCliente.Text) & "';", CONN, adOpenForwardOnly, adLockPessimistic
+              '
+              If rsClientes.RecordCount >= 0 Then
+                 '
+                 frmSistematica.GridCtrl.Rows = frmSistematica.GridCtrl.Rows + 1
+                 '
+                 frmSistematica.GridCtrl.TextMatrix(frmSistematica.GridCtrl.Rows - 1, 0) = rsClientes("codigo_cliente") & " - " & rsClientes("nome_fantasia")
+                 frmSistematica.GridCtrl.TextMatrix(frmSistematica.GridCtrl.Rows - 1, 1) = rsClientes("telefone")
+                 frmSistematica.GridCtrl.TextMatrix(frmSistematica.GridCtrl.Rows - 1, 2) = Mid(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex), 7, Len(Trim(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex))) - 6)
+                 '
+                 frmSistematica.GridCtrl.Row = frmSistematica.GridCtrl.Rows - 1
+                 '
+                 mLinhaGrid = frmSistematica.GridCtrl.Rows - 1
+                 '
+                 For X = 0 To 2
+                     '
+                     frmSistematica.GridCtrl.Col = X
+                     '
+                     frmSistematica.GridCtrl.CellBackColor = VerdeClaro
+                     '
+                 Next
+                 '
+                 ' MsgBox "Motivo:" & Mid(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex), 7, Len(Trim(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex))) - 6), vbOKOnly + vbCritical, App.Title
+                 '
+                 If rsClientes.State = 1 Then rsClientes.Close
+                 '
+                 connClose
+                 '
+                 Set rsClientes = Nothing
+                 '
+              End If
+              '
+           Else
+              '
+              ' MsgBox "Motivo:" & Mid(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex), 7, Len(Trim(frmRoteiro.cboMotivo.List(frmRoteiro.cboMotivo.ListIndex))) - 6), vbOKOnly + vbCritical, App.Title
+              '
+           End If
+           '
+        End If
+        '
+     End If
+     '
+  End If
+  '
+  mRoteiroExtra = 0
+  '
+  frmSistematica.GridCtrl.Col = 0
+  '
+  mLinhaGrid = 0
+  '
+  Screen.MousePointer = 0
+  '
+End Sub
+
+Private Sub Form_Load()
+  '
+  setamenu MenuBar, Me
+  '
+  cboDiadaSemana.Clear
+  cboDiadaSemana.AddItem "1 - Domingo"
+  cboDiadaSemana.AddItem "2 - Segunda-Feira"
+  cboDiadaSemana.AddItem "3 - Terça-Feira"
+  cboDiadaSemana.AddItem "4 - Quarta-Feira"
+  cboDiadaSemana.AddItem "5 - Quinta-Feira"
+  cboDiadaSemana.AddItem "6 - Sexta-Feira"
+  cboDiadaSemana.AddItem "7 - Sabádo"
+  '
+  Dim rs
+  '
+  connOpen
+  '
+  Set rs = CreateObject("ADOCE.Recordset.3.0")
+  '
+  rs.Open "SELECT * FROM justificativa_nao_venda;", CONN, adOpenForwardOnly, adLockReadOnly
+  '
+  frmRoteiro.cboMotivo.Clear
+  '
+  Do Until rs.EOF
+     '
+     frmRoteiro.cboMotivo.AddItem rs("codigo") & " - " & rs("descricao")
+     '
+     rs.MoveNext
+     '
+  Loop
+  '
+  If rs.State = 1 Then rs.Close
+  '
+  connClose
+  '
+  Set rs = Nothing
+  '
+  SetaGridCaption
+  '
+End Sub
+
+Private Sub form_resize()
+  '
+  On Error Resume Next
+  '
+  GridCtrl.Top = cboDiadaSemana.Top + cboDiadaSemana.Height + 60
+  GridCtrl.Left = 5
+  GridCtrl.Height = Me.ScaleHeight - (cboDiadaSemana.Top + cboDiadaSemana.Height + cmdRoteiroPercorrido.Height + 80)
+  GridCtrl.Width = Me.ScaleWidth - 10
+  '
+  cmdRoteiroPercorrido.Top = GridCtrl.Top + GridCtrl.Height + 10
+  cmdVisitaExtra.Top = cmdRoteiroPercorrido.Top
+  '
+  fraLegenda.Move (Me.ScaleWidth - fraLegenda.Width) / 2, (Me.ScaleHeight - fraLegenda.Height) / 2
+  '
+End Sub
+
+Private Sub GridCtrl_rowcolchange()
+  '
+  mLinhaGrid = frmSistematica.GridCtrl.Row
+  '
+End Sub
+
+Private Sub MenuBar_MenuClick(ByVal Item As MenuBarLib.Item)
+  '
+  ExecutaMenu Item.Caption, Me
+  '
+End Sub
+
+Sub SetaGridCaption()
+    '
+    GridCtrl.Rows = 1
+    GridCtrl.Row = 0
+    GridCtrl.Col = 0
+    GridCtrl.CellBackColor = &HC0C0C0
+    GridCtrl.CellFontBold = True
+    GridCtrl.Row = 0
+    GridCtrl.Col = 1
+    GridCtrl.CellBackColor = &HC0C0C0
+    GridCtrl.CellFontBold = True
+    GridCtrl.Row = 0
+    GridCtrl.Col = 2
+    GridCtrl.CellBackColor = &HC0C0C0
+    GridCtrl.CellFontBold = True
+    GridCtrl.ColWidth(0) = 2500
+    GridCtrl.ColWidth(1) = 1800
+    GridCtrl.ColWidth(2) = 2200
+    '
+    GridCtrl.TextMatrix(0, 0) = "Cliente"
+    GridCtrl.TextMatrix(0, 1) = "Telefone"
+    GridCtrl.TextMatrix(0, 2) = "Justificativa"
+    '
+    GridCtrl.Row = 0
+    GridCtrl.Col = 0
+    '
+End Sub

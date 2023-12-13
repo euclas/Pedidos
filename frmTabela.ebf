@@ -1,0 +1,1505 @@
+VERSION 5.00
+Object = "{532C2BF5-6B55-11D1-9AA5-00C04FAD5AEC}#1.0#0"; "MSCEGRID.DLL"
+Object = "{F7DEA2C9-BA8F-446E-A292-B4840F3BD661}#1.0#0"; "mscemenubar.dll"
+Begin VB.Form frmTabela 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   Caption         =   "Tabela de Preços"
+   ClientHeight    =   5520
+   ClientLeft      =   2880
+   ClientTop       =   1920
+   ClientWidth     =   9330
+   ForeColor       =   &H80000008&
+   ScaleHeight     =   5520
+   ScaleWidth      =   9330
+   Begin GRIDLibCtl.GridCtrl GridCtrl 
+      Height          =   2355
+      Left            =   0
+      TabIndex        =   0
+      Top             =   855
+      Width           =   3645
+      _cx             =   6429
+      _cy             =   4154
+      BackColor       =   16777215
+      BackColorBkg    =   8421504
+      BackColorSel    =   8388608
+      Cols            =   6
+      FillStyle       =   0
+      FocusRect       =   1
+      ForeColor       =   0
+      ForeColorSel    =   16777215
+      GridColor       =   12632256
+      GridLines       =   1
+      GridLineWidth   =   1
+      HighLight       =   1
+      Redraw          =   -1  'True
+      RowHeightMin    =   0
+      Rows            =   0
+      ScrollBars      =   3
+      ScrollTrack     =   -1  'True
+      SelectionMode   =   1
+      TextStyle       =   0
+      WordWrap        =   0   'False
+      Enabled         =   -1  'True
+   End
+   Begin MenuBarLib.MenuBar MenuBar 
+      Left            =   0
+      Top             =   3255
+      _cx             =   6376
+      _cy             =   661
+      Enabled         =   -1  'True
+      NewButton       =   0   'False
+   End
+   Begin GRIDLibCtl.GridCtrl GridCtrl1 
+      Height          =   270
+      Left            =   0
+      TabIndex        =   29
+      Top             =   600
+      Width           =   3645
+      _cx             =   6429
+      _cy             =   476
+      BackColor       =   16777215
+      BackColorBkg    =   8421504
+      BackColorSel    =   6956042
+      Cols            =   2
+      FillStyle       =   0
+      FocusRect       =   1
+      ForeColor       =   0
+      ForeColorSel    =   16777215
+      GridColor       =   12632256
+      GridLines       =   1
+      GridLineWidth   =   1
+      HighLight       =   1
+      Redraw          =   -1  'True
+      RowHeightMin    =   0
+      Rows            =   2
+      ScrollBars      =   0
+      ScrollTrack     =   0   'False
+      SelectionMode   =   0
+      TextStyle       =   0
+      WordWrap        =   0   'False
+      Enabled         =   -1  'True
+   End
+   Begin VBCE.CommandButton Command26 
+      Height          =   240
+      Left            =   3480
+      TabIndex        =   28
+      Top             =   345
+      Width           =   150
+      _cx             =   265
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "Z"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command25 
+      Height          =   240
+      Left            =   3345
+      TabIndex        =   27
+      Top             =   345
+      Width           =   150
+      _cx             =   265
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "Y"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command24 
+      Height          =   240
+      Left            =   3210
+      TabIndex        =   26
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "X"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command23 
+      Height          =   240
+      Left            =   3030
+      TabIndex        =   25
+      Top             =   345
+      Width           =   210
+      _cx             =   370
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "W"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command22 
+      Height          =   240
+      Left            =   2895
+      TabIndex        =   24
+      Top             =   345
+      Width           =   150
+      _cx             =   265
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "V"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command21 
+      Height          =   240
+      Left            =   2745
+      TabIndex        =   23
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "U"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command20 
+      Height          =   240
+      Left            =   2595
+      TabIndex        =   22
+      Top             =   345
+      Width           =   180
+      _cx             =   317
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "T"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command19 
+      Height          =   240
+      Left            =   2475
+      TabIndex        =   21
+      Top             =   345
+      Width           =   150
+      _cx             =   265
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "S"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command18 
+      Height          =   240
+      Left            =   2325
+      TabIndex        =   20
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "R"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command17 
+      Height          =   240
+      Left            =   2160
+      TabIndex        =   19
+      Top             =   345
+      Width           =   180
+      _cx             =   317
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "Q"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command16 
+      Height          =   240
+      Left            =   2025
+      TabIndex        =   18
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "P"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command15 
+      Height          =   240
+      Left            =   1875
+      TabIndex        =   17
+      Top             =   345
+      Width           =   180
+      _cx             =   317
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "O"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command14 
+      Height          =   240
+      Left            =   1725
+      TabIndex        =   16
+      Top             =   345
+      Width           =   180
+      _cx             =   317
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "N"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command13 
+      Height          =   240
+      Left            =   1575
+      TabIndex        =   15
+      Top             =   345
+      Width           =   180
+      _cx             =   317
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "M"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command12 
+      Height          =   240
+      Left            =   1455
+      TabIndex        =   14
+      Top             =   345
+      Width           =   150
+      _cx             =   265
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "L"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command11 
+      Height          =   240
+      Left            =   1320
+      TabIndex        =   13
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "K"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command10 
+      Height          =   240
+      Left            =   1185
+      TabIndex        =   12
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "J"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command9 
+      Height          =   240
+      Left            =   1065
+      TabIndex        =   11
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "I"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command8 
+      Height          =   240
+      Left            =   915
+      TabIndex        =   10
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "H"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command7 
+      Height          =   240
+      Left            =   780
+      TabIndex        =   9
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "G"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command6 
+      Height          =   240
+      Left            =   660
+      TabIndex        =   8
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "F"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command5 
+      Height          =   240
+      Left            =   525
+      TabIndex        =   7
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "E"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command4 
+      Height          =   240
+      Left            =   390
+      TabIndex        =   6
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "D"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command3 
+      Height          =   240
+      Left            =   255
+      TabIndex        =   5
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "C"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   4
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "B"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   240
+      Left            =   -15
+      TabIndex        =   3
+      Top             =   345
+      Width           =   165
+      _cx             =   291
+      _cy             =   423
+      BackColor       =   255
+      Caption         =   "A"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.Label Label1 
+      Height          =   195
+      Left            =   45
+      TabIndex        =   2
+      Top             =   60
+      Width           =   660
+      _cx             =   1164
+      _cy             =   344
+      AutoSize        =   -1  'True
+      BackColor       =   -2147483643
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Produto:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.ComboBox cboDescricao 
+      Height          =   300
+      Left            =   705
+      TabIndex        =   1
+      Top             =   15
+      Width           =   2910
+      List            =   "frmTabela.frx":0000
+      ItemData        =   "frmTabela.frx":0028
+      _cx             =   5133
+      _cy             =   529
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmTabela"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub cboDescricao_Click()
+   '
+   ' EncheTabelaPrecos ' cboDescricao.List(cboDescricao.ListIndex)
+   '
+   'GridCtrl.Visible = False
+   '
+   For I = 0 To (GridCtrl.Rows - 1)
+       If Trim(UCase(GridCtrl.TextMatrix(I, 0))) = Trim(UCase(cboDescricao.List(cboDescricao.ListIndex))) Then
+          GridCtrl.Row = I
+          GridCtrl.Col = 0
+          Exit For
+       End If
+   Next
+   '
+   'GridCtrl.Visible = True
+   '
+End Sub
+
+Private Sub Command1_Click()
+  '
+  If Command1.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("A")
+     Case 1
+          Command1.BackColor = Verde
+     Case 2
+          Command1.BackColor = Amarelo
+     Case Else
+          Command1.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "A" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command2_Click()
+  '
+  If Command2.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("B")
+     Case 1
+          Command2.BackColor = Verde
+     Case 2
+          Command2.BackColor = Amarelo
+     Case Else
+          Command2.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "B" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command3_Click()
+  '
+  If Command3.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("C")
+     Case 1
+          Command3.BackColor = Verde
+     Case 2
+          Command3.BackColor = Amarelo
+     Case Else
+          Command3.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "C" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command4_Click()
+  '
+  If Command4.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("D")
+     Case 1
+          Command4.BackColor = Verde
+     Case 2
+          Command4.BackColor = Amarelo
+     Case Else
+          Command4.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "D" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command5_Click()
+  '
+  If Command5.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("E")
+     Case 1
+          Command5.BackColor = Verde
+     Case 2
+          Command5.BackColor = Amarelo
+     Case Else
+          Command5.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "E" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command6_Click()
+  '
+  If Command6.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("F")
+     Case 1
+          Command6.BackColor = Verde
+     Case 2
+          Command6.BackColor = Amarelo
+     Case Else
+          Command6.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "F" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command7_Click()
+  '
+  If Command7.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("G")
+     Case 1
+          Command7.BackColor = Verde
+     Case 2
+          Command7.BackColor = Amarelo
+     Case Else
+          Command7.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "G" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command8_Click()
+  '
+  If Command8.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("H")
+     Case 1
+          Command8.BackColor = Verde
+     Case 2
+          Command8.BackColor = Amarelo
+     Case Else
+          Command8.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "H" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command9_Click()
+  '
+  If Command9.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("I")
+     Case 1
+          Command9.BackColor = Verde
+     Case 2
+          Command9.BackColor = Amarelo
+     Case Else
+          Command9.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "I" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command10_Click()
+  '
+  If Command10.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("J")
+     Case 1
+          Command10.BackColor = Verde
+     Case 2
+          Command10.BackColor = Amarelo
+     Case Else
+          Command10.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "J" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command11_Click()
+  '
+  If Command11.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("K")
+     Case 1
+          Command11.BackColor = Verde
+     Case 2
+          Command11.BackColor = Amarelo
+     Case Else
+          Command11.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "K" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command12_Click()
+  '
+  If Command12.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("L")
+     Case 1
+          Command12.BackColor = Verde
+     Case 2
+          Command12.BackColor = Amarelo
+     Case Else
+          Command12.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "L" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command13_Click()
+  '
+  If Command13.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("M")
+     Case 1
+          Command13.BackColor = Verde
+     Case 2
+          Command13.BackColor = Amarelo
+     Case Else
+          Command13.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "M" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command14_Click()
+  '
+  If Command14.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("N")
+     Case 1
+          Command14.BackColor = Verde
+     Case 2
+          Command14.BackColor = Amarelo
+     Case Else
+          Command14.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "N" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command15_Click()
+  '
+  If Command15.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("O")
+     Case 1
+          Command15.BackColor = Verde
+     Case 2
+          Command15.BackColor = Amarelo
+     Case Else
+          Command15.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "O" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command16_Click()
+  '
+  If Command16.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("P")
+     Case 1
+          Command16.BackColor = Verde
+     Case 2
+          Command16.BackColor = Amarelo
+     Case Else
+          Command16.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "P" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command17_Click()
+  '
+  If Command17.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("Q")
+     Case 1
+          Command17.BackColor = Verde
+     Case 2
+          Command17.BackColor = Amarelo
+     Case Else
+          Command17.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "Q" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command18_Click()
+  '
+  If Command18.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("R")
+     Case 1
+          Command18.BackColor = Verde
+     Case 2
+          Command18.BackColor = Amarelo
+     Case Else
+          Command18.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "R" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command19_Click()
+  '
+  If Command19.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("S")
+     Case 1
+          Command19.BackColor = Verde
+     Case 2
+          Command19.BackColor = Amarelo
+     Case Else
+          Command19.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "S" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command20_Click()
+  '
+  If Command20.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("T")
+     Case 1
+          Command20.BackColor = Verde
+     Case 2
+          Command20.BackColor = Amarelo
+     Case Else
+          Command20.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "T" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command21_Click()
+  '
+  If Command21.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("U")
+     Case 1
+          Command21.BackColor = Verde
+     Case 2
+          Command21.BackColor = Amarelo
+     Case Else
+          Command21.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "U" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command22_Click()
+  '
+  If Command22.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("V")
+     Case 1
+          Command22.BackColor = Verde
+     Case 2
+          Command22.BackColor = Amarelo
+     Case Else
+          Command22.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "V" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command23_Click()
+  '
+  If Command23.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("W")
+     Case 1
+          Command23.BackColor = Verde
+     Case 2
+          Command23.BackColor = Amarelo
+     Case Else
+          Command23.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "W" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command24_Click()
+  '
+  If Command24.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("X")
+     Case 1
+          Command24.BackColor = Verde
+     Case 2
+          Command24.BackColor = Amarelo
+     Case Else
+          Command24.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "X" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command25_Click()
+  '
+  If Command25.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("Y")
+     Case 1
+          Command25.BackColor = Verde
+     Case 2
+          Command25.BackColor = Amarelo
+     Case Else
+          Command25.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "Y" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command26_Click()
+  '
+  If Command26.BackColor = Vermelho Then
+     '
+     Select Case EncheTabelaPrecos("Z")
+     Case 1
+          Command26.BackColor = Verde
+     Case 2
+          Command26.BackColor = Amarelo
+     Case Else
+          Command26.BackColor = Vermelho
+     End Select
+     '
+  Else
+     '
+     For I = 0 To (GridCtrl.Rows - 1)
+         If UCase(Mid(GridCtrl.TextMatrix(I, 0), 1, 1)) = "Z" Then
+            GridCtrl.Row = I
+            GridCtrl.Col = 0
+            Exit For
+         End If
+     Next
+     '
+  End If
+  '
+End Sub
+
+Private Sub form_activate()
+  '
+  Screen.MousePointer = 0
+  '
+End Sub
+
+Private Sub Form_Load()
+  '
+  setamenu MenuBar, Me
+  '
+  Select Case EncheTabelaPrecos("A")
+  Case 1
+       Command1.BackColor = Verde
+  Case 2
+       Command1.BackColor = Amarelo
+  Case Else
+       Command1.BackColor = Vermelho
+  End Select
+  '
+  ' cboDescricao.List(cboDescricao.ListIndex)
+  '
+End Sub
+
+Private Sub form_resize()
+  '
+  On Error Resume Next
+  '
+  GridCtrl1.Top = cboDescricao.Top + cboDescricao.Height + 300
+  GridCtrl1.Left = 20
+  '
+  'GridCtrl1.Height = Me.ScaleHeight - (cboDescricao.Top + cboDescricao.Height + 280)
+  '
+  GridCtrl1.Height = 260 ' Me.ScaleHeight - (cboDescricao.Top + cboDescricao.Height + 280)
+  '
+  GridCtrl1.Width = Me.ScaleWidth - 30
+  '
+  GridCtrl.Top = cboDescricao.Top + cboDescricao.Height + GridCtrl1.Height + 300
+  '
+  GridCtrl.Left = 20
+  GridCtrl.Height = Me.ScaleHeight - (cboDescricao.Top + cboDescricao.Height + GridCtrl1.Height + 320)
+  GridCtrl.Width = Me.ScaleWidth - 30
+  '
+End Sub
+
+Private Sub GridCtrl_scroll()
+  '
+  GridCtrl1.ScrollBars = flexScrollBarHorizontal
+  '
+  GridCtrl1.LeftCol = GridCtrl.LeftCol
+  '
+  GridCtrl1.ScrollBars = flexScrollBarNone
+  '
+End Sub
+
+Private Sub GridCtrl_rowcolchange()
+  '
+  cboDescricao.Text = frmTabela.GridCtrl.TextMatrix(frmTabela.GridCtrl.Row, 0)
+  '
+End Sub
+
+
+
+Private Sub MenuBar_MenuClick(ByVal Item As MenuBarLib.Item)
+  '
+  ExecutaMenu Item.Caption, Me
+  '
+End Sub

@@ -1,0 +1,478 @@
+VERSION 5.00
+Object = "{F7346713-70C5-11D1-9AC9-00C04FAD5AEC}#1.0#0"; "msceimage.dll"
+Object = "{25C953A7-5464-11D1-A714-00AA0044064C}#1.0#0"; "MSCEFILE.DLL"
+Begin VB.Form frmLogin 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Login"
+   ClientHeight    =   3615
+   ClientLeft      =   915
+   ClientTop       =   810
+   ClientWidth     =   3480
+   ForeColor       =   &H80000008&
+   ScaleHeight     =   3615
+   ScaleWidth      =   3480
+   ShowOK          =   -1  'True
+   Begin FILECTLCtl.File File 
+      Left            =   2535
+      Top             =   2835
+      _cx             =   1000
+      _cy             =   1000
+   End
+   Begin FILECTLCtl.FileSystem FileSystem 
+      Left            =   1140
+      Top             =   2715
+      _cx             =   2200
+      _cy             =   1400
+   End
+   Begin VBCE.Frame Frame1 
+      Height          =   645
+      Left            =   1200
+      TabIndex        =   0
+      Top             =   30
+      Width           =   2070
+      _cx             =   3651
+      _cy             =   1138
+      BackColor       =   16777215
+      BorderStyle     =   1
+      Caption         =   "Usuário:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.TextBox txtUserName 
+         Height          =   375
+         Left            =   75
+         TabIndex        =   1
+         Top             =   210
+         Width           =   1935
+         _cx             =   3413
+         _cy             =   661
+         BackColor       =   16777215
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   30
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+   End
+   Begin VBCE.Frame Frame2 
+      Height          =   630
+      Left            =   1200
+      TabIndex        =   2
+      Top             =   750
+      Width           =   2070
+      _cx             =   3651
+      _cy             =   1111
+      BackColor       =   16777215
+      BorderStyle     =   1
+      Caption         =   "Senha:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.TextBox txtPassword 
+         Height          =   375
+         Left            =   75
+         TabIndex        =   3
+         Top             =   195
+         Width           =   1935
+         _cx             =   3413
+         _cy             =   661
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   "000050"
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   6
+         MultiLine       =   0   'False
+         PasswordChar    =   "*"
+         ScrollBars      =   0
+      End
+   End
+   Begin VBCE.Label Label1 
+      Height          =   225
+      Left            =   2595
+      TabIndex        =   8
+      Top             =   2445
+      Visible         =   0   'False
+      Width           =   600
+      _cx             =   1058
+      _cy             =   397
+      AutoSize        =   0   'False
+      BackColor       =   -2147483643
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   315
+      Left            =   1680
+      TabIndex        =   7
+      Top             =   2370
+      Visible         =   0   'False
+      Width           =   585
+      _cx             =   1032
+      _cy             =   556
+      BackColor       =   12632256
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Webdings"
+         Size            =   8.25
+         Charset         =   2
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin IMAGECtl.ImageCtl ImageCtl1 
+      Height          =   2400
+      Left            =   165
+      TabIndex        =   6
+      Top             =   90
+      Width           =   600
+      _cx             =   1058
+      _cy             =   4233
+      Picture         =   ""
+      Stretch         =   -1  'True
+   End
+   Begin VBCE.CommandButton cmdCancelar 
+      Height          =   375
+      Left            =   1200
+      TabIndex        =   5
+      Top             =   1935
+      Width           =   2175
+      _cx             =   3836
+      _cy             =   661
+      BackColor       =   8421631
+      Caption         =   "Cancelar e Encerrar"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton cmdConfirmar 
+      Height          =   375
+      Left            =   1200
+      TabIndex        =   4
+      Top             =   1455
+      Width           =   2175
+      _cx             =   3836
+      _cy             =   661
+      BackColor       =   8454016
+      Caption         =   "Entrar no Sistema"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VB.Shape Shape1 
+      BackColor       =   &H0080C0FF&
+      BackStyle       =   1  'Opaque
+      BorderColor     =   &H000000FF&
+      Height          =   3540
+      Left            =   120
+      Top             =   45
+      Width           =   690
+   End
+End
+Attribute VB_Name = "frmLogin"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+   '
+   Command1.Caption = Chr(mASCII)
+   Label1.Caption = CStr(mASCII)
+   mASCII = mASCII + 1
+   '
+End Sub
+
+'
+Private Sub Form_Load()
+End Sub
+
+Private Sub form_Deactivate()
+  '
+  SHFullScreen Me.hwnd, 8
+  SHFullScreen Me.hwnd, 12
+  '
+  frmLogin.SIPVisible = True
+  frmLogin.SIPVisible = False
+  '
+  Me.Refresh
+  '
+End Sub
+
+
+Private Sub cmdConfirmar_gotfocus()
+End Sub
+
+
+Private Sub form_resize()
+    '
+    On Error Resume Next
+    '
+    Shape1.Top = 0
+    Shape1.Left = 120
+    Shape1.Height = Me.ScaleHeight
+    Shape1.Width = 690
+    '
+End Sub
+
+Private Sub form_activate()
+  '
+  mASCII = 0
+  '
+  On Error Resume Next
+  '
+  ' MsgBox "Dir:(" & App.Path & ")", vbOKOnly + vbCritical, App.Title
+  '
+  If FileSystem.Dir("\my documents") <> "" Then
+     '
+     strPath = "\my documents"
+     '
+  ElseIf FileSystem.Dir("\meus documentos") <> "" Then
+     '
+     strPath = "\meus documentos"
+     '
+  End If
+  '
+  'If FileSystem.Dir("\Arquivos de programas\pSDC") <> "" Then
+  '   '
+  '   strPrograma = "\Arquivos de programas\pSDC"
+  '   '
+  'ElseIf FileSystem.Dir("\Program Files\pSDC") <> "" Then
+  '   '
+  '   strPrograma = "\Program Files\pSDC"
+  '   '
+  'End If
+  '
+  strPrograma = App.Path
+  '
+  ' MsgBox "Dir:(" & strPrograma & ")", vbOKOnly + vbCritical, App.Title
+  '
+  '===============================================
+  '
+  ImageCtl1.Picture = strPrograma & "\SD.bmp"
+  '
+  frmLogin.Refresh
+  '
+  ImageCtl1.Refresh
+  '
+  ' MsgBox "Dir:(" & FileSystem.Dir("\meus documentos") & ")", vbOKOnly + vbCritical, App.Title
+  '
+  '===============================================
+  '
+  File.Open strPath & "\user.txt", fsModeInput, fsAccessRead, fsLockReadWrite
+  '
+  txtUserName.Text = File.LineInputString
+  '
+  File.Close
+  '
+  ' FileSystem.Kill strPath & "\user.txt"
+  '
+  txtPassword.SetFocus
+  '
+  On Error GoTo 0
+  '
+End Sub
+
+Private Sub cmdCancelar_Click()
+  '
+  File.Open strPath & "\user.txt", fsModeOutput, fsAccessWrite, fsLockReadWrite
+  '
+  File.LinePrint txtUserName.Text
+  '
+  File.Close
+  '
+  App.End
+  '
+End Sub
+
+
+Private Sub cmdConfirmar_Click()
+  '
+  Dim retVal As Integer
+  '
+  frmStart.txtMensagem.Visible = False
+  '
+  Screen.MousePointer = 11
+  '
+  '======== Apaga o input panel
+  '
+  SHFullScreen Me.hwnd, 8
+  SHFullScreen Me.hwnd, 12
+  '
+  frmLogin.SIPVisible = True
+  frmLogin.SIPVisible = False
+  '
+  Me.Refresh
+  '
+  If Trim(txtUserName.Text) = "" Then
+     '
+     MsgBox "Usuário Vazio !!!", vbOKOnly + vbCritical, App.Title
+     '
+     txtUserName.SelText = ""
+     '
+     txtUserName.Refresh
+     '
+     txtUserName.SelStart = 0
+     '
+     txtUserName.SelLength = Len(txtUserName.Text)
+     '
+     txtUserName.SetFocus
+     '
+  Else
+     '
+     '
+     retVal = VerificaUsuario(txtUserName.Text, txtPassword.Text)
+     '
+     '0 = usuário ok
+     '1 = senha inválida
+     '2 = usuário não cadastrado
+     '4 = Tempo máximo ultrapassado
+     '
+     Select Case retVal
+     Case 0
+          '
+          File.Open strPath & "\user.txt", fsModeOutput, fsAccessWrite, fsLockReadWrite
+          '
+          File.LinePrint txtUserName.Text
+          '
+          File.Close
+          '
+          '======== Apaga o input panel
+          '
+          Me.Refresh
+          '
+          frmStart.Show
+          '
+          Me.Hide
+          '
+     Case 1
+          '
+          Screen.MousePointer = 0
+          MsgBox "Senha Inválida !!!", vbOKOnly + vbCritical, App.Title
+          '
+          txtPassword.Text = ""
+          txtPassword.SetFocus
+          '
+     Case 2
+          '
+          Screen.MousePointer = 0
+          MsgBox "Usuário inválido ou não cadastrado !!!", vbOKOnly + vbCritical, App.Title
+          '
+          txtUserName.Text = ""
+          txtPassword.Text = ""
+          '
+          txtUserName.SetFocus
+          '
+     Case 4
+          '
+          bolModoManutencao = True
+          '
+          frmValidarVendedor.Show
+          '
+     End Select
+     '
+  End If
+  '
+End Sub
+
+Private Sub Form_OKClick()
+    App.End
+End Sub
+
+Private Sub txtPassword_GotFocus()
+  '
+  Foco txtPassword
+  '
+End Sub
+
+Private Sub txtUserName_GotFocus()
+  '
+  Foco txtUserName
+  '
+End Sub
+
+Private Sub txtUserName_LostFocus()
+End Sub

@@ -1,0 +1,746 @@
+VERSION 5.00
+Object = "{532C2BF5-6B55-11D1-9AA5-00C04FAD5AEC}#1.0#0"; "MSCEGRID.DLL"
+Object = "{F7DEA2C9-BA8F-446E-A292-B4840F3BD661}#1.0#0"; "mscemenubar.dll"
+Begin VB.Form frmContas 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   Caption         =   "Contas a Receber"
+   ClientHeight    =   4380
+   ClientLeft      =   3720
+   ClientTop       =   3105
+   ClientWidth     =   8055
+   ForeColor       =   &H80000008&
+   ScaleHeight     =   4380
+   ScaleWidth      =   8055
+   Begin MenuBarLib.MenuBar MenuBar 
+      Left            =   0
+      Top             =   3960
+      _cx             =   6165
+      _cy             =   661
+      Enabled         =   -1  'True
+      NewButton       =   0   'False
+   End
+   Begin GRIDLibCtl.GridCtrl GridCtrl 
+      Height          =   2880
+      Left            =   30
+      TabIndex        =   0
+      TabStop         =   0   'False
+      Top             =   1050
+      Width           =   3495
+      _cx             =   6165
+      _cy             =   5080
+      BackColor       =   16777215
+      BackColorBkg    =   8421504
+      BackColorSel    =   8388608
+      Cols            =   3
+      FillStyle       =   0
+      FocusRect       =   1
+      ForeColor       =   0
+      ForeColorSel    =   16777215
+      GridColor       =   12632256
+      GridLines       =   1
+      GridLineWidth   =   1
+      HighLight       =   0
+      Redraw          =   -1  'True
+      RowHeightMin    =   0
+      Rows            =   2
+      ScrollBars      =   3
+      ScrollTrack     =   0   'False
+      SelectionMode   =   0
+      TextStyle       =   0
+      WordWrap        =   0   'False
+      Enabled         =   -1  'True
+   End
+   Begin VBCE.Label Label8 
+      Height          =   240
+      Left            =   1635
+      TabIndex        =   13
+      Top             =   810
+      Width           =   1845
+      _cx             =   3254
+      _cy             =   423
+      AutoSize        =   0   'False
+      BackColor       =   0
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label7 
+      Height          =   270
+      Left            =   495
+      TabIndex        =   12
+      Top             =   810
+      Width           =   1110
+      _cx             =   1958
+      _cy             =   476
+      AutoSize        =   0   'False
+      BackColor       =   -2147483643
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Data de Corte:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.TextBox Text2 
+      Height          =   510
+      Left            =   3765
+      TabIndex        =   11
+      Top             =   675
+      Visible         =   0   'False
+      Width           =   3495
+      _cx             =   6165
+      _cy             =   900
+      BackColor       =   65535
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial Narrow"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Text            =   ""
+      Alignment       =   1
+      HideSelection   =   -1  'True
+      Locked          =   -1  'True
+      MaxLength       =   0
+      MultiLine       =   -1  'True
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.TextBox Text1 
+      Height          =   510
+      Left            =   3750
+      TabIndex        =   9
+      Top             =   60
+      Visible         =   0   'False
+      Width           =   3495
+      _cx             =   6165
+      _cy             =   900
+      BackColor       =   65535
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial Narrow"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   -1  'True
+      MaxLength       =   0
+      MultiLine       =   -1  'True
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   315
+      Left            =   45
+      TabIndex        =   10
+      Top             =   465
+      Width           =   600
+      _cx             =   1058
+      _cy             =   556
+      BackColor       =   65280
+      Caption         =   "Zoom"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.Label Label6 
+      Height          =   195
+      Left            =   1860
+      TabIndex        =   8
+      Top             =   330
+      Width           =   750
+      _cx             =   1323
+      _cy             =   344
+      AutoSize        =   0   'False
+      BackColor       =   -2147483643
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "À Vencer"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label5 
+      Height          =   255
+      Left            =   1635
+      TabIndex        =   7
+      Top             =   525
+      Width           =   900
+      _cx             =   1587
+      _cy             =   450
+      AutoSize        =   0   'False
+      BackColor       =   33023
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "R$ 0,00"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label4 
+      Height          =   195
+      Left            =   3075
+      TabIndex        =   6
+      Top             =   330
+      Width           =   390
+      _cx             =   688
+      _cy             =   344
+      AutoSize        =   -1  'True
+      BackColor       =   -2147483643
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Total"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label3 
+      Height          =   195
+      Left            =   945
+      TabIndex        =   5
+      Top             =   330
+      Width           =   660
+      _cx             =   1164
+      _cy             =   344
+      AutoSize        =   -1  'True
+      BackColor       =   -2147483643
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Vencidas"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   690
+      TabIndex        =   4
+      Top             =   525
+      Width           =   900
+      _cx             =   1587
+      _cy             =   450
+      AutoSize        =   0   'False
+      BackColor       =   65535
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "R$ 0,00"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label LblTotal 
+      Height          =   255
+      Left            =   2580
+      TabIndex        =   3
+      Top             =   525
+      Width           =   900
+      _cx             =   1587
+      _cy             =   450
+      AutoSize        =   0   'False
+      BackColor       =   255
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "R$ 0,00"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   195
+      Left            =   45
+      TabIndex        =   2
+      Top             =   30
+      Width           =   585
+      _cx             =   1032
+      _cy             =   344
+      AutoSize        =   -1  'True
+      BackColor       =   -2147483643
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Cliente:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.ComboBox cboFantasia 
+      Height          =   300
+      Left            =   630
+      TabIndex        =   1
+      Top             =   30
+      Width           =   2850
+      List            =   "frmContas.frx":0000
+      ItemData        =   "frmContas.frx":0028
+      _cx             =   5027
+      _cy             =   529
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmContas"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+'
+Dim mZoom As Boolean
+'
+Private Sub cboFantasia_dropdown()
+  '
+  frmContas.GridCtrl.Rows = 1
+  '
+  frmContas.GridCtrl.Clear
+  '
+  Text1.Left = -50 - Text1.Width
+  '
+  Text1.Visible = False
+  '
+  Text2.Left = -50 - Text1.Width
+  '
+  Text2.Visible = False
+  '
+End Sub
+'
+Private Sub Command1_Click()
+  '
+  If mZoom = True Then
+     '
+     mZoom = False
+     '
+     Command1.BackColor = Vermelho
+     '
+     Call GridEditEnd
+     '
+  Else
+     '
+     mZoom = True
+     '
+     Command1.BackColor = Verde
+     '
+  End If
+  '
+End Sub
+'
+Private Sub GridCtrl_MouseUp(ByVal Button As Long, ByVal Shift As Long, ByVal X As Single, ByVal Y As Single)
+  '
+  ' If clicked an area that is not a cell, then end edit
+  If Y > GridCtrl.RowPos(GridCtrl.Rows - 1) + GridCtrl.RowHeight(GridCtrl.Rows - 1) Or _
+     X > GridCtrl.ColPos(GridCtrl.Cols - 1) + GridCtrl.ColWidth(GridCtrl.Cols - 1) Then
+       '
+       ' MsgBox "Sai fora", vbOKOnly + vbCritical, App.Title
+       '
+       Call GridEditEnd
+       '
+       Exit Sub
+  '    '
+  ' If a single cell was selected (not multiple cells), edit the cell
+  '
+  ElseIf GridCtrl.Col = GridCtrl.ColSel Then
+     '
+     ' MsgBox "Edita 1 " & CStr(GridCtrl.ColSel), vbOKOnly + vbCritical, App.Title
+     '
+     If mZoom = True Then
+        '
+        If GridCtrl.Col = 0 Or GridCtrl.Col = 1 Or GridCtrl.Col = 2 Then
+           '
+           Call GridEditStart
+           '
+        End If
+        '
+     Else
+        '
+       Call GridEditEnd
+       '
+     End If
+     '
+  End If
+  '
+End Sub
+'
+Private Sub GridEditStart()
+    '
+    Call GridShowTextbox
+    '
+    ' Load Text7 with contents of selected cell
+    '
+    If GridCtrl.Col = 0 Then
+       '
+       Text1.Locked = False
+       Text1.Visible = True
+       Text1.Locked = True
+       '
+       Text2.Locked = False
+       Text2.Visible = False
+       Text2.Locked = True
+       '
+       Text1.Text = GridCtrl.TextMatrix(GridCtrl.Row, GridCtrl.Col)
+       '
+       Text1.ZOrder
+       '
+       Text1.SelStart = 0                      '< these 2 lines highlight
+       Text1.SelLength = 0
+       '
+       ' Text1.SelLength = Len(Text1.Text) '< the current text
+       '
+       Text1.SetFocus
+       '
+       Text1.SetFocus
+       '
+    End If
+    '
+    If GridCtrl.Col = 1 Then
+       '
+       Text1.Locked = False
+       Text1.Visible = True
+       Text1.Locked = True
+       '
+       Text2.Locked = False
+       Text2.Visible = False
+       Text2.Locked = True
+       '
+       Text1.Text = GridCtrl.TextMatrix(GridCtrl.Row, GridCtrl.Col)
+       '
+       Text1.ZOrder
+       '
+       Text1.SelStart = 0                      '< these 2 lines highlight
+       Text1.SelLength = 0
+       '
+       Text1.SetFocus
+       '
+    End If
+    '
+    If GridCtrl.Col = 2 Then
+       '
+       Text1.Locked = False
+       Text1.Visible = False
+       Text1.Locked = True
+       '
+       Text2.Locked = False
+       Text2.Visible = True
+       Text2.Locked = True
+       '
+       Text2.Text = GridCtrl.TextMatrix(GridCtrl.Row, GridCtrl.Col)
+       '
+       Text2.ZOrder
+       '
+       Text2.SelStart = Len(Text2.Text)                      '< these 2 lines highlight
+       Text2.SelLength = 0
+       '
+       Text2.SetFocus
+       '
+    End If
+    '
+End Sub
+
+Private Sub GridShowTextbox()
+    '
+    ' if selected column and row is visible, show the text box
+    '
+    Text1.Left = -50 - Text1.Width
+    Text1.Visible = False
+    '
+    Text2.Left = -50 - Text2.Width
+    Text2.Visible = False
+    '
+    If GridCtrl.ColIsVisible(GridCtrl.Col) = True And GridCtrl.RowIsVisible(GridCtrl.Row) = True Then
+       '
+       Text1.Visible = True
+       Text2.Visible = True
+       '
+    Else
+       ' otherwise allow focus retention but make invisible...
+       '
+       Text1.Visible = True
+       Text2.Visible = True
+       '
+    End If
+    '
+    ' Set left, top, height, and width properties to match selected cell
+    '
+    'Text1.Left = GridCtrl.Left + GridCtrl.ColPos(GridCtrl.Col) + Screen.TwipsPerPixelX * 2
+    'Text1.Top = GridCtrl.Top + GridCtrl.RowPos(GridCtrl.Row) + Screen.TwipsPerPixelY * 2
+    'Text1.Height = GridCtrl.RowHeight(GridCtrl.Row) + Screen.TwipsPerPixelY
+    'Text1.Width = GridCtrl.ColWidth(GridCtrl.Col)
+    '
+    Text1.Left = GridCtrl.Left + GridCtrl.ColPos(GridCtrl.Col) + Screen.TwipsPerPixelX * 2
+    '
+    Text1.Top = GridCtrl.Top + (GridCtrl.RowHeight(GridCtrl.Row)) + GridCtrl.RowPos(GridCtrl.Row) + Screen.TwipsPerPixelY * 2
+    '
+    Text1.Height = (GridCtrl.RowHeight(GridCtrl.Row) * 2) + Screen.TwipsPerPixelY
+    '
+    Text1.Width = GridCtrl.ColWidth(GridCtrl.Col) * 2
+    '
+    If GridCtrl.Col = 2 Then
+       '
+       Text2.Left = GridCtrl.Left + GridCtrl.ColPos(GridCtrl.Col - 1) + Screen.TwipsPerPixelX * 2
+       '
+    Else
+       '
+       Text2.Left = GridCtrl.Left + GridCtrl.ColPos(GridCtrl.Col) + Screen.TwipsPerPixelX * 2
+       '
+    End If
+    '
+    Text2.Top = GridCtrl.Top + (GridCtrl.RowHeight(GridCtrl.Row)) + GridCtrl.RowPos(GridCtrl.Row) + Screen.TwipsPerPixelY * 2
+    '
+    Text2.Height = (GridCtrl.RowHeight(GridCtrl.Row) * 2) + Screen.TwipsPerPixelY
+    '
+    Text2.Width = GridCtrl.ColWidth(GridCtrl.Col) * 2
+    '
+End Sub
+'
+Private Sub GridEditEnd()
+    '
+    ' GridCtrl.TextMatrix(GridCtrl.Row, GridCtrl.Col) = Text1.Text
+    '
+    Text1.Left = -50 - Text1.Width
+    '
+    Text1.Visible = False
+    '
+    Text2.Left = -50 - Text1.Width
+    '
+    Text2.Visible = False
+    '
+    GridCtrl.SetFocus
+    '
+End Sub
+'
+
+
+Private Sub GridCtrl_KeyPress(ByVal KeyAscii As Long)
+    '
+    If KeyAscii = 13 Then
+       '
+       ' MsgBox "GridCtrl_KeyPress Coluna = " & CStr(GridCtrl.Col), vbOKOnly + vbCritical, App.Title
+       '
+       If GridCtrl.Col = 0 Or GridCtrl.Col = 1 Or GridCtrl.Col = 2 Then
+          '
+          Call GridEditStart
+          '
+       End If
+       '
+    End If
+    '
+    '
+End Sub
+
+Private Sub cboFantasia_Click()
+  '
+  EncheTitulosPendentes cboFantasia.List(cboFantasia.ListIndex)
+  '
+End Sub
+
+Private Sub form_activate()
+    '
+    Screen.MousePointer = 0
+    '
+    connOpen
+    '
+    EncheComboClientes frmContas.cboFantasia, 2
+    '
+    connClose
+    '
+    LblTotal.Caption = ""
+    Label2.Caption = ""
+    Label5.Caption = ""
+    '
+    SetaGridCaption
+    '
+End Sub
+
+Private Sub Form_Load()
+    '
+    setamenu MenuBar, Me
+    SetaGridCaption
+    '
+End Sub
+
+Private Sub form_resize()
+    On Error Resume Next
+    '
+    GridCtrl.Top = Label8.Top + Label8.Height + 60
+    GridCtrl.Left = 5
+    GridCtrl.Height = Me.ScaleHeight - (Label8.Top + Label8.Height + 20)
+    GridCtrl.Width = Me.ScaleWidth - 10
+    '
+    mZoom = False
+    '
+    Command1.BackColor = Vermelho
+    '
+    Text1.Visible = False
+    '
+    Text2.Visible = False
+    '
+End Sub
+
+Private Sub Label2_Click()
+
+End Sub
+
+Private Sub MenuBar_MenuClick(ByVal Item As MenuBarLib.Item)
+    ExecutaMenu Item.Caption, Me
+End Sub
+
+Sub SetaGridCaption()
+    GridCtrl.Rows = 1
+    GridCtrl.Row = 0
+    GridCtrl.Col = 0
+    GridCtrl.CellBackColor = &HC0C0C0
+    GridCtrl.CellFontBold = True
+    GridCtrl.Row = 0
+    GridCtrl.Col = 1
+    GridCtrl.CellBackColor = &HC0C0C0
+    GridCtrl.CellFontBold = True
+    GridCtrl.Row = 0
+    GridCtrl.Col = 2
+    GridCtrl.CellBackColor = &HC0C0C0
+    '
+    GridCtrl.CellFontBold = True
+    '
+    frmContas.GridCtrl.ColWidth(0) = 1660 ' 1600
+    frmContas.GridCtrl.ColWidth(1) = 900 ' 2000
+    frmContas.GridCtrl.ColWidth(2) = 800 ' 1500
+    frmContas.GridCtrl.TextMatrix(0, 0) = "Documento"
+    frmContas.GridCtrl.TextMatrix(0, 1) = "Venci/to"
+    frmContas.GridCtrl.TextMatrix(0, 2) = "Valor"
+    '
+End Sub

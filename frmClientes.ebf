@@ -1,0 +1,3158 @@
+VERSION 5.00
+Object = "{01FC4473-8DE5-11D1-91B7-00C04FA87A04}#1.0#0"; "mscetabstrip.dll"
+Object = "{F7DEA2C9-BA8F-446E-A292-B4840F3BD661}#1.0#0"; "mscemenubar.dll"
+Object = "{338D5EA5-4BBD-11D1-9A7D-00C04FAD5AEC}#1.0#0"; "mscepicture.dll"
+Begin VB.Form frmClientes 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   Caption         =   "Clientes - Cadastro e Consulta"
+   ClientHeight    =   11115
+   ClientLeft      =   165
+   ClientTop       =   -2580
+   ClientWidth     =   8220
+   ForeColor       =   &H80000008&
+   ScaleHeight     =   11115
+   ScaleMode       =   0  'User
+   ScaleWidth      =   8220
+   Begin VBCE.Frame fraReferencias 
+      Height          =   2480
+      Left            =   3675
+      TabIndex        =   42
+      Top             =   3120
+      Visible         =   0   'False
+      Width           =   3585
+      _cx             =   6324
+      _cy             =   4374
+      BackColor       =   16777215
+      BorderStyle     =   1
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin PictureBoxCtl.PictureBox PicCal 
+         Height          =   2205
+         Left            =   -855
+         TabIndex        =   65
+         Top             =   2370
+         Visible         =   0   'False
+         Width           =   1800
+         _cx             =   3175
+         _cy             =   3889
+         AutoSize        =   0   'False
+         BackColor       =   12632256
+         BorderStyle     =   0
+         DrawMode        =   13
+         DrawStyle       =   0
+         DrawWidth       =   1
+         FillColor       =   -2147483643
+         FillStyle       =   1
+         ForeColor       =   -2147483640
+         FontBold        =   0   'False
+         FontItalic      =   0   'False
+         FontStrikethru  =   0   'False
+         FontUnderline   =   0   'False
+         FontName        =   "Tahoma"
+         FontSize        =   10
+         FontTransparent =   -1  'True
+         Object.Height          =   147
+         Object.Width           =   120
+         Object.Left            =   -57
+         Object.Top             =   158
+         Picture         =   ""
+         ScaleHeight     =   2205
+         ScaleWidth      =   1800
+         ScaleLeft       =   0
+         ScaleTop        =   0
+         ScaleMode       =   1
+         Enabled         =   -1  'True
+      End
+      Begin VBCE.Label LblMonth 
+         Height          =   220
+         Left            =   2370
+         TabIndex        =   70
+         Top             =   2190
+         Visible         =   0   'False
+         Width           =   765
+         _cx             =   1349
+         _cy             =   388
+         AutoSize        =   0   'False
+         BackColor       =   16711680
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Novembro"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   16777215
+         Alignment       =   2
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.ListBox lstMonthNames 
+         Height          =   2175
+         Left            =   1155
+         TabIndex        =   69
+         Top             =   225
+         Visible         =   0   'False
+         Width           =   855
+         List            =   "frmClientes.frx":0000
+         ItemData        =   "frmClientes.frx":0042
+         _cx             =   1508
+         _cy             =   3836
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Columns         =   0
+         IntegralHeight  =   -1  'True
+         MultiSelect     =   0
+         Sorted          =   0   'False
+      End
+      Begin VBCE.Timer TimerYear 
+         Left            =   3015
+         Top             =   510
+         _cx             =   847
+         _cy             =   847
+         Enabled         =   -1  'True
+         Interval        =   50
+      End
+      Begin VBCE.ListBox List1 
+         Height          =   225
+         Left            =   105
+         TabIndex        =   68
+         Top             =   1845
+         Visible         =   0   'False
+         Width           =   855
+         List            =   "frmClientes.frx":009E
+         ItemData        =   "frmClientes.frx":0166
+         _cx             =   1508
+         _cy             =   397
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Columns         =   0
+         IntegralHeight  =   -1  'True
+         MultiSelect     =   0
+         Sorted          =   0   'False
+      End
+      Begin VBCE.Label LblDay 
+         Height          =   220
+         Left            =   2115
+         TabIndex        =   67
+         Top             =   2190
+         Visible         =   0   'False
+         Width           =   210
+         _cx             =   370
+         _cy             =   388
+         AutoSize        =   0   'False
+         BackColor       =   16711680
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "28"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   16777215
+         Alignment       =   2
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label LblYear 
+         Height          =   220
+         Left            =   3180
+         TabIndex        =   66
+         Top             =   2190
+         Visible         =   0   'False
+         Width           =   390
+         _cx             =   688
+         _cy             =   388
+         AutoSize        =   0   'False
+         BackColor       =   16711680
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "2002"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   16777215
+         Alignment       =   2
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label18 
+         Height          =   195
+         Left            =   120
+         TabIndex        =   60
+         Top             =   240
+         Width           =   870
+         _cx             =   1535
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "R.Ativi/de.:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label17 
+         Height          =   195
+         Left            =   90
+         TabIndex        =   56
+         Top             =   1530
+         Width           =   840
+         _cx             =   1482
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Ref. Pess.:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtRefPess01 
+         Height          =   270
+         Left            =   990
+         TabIndex        =   51
+         Top             =   1515
+         Width           =   2535
+         _cx             =   4471
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   20
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtRefPess02 
+         Height          =   270
+         Left            =   990
+         TabIndex        =   52
+         Top             =   1830
+         Width           =   2535
+         _cx             =   4471
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   20
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.OptionButton optNao 
+         Height          =   240
+         Left            =   2340
+         TabIndex        =   47
+         Top             =   555
+         Width           =   630
+         _cx             =   1111
+         _cy             =   423
+         BackColor       =   -2147483643
+         Caption         =   "Não"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton optSim 
+         Height          =   240
+         Left            =   1575
+         TabIndex        =   45
+         Top             =   555
+         Width           =   630
+         _cx             =   1111
+         _cy             =   423
+         BackColor       =   -2147483643
+         Caption         =   "Sim"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   -1  'True
+      End
+      Begin VBCE.Label Label26 
+         Height          =   195
+         Left            =   120
+         TabIndex        =   55
+         Top             =   560
+         Width           =   1155
+         _cx             =   2037
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Prédio Próprio ?"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label21 
+         Height          =   195
+         Left            =   90
+         TabIndex        =   53
+         Top             =   900
+         Width           =   855
+         _cx             =   1508
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Ref. Banc.:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtRefBanc01 
+         Height          =   270
+         Left            =   990
+         TabIndex        =   48
+         Top             =   855
+         Width           =   2535
+         _cx             =   4471
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   20
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label20 
+         Height          =   195
+         Left            =   120
+         TabIndex        =   49
+         Top             =   2180
+         Width           =   795
+         _cx             =   1402
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Fundação:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtDataFundacao 
+         Height          =   270
+         Left            =   990
+         TabIndex        =   54
+         Top             =   2145
+         Width           =   1095
+         _cx             =   1931
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   10
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtRefBanc02 
+         Height          =   270
+         Left            =   990
+         TabIndex        =   50
+         Top             =   1200
+         Width           =   2535
+         _cx             =   4471
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   20
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.ComboBox cboAtividade 
+         Height          =   300
+         Left            =   990
+         TabIndex        =   59
+         Top             =   180
+         Width           =   2535
+         List            =   "frmClientes.frx":01AE
+         ItemData        =   "frmClientes.frx":01D6
+         _cx             =   4471
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.TextBox txtAtividade 
+         Height          =   300
+         Left            =   990
+         TabIndex        =   71
+         Top             =   180
+         Width           =   2535
+         _cx             =   4471
+         _cy             =   529
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+   End
+   Begin VBCE.Frame fraCobranca 
+      Height          =   2480
+      Left            =   30
+      TabIndex        =   36
+      Top             =   3120
+      Visible         =   0   'False
+      Width           =   3585
+      _cx             =   6324
+      _cy             =   4374
+      BackColor       =   16777215
+      BorderStyle     =   1
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.CommandButton Command1 
+         Height          =   300
+         Left            =   2685
+         TabIndex        =   72
+         Top             =   1845
+         Visible         =   0   'False
+         Width           =   585
+         _cx             =   1032
+         _cy             =   529
+         BackColor       =   -2147483643
+         Caption         =   "Lig."
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+      Begin VBCE.Label Label13 
+         Height          =   195
+         Left            =   450
+         TabIndex        =   64
+         Top             =   1860
+         Width           =   360
+         _cx             =   635
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Fax:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtFax 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   63
+         Top             =   1830
+         Width           =   1440
+         _cx             =   2540
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   12
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label12 
+         Height          =   195
+         Left            =   120
+         TabIndex        =   62
+         Top             =   1550
+         Width           =   720
+         _cx             =   1270
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Telefone:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtTelefone 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   61
+         Top             =   1515
+         Width           =   1440
+         _cx             =   2540
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   12
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtCobranca 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   41
+         Top             =   180
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   40
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label25 
+         Height          =   195
+         Left            =   60
+         TabIndex        =   40
+         Top             =   240
+         Width           =   780
+         _cx             =   1376
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Cobrança:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtCobrancaBairro 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   43
+         Top             =   525
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   20
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label24 
+         Height          =   195
+         Left            =   330
+         TabIndex        =   39
+         Top             =   560
+         Width           =   510
+         _cx             =   900
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Bairro:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label23 
+         Height          =   195
+         Left            =   255
+         TabIndex        =   38
+         Top             =   900
+         Width           =   585
+         _cx             =   1032
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Cidade:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtCobrancaCEP 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   46
+         Top             =   1200
+         Width           =   885
+         _cx             =   1561
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   8
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label22 
+         Height          =   195
+         Left            =   465
+         TabIndex        =   37
+         Top             =   1230
+         Width           =   375
+         _cx             =   661
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "CEP:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.ComboBox cboCidadeCobranca 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   58
+         Top             =   855
+         Visible         =   0   'False
+         Width           =   2655
+         List            =   "frmClientes.frx":01FE
+         ItemData        =   "frmClientes.frx":0226
+         _cx             =   4683
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   -1  'True
+         Style           =   0
+      End
+      Begin VBCE.TextBox txtCobrancaCidade 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   44
+         Top             =   855
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   529
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   5
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+   End
+   Begin VBCE.Frame fraEndereco 
+      Height          =   2480
+      Left            =   3660
+      TabIndex        =   21
+      Top             =   -100
+      Visible         =   0   'False
+      Width           =   3585
+      _cx             =   6324
+      _cy             =   4374
+      BackColor       =   16777215
+      BorderStyle     =   1
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.Label Label16 
+         Height          =   195
+         Left            =   390
+         TabIndex        =   35
+         Top             =   2180
+         Width           =   450
+         _cx             =   794
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "www:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtWWW 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   28
+         Top             =   2145
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   30
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label15 
+         Height          =   195
+         Left            =   330
+         TabIndex        =   34
+         Top             =   1860
+         Width           =   510
+         _cx             =   900
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "E-mail:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtEmail 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   27
+         Top             =   1830
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   30
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label14 
+         Height          =   195
+         Left            =   165
+         TabIndex        =   33
+         Top             =   1550
+         Width           =   675
+         _cx             =   1191
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Contato:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtContato 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   26
+         Top             =   1515
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   25
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label10 
+         Height          =   195
+         Left            =   465
+         TabIndex        =   32
+         Top             =   1230
+         Width           =   375
+         _cx             =   661
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "CEP:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtCEP 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   25
+         Top             =   1200
+         Width           =   1020
+         _cx             =   1799
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   8
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label9 
+         Height          =   195
+         Left            =   255
+         TabIndex        =   31
+         Top             =   900
+         Width           =   585
+         _cx             =   1032
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Cidade:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label8 
+         Height          =   195
+         Left            =   330
+         TabIndex        =   30
+         Top             =   560
+         Width           =   510
+         _cx             =   900
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Bairro:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtBairro 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   23
+         Top             =   525
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   20
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label11 
+         Height          =   195
+         Left            =   180
+         TabIndex        =   29
+         Top             =   240
+         Width           =   660
+         _cx             =   1164
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Entrega:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtEntrega 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   22
+         Top             =   180
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   40
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.ComboBox cboCidadeEndereco 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   57
+         Top             =   855
+         Visible         =   0   'False
+         Width           =   2655
+         List            =   "frmClientes.frx":024E
+         ItemData        =   "frmClientes.frx":0276
+         _cx             =   4683
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   -1  'True
+         Style           =   0
+      End
+      Begin VBCE.TextBox txtCidade 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   24
+         Top             =   855
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   529
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   5
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+   End
+   Begin VBCE.Frame fraPrincipal 
+      Height          =   2480
+      Left            =   0
+      TabIndex        =   8
+      Top             =   -100
+      Width           =   3585
+      _cx             =   6324
+      _cy             =   4366
+      BackColor       =   16777215
+      BorderStyle     =   1
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.ComboBox cboCodigo 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   16
+         Top             =   180
+         Width           =   2655
+         List            =   "frmClientes.frx":029E
+         ItemData        =   "frmClientes.frx":02C6
+         _cx             =   4683
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.TextBox txtCPF 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   6
+         Top             =   1830
+         Width           =   1920
+         _cx             =   3387
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   14
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtRG 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   7
+         Top             =   2145
+         Width           =   1920
+         _cx             =   3387
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   20
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label7 
+         Height          =   195
+         Left            =   540
+         TabIndex        =   15
+         Top             =   2180
+         Width           =   300
+         _cx             =   529
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "RG:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label6 
+         Height          =   195
+         Left            =   465
+         TabIndex        =   14
+         Top             =   1860
+         Width           =   375
+         _cx             =   661
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "CPF:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label5 
+         Height          =   195
+         Left            =   300
+         TabIndex        =   13
+         Top             =   1550
+         Width           =   540
+         _cx             =   953
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "I. Est.:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label4 
+         Height          =   195
+         Left            =   120
+         TabIndex        =   12
+         Top             =   1230
+         Width           =   720
+         _cx             =   1270
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "CNPJ MF:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label3 
+         Height          =   195
+         Left            =   135
+         TabIndex        =   11
+         Top             =   900
+         Width           =   705
+         _cx             =   1244
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "R. Social:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label2 
+         Height          =   195
+         Left            =   135
+         TabIndex        =   10
+         Top             =   560
+         Width           =   705
+         _cx             =   1244
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Fantasia:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label1 
+         Height          =   195
+         Left            =   255
+         TabIndex        =   9
+         Top             =   240
+         Width           =   585
+         _cx             =   1032
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Código:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.ComboBox cboRSocial 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   18
+         Top             =   855
+         Width           =   2655
+         List            =   "frmClientes.frx":02EE
+         ItemData        =   "frmClientes.frx":0316
+         _cx             =   4683
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.ComboBox cboFantasia 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   17
+         Top             =   525
+         Width           =   2655
+         List            =   "frmClientes.frx":033E
+         ItemData        =   "frmClientes.frx":0366
+         _cx             =   4683
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.TextBox txtFantasia 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   2
+         Top             =   525
+         Visible         =   0   'False
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   529
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   20
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtCodigo 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   1
+         Top             =   180
+         Visible         =   0   'False
+         Width           =   975
+         _cx             =   1720
+         _cy             =   529
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   0   'False
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   -1  'True
+         MaxLength       =   5
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtRazaoSocial 
+         Height          =   300
+         Left            =   870
+         TabIndex        =   3
+         Top             =   855
+         Visible         =   0   'False
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   529
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   40
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtCNPJMF 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   4
+         Top             =   1200
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   14
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtIEST 
+         Height          =   270
+         Left            =   870
+         TabIndex        =   5
+         Top             =   1515
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   20
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+   End
+   Begin MenuBarLib.MenuBar MenuBar 
+      Left            =   30
+      Top             =   2790
+      _cx             =   6297
+      _cy             =   503
+      Enabled         =   -1  'True
+      NewButton       =   0   'False
+   End
+   Begin VBCE.Frame fraObs 
+      Height          =   2480
+      Left            =   30
+      TabIndex        =   19
+      Top             =   5565
+      Visible         =   0   'False
+      Width           =   3585
+      _cx             =   6324
+      _cy             =   4374
+      BackColor       =   16777215
+      BorderStyle     =   1
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.TextBox txtObs 
+         Height          =   2250
+         Left            =   60
+         TabIndex        =   20
+         Top             =   180
+         Width           =   3480
+         _cx             =   6138
+         _cy             =   3969
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   -1  'True
+         PasswordChar    =   ""
+         ScrollBars      =   2
+      End
+   End
+   Begin CETabStripCtl.TabStrip TabStrip 
+      Height          =   345
+      Left            =   15
+      TabIndex        =   0
+      Top             =   2415
+      Width           =   3585
+      _cx             =   6315
+      _cy             =   609
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   "MS Sans Serif"
+      FontSize        =   8
+      MultiRow        =   0   'False
+      Style           =   0
+      TabFixedHeight  =   0
+      TabFixedWidth   =   0
+      TabWidthStyle   =   0
+      TabsPersist     =   $"frmClientes.frx":038E
+      Enabled         =   -1  'True
+   End
+End
+Attribute VB_Name = "frmClientes"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+'
+Dim mValida As Integer
+Dim mNula As Boolean
+Dim mEstado As Integer
+'
+Dim prevX As Integer, prevY As Integer
+Dim aMonthDays(6, 7) As Variant
+Dim aDayWidth(31) As Integer
+Dim aDateArray(42) As Variant
+'
+Dim stDate As Date
+Dim CallingControl As String
+'
+Const mAnoInicial = 2002
+Const mAnoFinal = 2005
+'
+Const DayCellWidth = 250  ' Largura da célula no grid = 250
+Const DayCellHeight = 200 ' Altura da célula no grid = 250
+'
+Const DayHeaderWidth = 200  ' Largura das iniciais do nomes dos dias da semana
+Const DayHeaderHeight = 200  ' Altura das iniciais do nomes dos dias da semana
+'
+Const DayHeaderTop = 200  ' Altura das letras das iniciais do nomes dos dias da semana
+'
+Const HeaderMonthH = 700 ' Posição até onde vai o cabeçalho de dia/mes/ano
+'
+Const HeaderDaysH = 250  ' Posição até onde vai o cabeçaho dos dias da semana = 250
+'
+'
+'Pega data do SO
+'
+Const lButSOLeft = 30
+Const lButSOTop = 15
+Const lButSORight = 220
+Const lButSOBottom = 150
+'
+'Retorna data indefinida
+'
+Const rButDtLeft = 1560
+Const rButDtTop = 15
+Const rButDtRight = 1740
+Const rButDtBottom = 150
+'
+'left button = Atraza um Mes
+'
+Const lButLeft = 30
+Const lButTop = 240
+Const lButRight = 220
+Const lButBottom = 400
+'
+'right button = Adianta um Mes
+'
+Const rButLeft = 1560
+Const rButTop = 240
+Const rButRight = 1740
+Const rButBottom = 400
+'
+'scroll down button = Atraza um Ano
+'
+Const dnButLeft = 30
+Const dnButTop = 450
+Const dnButRight = 220
+Const dnButBottom = 690
+'
+'scroll up button = Adianta um Ano
+'
+Const upButLeft = 1560
+Const upButTop = 450
+Const upButRight = 1740
+Const upButBottom = 690
+'
+Const ButtonDirectionUp = 1
+Const ButtonDirectionDn = 2
+'
+Const ButtonDirectionLeft = 3
+Const ButtonDirectionRight = 4
+'
+Dim ButtonDirection As Integer
+'
+'================================================================================
+'
+Private Sub cboCidadeCobranca_Click()
+    txtCobrancaCidade.Text = RetornaCodigoCidade(cboCidadeCobranca.List(cboCidadeCobranca.ListIndex), 1)
+End Sub
+
+Private Sub cboCidadeEndereco_Click()
+    txtCidade.Text = RetornaCodigoCidade(cboCidadeEndereco.List(cboCidadeEndereco.ListIndex), 1)
+End Sub
+
+Private Sub cboCodigo_Click()
+    '
+    EncheFormularioCliente Mid(cboCodigo.List(cboCodigo.ListIndex), 1, 5), 1
+    '
+    frmClientes.Refresh
+    '
+End Sub
+
+Private Sub cboCodigo_dropdown()
+    '
+    connOpen
+    '
+    EncheComboClientes frmClientes.cboCodigo, 1
+    '
+    connClose
+    '
+    frmClientes.Refresh
+    '
+End Sub
+
+Private Sub cboCodigo_Click()
+    '
+    EncheFormularioCliente Mid(cboCodigo.List(cboCodigo.ListIndex), 1, 5), 1
+    '
+    frmClientes.Refresh
+    '
+End Sub
+
+Private Sub cboFantasia_Click()
+    '
+    EncheFormularioCliente cboFantasia.List(cboFantasia.ListIndex), 2
+    '
+    frmClientes.Refresh
+    '
+End Sub
+
+Private Sub cboRSocial_Click()
+    '
+    EncheFormularioCliente cboRSocial.List(cboRSocial.ListIndex), 3
+    '
+    frmClientes.Refresh
+    '
+End Sub
+
+Private Sub Command1_Click()
+'
+' removing the input panel
+'
+If mEstado = 8 Then
+   '
+'If frmClientes.SIPVisible = True Then
+'   '
+'   frmClientes.SIPVisible = False
+'   '
+   mEstado = 12
+   '
+   'MsgBox "mEstado=" & CInt(mEstado), vbOKOnly + vbCritical, App.Title
+   '
+   SHFullScreen Me.hwnd, mEstado
+   '
+   Me.Refresh
+   '
+Else
+   '
+'  frmClientes.SIPVisible = True
+   '
+   mEstado = 8
+   '
+   'MsgBox "mEstado=" & CInt(mEstado), vbOKOnly + vbCritical, App.Title
+   '
+   SHFullScreen Me.hwnd, mEstado
+   '
+   'MsgBox "mEstado=" & CInt(mEstado), vbOKOnly + vbCritical, App.Title
+   '
+   mEstado = 12
+   '
+   SHFullScreen Me.hwnd, mEstado
+   '
+   Me.Refresh
+   '
+End If
+'
+End Sub
+
+
+Private Sub form_activate()
+    '
+    Screen.MousePointer = 0
+    '
+    LimpaControlesCliente opcClear
+    '
+    LimpaControlesCliente opcConsulta
+    '
+    mValida = 0
+    '
+    mEstado = 8
+    '
+    connOpen
+    '
+    EncheComboClientes frmClientes.cboCodigo, 1
+    '
+    EncheComboClientes frmClientes.cboFantasia, 2
+    '
+    EncheComboClientes frmClientes.cboRSocial, 3
+    '
+    EncheComboCidade
+    '
+    EncheComboAtividade
+    '
+    connClose
+    '
+End Sub
+
+Private Sub form_resize()
+    '
+    On Error Resume Next
+    '
+    TabStrip.Top = 0 ' 5  euclides
+    TabStrip.Left = 0 ' 5 euclides
+    '
+    TabStrip.Height = Me.ScaleHeight ' - 10 euclides
+    TabStrip.Width = Me.ScaleWidth ' - 10 euclides
+    '
+    fraPrincipal.Move (Me.ScaleWidth - fraPrincipal.Width) / 2, 0 '  15 euclides
+    fraObs.Move (Me.ScaleWidth - fraObs.Width) / 2, 0 ' 15 euclides
+    fraEndereco.Move (Me.ScaleWidth - fraEndereco.Width) / 2, 0 '  15 euclides
+    fraCobranca.Move (Me.ScaleWidth - fraCobranca.Width) / 2, 0 ' 15 euclides
+    fraReferencias.Move (Me.ScaleWidth - fraCobranca.Width) / 2, 0 ' 15 euclides
+    '
+    mValida = 0
+    '
+End Sub
+
+Private Sub fraCobranca_MouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+
+End Sub
+
+Private Sub fraReferencias_MouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+
+End Sub
+
+Private Sub MenuBar_MenuClick(ByVal Item As MenuBarLib.Item)
+    ExecutaMenu Item.Caption, Me
+End Sub
+
+Private Sub TabStrip_Click()
+   '
+   Select Case LCase(TabStrip.SelectedItem.Caption)
+        Case "dados"
+            '
+            ' MsgBox "Clicou em Dados.", vbOKOnly + vbCritical, App.Title
+            '
+            fraPrincipal.Top = 0
+            '
+            fraPrincipal.Visible = True
+            fraEndereco.Visible = False
+            fraCobranca.Visible = False
+            fraReferencias.Visible = False
+            fraObs.Visible = False
+            '
+        Case "endereço"
+            '
+            ' MsgBox "Clicou em Endereço.", vbOKOnly + vbCritical, App.Title
+            '
+            fraEndereco.Top = 0
+            '
+            fraPrincipal.Visible = False
+            fraEndereco.Visible = True
+            fraCobranca.Visible = False
+            fraReferencias.Visible = False
+            fraObs.Visible = False
+        Case "cobrança"
+            '
+            ' MsgBox "Clicou em Cobrança.", vbOKOnly + vbCritical, App.Title
+            '
+            fraCobranca.Top = 0
+            '
+            fraPrincipal.Visible = False
+            fraEndereco.Visible = False
+            fraCobranca.Visible = True
+            fraReferencias.Visible = False
+            fraObs.Visible = False
+        Case "ref."
+            '
+            ' MsgBox "Clicou em Referencias.", vbOKOnly + vbCritical, App.Title
+            '
+            fraReferencias.Top = 0
+            '
+            fraPrincipal.Visible = False
+            fraEndereco.Visible = False
+            fraCobranca.Visible = False
+            fraReferencias.Visible = True
+            fraObs.Visible = False
+        Case "obs."
+            '
+            ' MsgBox "Clicou em Observações.", vbOKOnly + vbCritical, App.Title
+            '
+            fraObs.Top = 0
+            '
+            fraPrincipal.Visible = False
+            fraEndereco.Visible = False
+            fraCobranca.Visible = False
+            fraReferencias.Visible = False
+            fraObs.Visible = True
+        Case Else
+            '
+            MsgBox "Chegou aqui.", vbOKOnly + vbCritical, App.Title
+            '
+   End Select
+   '
+End Sub
+'
+Private Sub Form_Load()
+  '
+  Dim szFontName As String
+  Dim I As Integer
+  Dim sMyString As String
+  '
+  setamenu MenuBar, Me
+  '
+  ' Carrega nomes dos Meses no Listbox
+  '
+  'For i = 1 To 12
+  '    lstMonthNames.AddItem MonthName(i)
+  'Next i
+  '
+  '========================================
+  ' Trocado pelo seguinte...
+  '========================================
+  '
+  lstMonthNames.Clear
+  '
+  lstMonthNames.Top = 0
+  '
+  lstMonthNames.AddItem "Janeiro"
+  lstMonthNames.AddItem "Fevereiro"
+  lstMonthNames.AddItem "Março"
+  lstMonthNames.AddItem "Abril"
+  lstMonthNames.AddItem "Maio"
+  lstMonthNames.AddItem "Junho"
+  lstMonthNames.AddItem "Julho"
+  lstMonthNames.AddItem "Agosto"
+  lstMonthNames.AddItem "Setembro"
+  lstMonthNames.AddItem "Outubro"
+  lstMonthNames.AddItem "Novembro"
+  lstMonthNames.AddItem "Dezembro"
+  '
+  Me.PicCal.FillColor = vbWhite
+  Me.PicCal.FillStyle = picFSSolid
+  '
+  '
+  For I = 1 To 31
+      aDayWidth(I) = (DayCellWidth - PicCal.TextWidth(I) * Screen.TwipsPerPixelX) \ 2
+  Next I
+  '
+  
+  
+  
+  
+  
+End Sub
+'
+'
+'
+Private Sub txtDataFundacao_Click()
+    '
+    Dim msai As Boolean
+    '
+    CallingControl = txtDataFundacao.Name
+    '
+    msai = True
+    '
+    If mValida < 1 Then
+       '
+       msai = ValidaDataCliente(txtDataFundacao.Text)
+       '
+       If msai = False Then
+          '
+          mValida = mValida + 1
+          '
+          If mValida = 1 Then
+             '
+             MsgBox "(2) - Data de Fundação não é uma Data Válida:(" & frmClientes.txtDataFundacao.Text & ")" & CInt(mValida), vbOKOnly + vbCritical, App.Title
+             '
+          End If
+          '
+          OpenCloseCalendar Now, txtDataFundacao
+          '
+       Else
+          '
+          OpenCloseCalendar txtDataFundacao.Text, txtDataFundacao
+          '
+       End If
+       '
+    Else
+       '
+       mValida = 0
+       '
+    End If
+    '
+End Sub
+'
+'
+'
+Private Sub LblMonth_Click()
+    '
+    If lstMonthNames.Visible = False Then
+        '
+        lstMonthNames.ListIndex = Month(stDate) - 1
+        '
+        If PicCal.Left > lstMonthNames.Width Then
+           lstMonthNames.Left = PicCal.Left - lstMonthNames.Width
+        Else
+           lstMonthNames.Left = PicCal.Width + PicCal.Left
+        End If
+        '
+        lstMonthNames.ZOrder vbBringToFront ' vbSendToBack
+        lstMonthNames.Visible = True
+        '
+    Else
+        lstMonthNames.Visible = False
+    End If
+    '
+End Sub
+'
+'
+Private Sub picCal_MouseDown(ByVal Button As Long, ByVal Shift As Long, ByVal X As Double, ByVal Y As Double)
+   '
+   Dim xCell As Integer
+   Dim yCell As Integer
+   Dim iDay As Integer
+   Dim strData As String
+   '
+   ' Check for click on the SO Date button
+    '
+    If X > lButSOLeft And X < lButSORight And Y > lButSOTop And Y < lButSOBottom Then
+       '
+       stDate = Now
+       '
+       Me.PicCal.DrawLine 0, HeaderMonthH + HeaderDaysH, PicCal.ScaleWidth, PicCal.ScaleHeight, vbBlack, True, False
+       '
+       FillArrayMonth stDate
+       '
+       drawmonthname stDate
+       '
+       Exit Sub
+       '
+    End If
+    '
+    ' Check for click on the Undefinided Date button
+    '
+    If X > rButDtLeft And X < rButDtRight And Y > rButDtTop And Y < rButDtBottom Then
+       '
+       FillArrayMonth stDate
+       '
+       'DrawReverseDate xCell, yCell, prevX, prevY, iDay
+       '
+       Me.Controls(CallingControl).Text = "**/**/****"
+       '
+       PicCal.Visible = False
+       '
+       lstMonthNames.Visible = False
+       '
+       Me.LblDay.Visible = False
+       Me.LblMonth.Visible = False
+       Me.LblYear.Visible = False
+       '
+       ' Exit Sub
+       '
+    End If
+    '
+    'check for click on the left button = Atraza um mes
+    '
+    Me.PicCal.FillColor = vbWhite
+    '
+    If X > lButLeft And X < lButRight And Y > lButTop And Y < lButBottom Then
+        '
+        Me.TimerYear.Interval = 500
+        '
+        ButtonDirection = ButtonDirectionLeft
+        '
+        stDate = DateAdd("m", -1, stDate)
+        '
+        Me.PicCal.DrawLine 0, HeaderMonthH + HeaderDaysH, PicCal.ScaleWidth, PicCal.ScaleHeight, vbBlack, True, False
+        '
+        FillArrayMonth stDate
+        '
+        drawmonthname stDate
+        '
+        Exit Sub
+    End If
+    '
+    'check for click on the right button = Adianta um mes
+    '
+    If X > rButLeft And X < rButRight And Y > rButTop And Y < rButBottom Then
+        '
+        Me.TimerYear.Interval = 500
+        '
+        ButtonDirection = ButtonDirectionRight
+        '
+        stDate = DateAdd("m", 1, stDate)
+        '
+        Me.PicCal.DrawLine 0, HeaderMonthH + HeaderDaysH, PicCal.ScaleWidth, PicCal.ScaleHeight, vbBlack, True, False
+        '
+        FillArrayMonth stDate
+        '
+        drawmonthname stDate
+        '
+        Exit Sub
+    End If
+    '
+    'check for click on scroll year up = Atraza um Ano
+    '
+    If X > upButLeft And X < upButRight And Y > upButTop And Y < upButBottom Then
+       '
+       ButtonDirection = ButtonDirectionUp
+       '
+       Me.TimerYear.Interval = 50
+       '
+       Exit Sub
+    End If
+    '
+    'check for click on scroll year down = Adianta um Ano
+    '
+    If X > dnButLeft And X < dnButRight And Y > dnButTop And Y < dnButBottom Then
+        '
+        ButtonDirection = ButtonDirectionDn
+        '
+        Me.TimerYear.Interval = 50
+        '
+        Exit Sub
+    End If
+    '
+    'check for click in the calendar itself = Carrega o dia
+    '
+    If Y > HeaderMonthH + HeaderDaysH Then
+       '
+       ' iDay = (yCell - 1) * 7 + xCell
+       ' If Not IsEmpty(aDateArray(iDay)) Then
+       '
+       If prevX <> 0 And prevY <> 0 Then
+          '
+          iDay = (prevY - 1) * 7 + prevX
+          '
+          If iDay Mod 7 <> 0 Then
+             '
+             '=== Se for Tap em célula em branco (Fora dos Dias possíveis) Marca o dia corrente no Grid que vai ser transportado para o campocom a cor amarela
+             '
+             Me.PicCal.DrawLine ((prevX - 1) * DayCellWidth) + 10 + 15, ((prevY - 1) * DayCellHeight) + HeaderMonthH + HeaderDaysH + 10, ((prevX) * DayCellWidth) - 10 + 15, ((prevY) * DayCellHeight) + HeaderMonthH + HeaderDaysH + 10, vbYellow, True, True
+             '
+             Me.PicCal.ForeColor = vbBlack
+             '
+             Me.PicCal.DrawText aDateArray(iDay), (((iDay - 1) Mod 7) * DayCellWidth) + aDayWidth(aDateArray(iDay)) + 15, HeaderMonthH + HeaderDaysH + ((iDay - 1) \ 7) * DayCellHeight
+             '
+          Else
+             '
+             '=== Marca o dia corrente no Grid que vai ser transportado para o campo
+             '
+               Me.PicCal.DrawLine ((6) * DayCellWidth) + 10 + 15, ((prevY - 1) * DayCellHeight) + HeaderMonthH + HeaderDaysH + 10, ((7) * DayCellWidth) - 10 + 15, ((prevY - 1) * DayCellHeight) + HeaderMonthH + HeaderDaysH + 10, vbRed, True, True
+             '
+             Me.PicCal.ForeColor = vbBlack
+             '
+             Me.PicCal.DrawText aDateArray(iDay), ((6) * DayCellWidth) + aDayWidth(aDateArray(iDay)) + 15, HeaderMonthH + HeaderDaysH + ((iDay - 2) \ 7) * DayCellHeight
+             '
+          End If
+          '
+       End If
+       '
+       xCell = ((X - 15) \ DayCellWidth) + 1
+       yCell = Fix((Y - (HeaderMonthH + HeaderDaysH)) \ DayCellHeight) + 1
+       '
+       '      If y > HeaderMonthH + HeaderDaysH Then
+       '
+       iDay = (yCell - 1) * 7 + xCell
+       '
+       If Not IsEmpty(aDateArray(iDay)) Then
+          '
+          '
+          '
+          '
+          If Me.TimerYear.Interval > 0 Then
+             '
+             ButtonDirection = 0
+             '
+             Me.TimerYear.Interval = 0
+             '
+          End If
+          '
+          '
+          '
+          '
+          DrawReverseDate xCell, yCell, prevX, prevY, iDay
+          '
+          strData = Right("00" & Trim(CStr(aDateArray(iDay))), 2) & "/" & Right("00" & Trim(CStr(Month(stDate))), 2) & "/" & Right("0000" & Trim(CStr(Year(stDate))), 4)
+          '
+          ' FormatDateTime(DateSerial(Year(stDate), Month(stDate), aDateArray(iDay)), vbShortDate)
+          '
+          Me.Controls(CallingControl).Text = strData
+          '
+          PicCal.Visible = False
+          '
+          lstMonthNames.Visible = False
+          '
+          Me.LblDay.Visible = False
+          Me.LblMonth.Visible = False
+          Me.LblYear.Visible = False
+          '
+       End If
+       '
+    End If
+    '
+End Sub
+'
+'
+Private Sub piccal_MouseUp(ByVal Button As Long, ByVal Shift As Long, ByVal X As Double, ByVal Y As Double)
+  '
+  If Me.TimerYear.Interval > 0 Then
+     '
+     ButtonDirection = 0
+     '
+     Me.TimerYear.Interval = 0
+     '
+     '== Desenha quadro quando muda ano anterior/posterior.
+     '
+     Me.PicCal.DrawLine 0, HeaderMonthH + HeaderDaysH, PicCal.ScaleWidth, PicCal.ScaleHeight, vbBlack, True, False
+     '
+     FillArrayMonth stDate
+     '
+     drawmonthname stDate
+     '
+  End If
+  '
+End Sub
+'
+'
+Private Sub TimerYear_Timer()
+    '
+    If ButtonDirection > 0 And PicCal.Visible = True Then
+       '
+       Select Case ButtonDirection
+       
+       Case ButtonDirectionLeft
+            '
+            stDate = DateAdd("m", -1, stDate)
+            '
+            If Year(stDate) < mAnoInicial Then stDate = DateAdd("yyyy", 1, stDate)
+            '
+            drawmonthname stDate
+            '
+       Case ButtonDirectionRight
+            '
+            stDate = DateAdd("m", 1, stDate)
+            '
+            If Year(stDate) > mAnoFinal Then stDate = DateAdd("yyyy", -1, stDate)
+            '
+            drawmonthname stDate
+            '
+       Case ButtonDirectionUp
+            '
+            stDate = DateAdd("yyyy", 1, stDate)
+            '
+            If Year(stDate) > mAnoFinal Then stDate = DateAdd("yyyy", -1, stDate)
+            '
+            drawmonthname stDate
+            '
+       Case ButtonDirectionDn
+            '
+            stDate = DateAdd("yyyy", -1, stDate)
+            '
+            If Year(stDate) < mAnoInicial Then stDate = DateAdd("yyyy", 1, stDate)
+            '
+            drawmonthname stDate
+            '
+       End Select
+       '
+    End If
+    '
+End Sub
+'
+'
+Sub OpenCloseCalendar(strValidaData As String, ctrlContainer As Control)
+    '
+    Dim I As Integer
+    '
+    If Me.PicCal.Visible = False Then
+       '
+       Me.PicCal.Visible = True
+       '
+       If (Trim(strValidaData) = "") Or (Trim(strValidaData) = "**/**/****") Or (Trim(strValidaData) = "//") Then
+          '
+          strValidaData = Right("00" & Trim(CStr(Day(Now))), 2) & "/" & Right("00" & Trim(CStr(Month(Now))), 2) & "/" & Right("0000" & Trim(CStr(Year(Now))), 4)
+          '
+          stDate = strValidaData
+          '
+          mNula = True
+          '
+       Else
+          '
+          stDate = strValidaData
+          '
+          mNula = False
+          '
+       End If
+       '
+       SetPicCalPos ctrlContainer
+       '
+       prevX = 0
+       prevY = 0
+       '
+       Me.PicCal.FillColor = vbWhite
+       '
+       '== Desenha o quadro quando entra no calendario.
+       '
+       Me.PicCal.DrawLine 0, HeaderDaysH + HeaderMonthH, PicCal.ScaleWidth, PicCal.ScaleHeight, vbBlack, True, False
+       '
+       Me.LblDay.Visible = True
+       Me.LblMonth.Visible = True
+       Me.LblYear.Visible = True
+       '
+       Me.PicCal.ZOrder vbBringToFront ' vbSendToBack
+       '
+       Me.LblDay.ZOrder vbBringToFront ' vbSendToBack
+       Me.LblMonth.ZOrder vbBringToFront ' vbSendToBack
+       Me.LblYear.ZOrder vbBringToFront ' vbSendToBack
+       '
+       FillArrayMonth stDate
+       '
+       '============ =============== ================
+       '
+       ' Desenha não sei onde...
+       '
+       Me.PicCal.DrawLine 0, 0, PicCal.ScaleWidth, PicCal.ScaleHeight, vbBlack, True, False
+       '
+       Me.PicCal.DrawPicture strPrograma & "\mscroll.bmp", 10, 10
+       '
+       FillArrayMonth stDate
+       '
+       '========================================
+       ' Escreve a inicial dos dias da semana
+       '========================================
+       '
+       Me.PicCal.FontBold = True
+       '
+       For I = 1 To 7
+           '
+           '========================================
+           ' Me.piccal.DrawText Mid(WeekdayName(i, True, vbUseSystem), 1, 1), ((DayCellWidth - piccal.TextWidth(CStr(Mid(WeekdayName(i, True, vbUseSystem), 1, 1))) * Screen.TwipsPerPixelX) \ 2 + (i - 1) * DayCellWidth) + 15, HeaderMonthH
+           '========================================
+           '
+           If I = 1 Then
+              '
+              Me.PicCal.ForeColor = vbRed
+              '
+           Else
+              '
+              Me.PicCal.ForeColor = vbBlue
+              '
+           End If
+           '
+           Me.PicCal.DrawText Mid(List1.List(I), 1, 1), ((DayCellWidth - PicCal.TextWidth(CStr(Mid(List1.List(I), 1, 1))) * Screen.TwipsPerPixelX) \ 2 + (I - 1) * DayCellWidth) + 15, HeaderMonthH + HeaderDaysH - DayHeaderTop
+           '
+       Next I
+       '
+       Me.PicCal.DrawLine 0, HeaderMonthH + HeaderDaysH, PicCal.ScaleWidth, HeaderMonthH + HeaderDaysH, vbBlack, False, False
+       '
+       Me.PicCal.FontBold = False
+       '
+       '============ =============== ================
+       '
+       drawmonthname stDate
+       '
+       Me.PicCal.SetFocus
+       '
+    Else
+       '
+       mValida = 0
+       '
+       Me.LblDay.Visible = False
+       Me.LblMonth.Visible = False
+       Me.LblYear.Visible = False
+       '
+       Me.PicCal.Visible = False
+       '
+       If Me.Controls(CallingControl).Text = "" Or Me.Controls(CallingControl).Text = "**/**/****" Or Me.Controls(CallingControl).Text = "//" Then
+          '
+          Me.Controls(CallingControl).Text = "**/**/****"
+          '
+       End If
+       '
+    End If
+    '
+End Sub
+'
+'
+Private Sub Form_Click()
+    '
+    If Me.PicCal.Visible = True Then
+       '
+       Me.LblDay.Visible = False
+       Me.LblMonth.Visible = False
+       Me.LblYear.Visible = False
+       '
+       Me.PicCal.Visible = False
+       '
+       Me.lstMonthNames.Visible = False
+       '
+    End If
+    '
+End Sub
+'
+'
+Private Sub lstMonthNames_Click()
+   '
+   Dim nlastmonthday As Integer
+   '
+   nlastmonthday = Day(DateAdd("d", -1, DateAdd("m", 1, DateSerial(Year(stDate), lstMonthNames.ListIndex + 1, 1))))
+   '
+   If Day(stDate) > nlastmonthday Then
+      '
+      stDate = DateSerial(Year(stDate), lstMonthNames.ListIndex + 1, nlastmonthday)
+      '
+   Else
+      '
+      stDate = DateSerial(Year(stDate), lstMonthNames.ListIndex + 1, Day(stDate))
+      '
+   End If
+   '
+   '== Desenha quadro depois de chamar o listbox dos meses.
+   '
+   Me.PicCal.DrawLine 0, HeaderMonthH + HeaderDaysH, PicCal.ScaleWidth, PicCal.ScaleHeight, vbBlack, True, False
+   '
+   FillArrayMonth stDate
+   '
+   drawmonthname stDate
+   '
+   lstMonthNames.Visible = False
+   '
+End Sub
+'
+'
+Private Sub picCal_LostFocus()
+   '
+   ' Me.picCal.Visible = False
+   '
+End Sub
+'
+'
+Sub DrawReverseDate(xC As Integer, yC As Integer, xP As Integer, yP As Integer, arrayDay As Integer)
+    '
+    If arrayDay Mod 7 <> 0 Then
+       '
+       Me.PicCal.DrawLine ((xC - 1) * DayCellWidth) + 10 + 15, ((yC - 1) * DayCellHeight) + HeaderMonthH + HeaderDaysH + 10, ((xC) * DayCellWidth) - 10 + 15, ((yC) * DayCellHeight) + HeaderMonthH + HeaderDaysH - 10, vbRed, True, True
+       '
+       Me.PicCal.ForeColor = vbWhite
+       '
+       PicCal.DrawText aDateArray(arrayDay), (((arrayDay - 1) Mod 7) * DayCellWidth) + aDayWidth(aDateArray(arrayDay)) + 15, HeaderMonthH + HeaderDaysH + ((arrayDay - 1) \ 7) * DayCellHeight
+       '
+    Else
+       '
+       If ((yC - 2) * DayCellHeight) + HeaderMonthH + HeaderDaysH + 10 > (HeaderMonthH + HeaderDaysH) Then
+          '
+          Me.PicCal.DrawLine ((6) * DayCellWidth) + 10 + 15, ((yC - 2) * DayCellHeight) + HeaderMonthH + HeaderDaysH + 10, ((7) * DayCellWidth) - 10 + 15, ((yC - 1) * DayCellHeight) + HeaderMonthH + HeaderDaysH - 10, vbRed, True, True
+          '
+          Me.PicCal.ForeColor = vbWhite
+          '
+          PicCal.DrawText aDateArray(arrayDay), ((6) * DayCellWidth) + aDayWidth(aDateArray(arrayDay)) + 15, HeaderMonthH + HeaderDaysH + ((arrayDay - 2) \ 7) * DayCellHeight
+          '
+       End If
+       '
+    End If
+    '
+    xP = xC
+    yP = yC
+    '
+End Sub
+'
+'
+Sub FillArrayMonth(iDate As Date)
+    '
+    Dim mMonth As Integer, nMonthDays As Integer, nFirstDay As Integer
+    Dim nArrayElCnt As Integer
+    Dim tmpDate As Date
+    Dim ntxtWidth As Integer
+    Dim I As Integer
+    '
+    mMonth = Month(iDate)
+    tmpDate = DateAdd("m", 1, DateSerial(Year(iDate), Month(iDate), 1))
+    nMonthDays = Day(DateAdd("d", -1, tmpDate))
+    nFirstDay = Weekday(DateSerial(Year(iDate), Month(iDate), 1), vbUseSystem)
+    '
+    Me.PicCal.ForeColor = vbBlack
+    '
+    For I = 0 To nFirstDay - 1
+        aDateArray(I) = Empty
+    Next I
+    '
+    For I = nFirstDay + nMonthDays To UBound(aDateArray)
+        aDateArray(I) = Empty
+    Next I
+    I = 1
+    '
+    For nArrayElCnt = nFirstDay To nFirstDay + nMonthDays - 1
+        '
+        aDateArray(nArrayElCnt) = I
+        '
+        ' Define a cor dos dias do calendário
+        '
+        ' < 270
+        '
+        If (((nArrayElCnt - 1) Mod 7) * DayCellWidth) + aDayWidth(I) < DayCellWidth Then
+           '
+           ' If MsgBox("X = " & CInt((((nArrayElCnt - 1) Mod 7) * DayCellWidth) + aDayWidth(i)), vbYesNo + vbQuestion, App.Title) = vbNo Then Exit Sub
+           '
+           Me.PicCal.ForeColor = vbRed
+           '
+        Else
+           '
+           Me.PicCal.ForeColor = vbBlack
+           '
+        End If
+        '
+        PicCal.DrawText aDateArray(nArrayElCnt), (((nArrayElCnt - 1) Mod 7) * DayCellWidth) + aDayWidth(I), (HeaderMonthH + HeaderDaysH + ((nArrayElCnt - 1) \ 7) * DayCellHeight)
+        '
+        I = I + 1
+        '
+    Next nArrayElCnt
+    '
+    ' paint input date in reverse color
+    '
+    nArrayElCnt = nFirstDay + Day(iDate) - 1
+    '
+    DrawReverseDate (nArrayElCnt) Mod 7, (nArrayElCnt) \ 7 + 1, prevX, prevY, nArrayElCnt
+    '
+End Sub
+'
+'
+Sub drawmonthname(iDate As Date)
+    '
+    '============== Dia
+    '
+    ' Me.lblMonth = MonthName(Month(iDate), True) & " " & Year(iDate)
+    '
+    ' Me.LblDay.Top = Me.PicCal.Top + 30
+    '
+    ' Me.LblDay.Top = ((Me.PicCal.Top + Me.PicCal.Height) - Me.LblDay.Height) - HeaderMonthH
+    '
+    Me.LblDay.Top = HeaderMonthH - (Me.LblDay.Height + lButSOTop)
+    '
+    ' Me.LblDay.Left = Me.PicCal.Left + lButRight + 260
+    '
+    Me.LblDay.Left = Me.PicCal.Left + lButSORight + 400 ' 360
+    '
+    ' Me.LblDay.Width = upButLeft - lButRight ' - 60
+    '
+    Me.LblDay.Width = Me.PicCal.Width - (3 * ((lButSORight - lButSOLeft) + (rButRight - rButLeft))) - 100
+    '
+    Me.LblDay.Caption = Day(iDate)
+    '
+    Me.LblDay.Refresh
+    '
+    '============== Mes
+    '
+    ' Me.lblMonth.Top = Me.LblDay.Top + Me.LblDay.Height + 60
+    '
+    Me.LblMonth.Top = Me.LblDay.Top + Me.LblDay.Height + 40
+    '
+    ' Me.lblMonth.Left = Me.PicCal.Left + lButRight + 300
+    '
+    Me.LblMonth.Left = Me.PicCal.Left + lButSORight + 400 ' 360
+    '
+    ' Me.lblMonth.Width = upButLeft - lButRight ' - 60
+    '
+    Me.LblMonth.Width = Me.PicCal.Width - (3 * ((lButSORight - lButSOLeft) + (rButRight - rButLeft))) - 100
+    '
+    Me.LblMonth.Caption = lstMonthNames.List(Month(iDate) - 1)
+    '
+    '============== Ano
+    '
+    ' Me.LblYear.Top = Me.lblMonth.Top + Me.lblMonth.Height + 60
+    '
+    Me.LblYear.Top = Me.LblMonth.Top + Me.LblMonth.Height + 40
+    '
+    ' Me.LblYear.Left = Me.PicCal.Left + lButRight + 300
+    '
+    Me.LblYear.Left = Me.PicCal.Left + lButSORight + 400 ' 360
+    '
+    ' Me.LblYear.Width = upButLeft - lButRight ' - 60
+    '
+    Me.LblYear.Width = Me.PicCal.Width - (3 * ((lButSORight - lButSOLeft) + (rButRight - rButLeft))) - 100
+    '
+    Me.LblYear.Caption = Year(iDate)
+    '
+End Sub
+'
+'
+Sub SetPicCalPos(ctrl As Control)
+    '
+    Dim newTop As Integer, newLeft As Integer
+    '
+    'calculate the top for the calendar control
+    '
+    If Screen.Height - (ctrl.Top + ctrl.Height) >= PicCal.Height Then
+        newTop = ctrl.Top + ctrl.Height
+    Else
+        newTop = ctrl.Top - PicCal.Height
+    End If
+    '
+    'calculate the left for the calendar control
+    '
+    If ctrl.Left + ctrl.Width >= PicCal.Width Then
+        newLeft = (ctrl.Left + ctrl.Width) - PicCal.Width
+    Else
+        newLeft = ctrl.Left
+    End If
+    '
+    PicCal.Move newLeft, newTop
+    '
+End Sub
+
+Private Sub txtDataFundacao_Lostfocus()
+   '
+   Dim msai As Boolean
+   '
+   msai = True
+   '
+   If mValida <= 1 Then
+      '
+      msai = ValidaDataCliente(txtDataFundacao.Text)
+      '
+      If msai = False Then
+         '
+         mValida = mValida + 1
+         '
+         If mValida = 1 Then
+            '
+            MsgBox "(3) - Data de Fundação não é uma Data Válida:(" & frmClientes.txtDataFundacao.Text & ")" & CInt(mValida), vbOKOnly + vbCritical, App.Title
+            '
+            txtDataFundacao.SetFocus
+            '
+         End If
+         '
+      End If
+      '
+   Else
+      '
+      mValida = 1
+      '
+   End If
+   '
+End Sub

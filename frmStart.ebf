@@ -1,0 +1,671 @@
+VERSION 5.00
+Object = "{F7DEA2C9-BA8F-446E-A292-B4840F3BD661}#1.0#0"; "mscemenubar.dll"
+Object = "{25C953A7-5464-11D1-A714-00AA0044064C}#1.0#0"; "MSCEFILE.DLL"
+Object = "{338D5EA5-4BBD-11D1-9A7D-00C04FAD5AEC}#1.0#0"; "mscepicture.dll"
+Begin VB.Form frmStart 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   Caption         =   "p-SDC"
+   ClientHeight    =   6135
+   ClientLeft      =   3060
+   ClientTop       =   1860
+   ClientWidth     =   5370
+   ForeColor       =   &H80000008&
+   ScaleHeight     =   6135
+   ScaleWidth      =   5370
+   Begin FILECTLCtl.FileSystem FileSystem 
+      Left            =   120
+      Top             =   360
+      _cx             =   2200
+      _cy             =   1400
+   End
+   Begin MenuBarLib.MenuBar MenuBar 
+      Left            =   0
+      Top             =   3960
+      _cx             =   6297
+      _cy             =   661
+      Enabled         =   -1  'True
+      NewButton       =   0   'False
+   End
+   Begin VBCE.Frame Frame1 
+      Height          =   600
+      Left            =   15
+      TabIndex        =   0
+      Top             =   3315
+      Visible         =   0   'False
+      Width           =   3510
+      _cx             =   6191
+      _cy             =   1058
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   "Processamento"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin PictureBoxCtl.PictureBox PictureBox1 
+         Height          =   345
+         Left            =   60
+         TabIndex        =   1
+         Top             =   210
+         Width           =   3405
+         _cx             =   6006
+         _cy             =   609
+         AutoSize        =   0   'False
+         BackColor       =   255
+         BorderStyle     =   1
+         DrawMode        =   13
+         DrawStyle       =   0
+         DrawWidth       =   1
+         FillColor       =   -2147483640
+         FillStyle       =   1
+         ForeColor       =   16711680
+         FontBold        =   0   'False
+         FontItalic      =   0   'False
+         FontStrikethru  =   0   'False
+         FontUnderline   =   0   'False
+         FontName        =   "Tahoma"
+         FontSize        =   10
+         FontTransparent =   -1  'True
+         Object.Height          =   23
+         Object.Width           =   227
+         Object.Left            =   4
+         Object.Top             =   14
+         Picture         =   ""
+         ScaleHeight     =   345
+         ScaleWidth      =   3405
+         ScaleLeft       =   0
+         ScaleTop        =   0
+         ScaleMode       =   1
+         Enabled         =   -1  'True
+      End
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   645
+      Left            =   1920
+      TabIndex        =   5
+      Top             =   4875
+      Width           =   1305
+      _cx             =   2302
+      _cy             =   1138
+      BackColor       =   8421631
+      Caption         =   "Command1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton cmdOK 
+      Height          =   360
+      Left            =   1215
+      TabIndex        =   4
+      Top             =   3600
+      Width           =   975
+      _cx             =   1720
+      _cy             =   635
+      BackColor       =   65280
+      Caption         =   "Ok"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.TextBox txtMensagem 
+      Height          =   3270
+      Left            =   30
+      TabIndex        =   3
+      Top             =   270
+      Width           =   3540
+      _cx             =   6244
+      _cy             =   5768
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   -1  'True
+      MaxLength       =   0
+      MultiLine       =   -1  'True
+      PasswordChar    =   ""
+      ScrollBars      =   2
+   End
+   Begin VBCE.TextBox txtStatus 
+      Height          =   255
+      Left            =   0
+      TabIndex        =   2
+      Top             =   0
+      Width           =   3600
+      _cx             =   6350
+      _cy             =   450
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16711680
+      Text            =   "Status"
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   -1  'True
+      MaxLength       =   0
+      MultiLine       =   -1  'True
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+End
+Attribute VB_Name = "frmStart"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub CmdOK_Click()
+  '
+  txtStatus.Visible = False
+  '
+  txtMensagem.Visible = False
+  '
+  cmdOK.Visible = False
+  '
+  SHFullScreen Me.hwnd, 8
+  SHFullScreen Me.hwnd, 12
+  '
+  frmStart.SIPVisible = True
+  frmStart.SIPVisible = False
+  '
+  bolMensagemStatus = False
+  '
+  ' setamenu MenuBar, Me
+  '
+End Sub
+
+'
+Private Sub form_activate()
+  '
+  On Error Resume Next
+  '
+  Dim rs
+  '
+  Dim strLine As String
+  Dim nbrecords As Integer
+  '
+  Dim ret As Boolean
+  Dim mProcessa As Integer
+  Dim mHeigth As Integer
+  Dim mWidth As Integer
+  '
+  '======== Apaga o input panel
+  '
+  SHFullScreen Me.hwnd, 8
+  SHFullScreen Me.hwnd, 12
+  '
+  frmLogin.SIPVisible = True
+  frmLogin.SIPVisible = False
+  '
+  frmStart.txtStatus.Visible = True
+  frmStart.txtMensagem.Visible = False
+  '
+  cmdOK.Visible = False
+  '
+  frmStart.Frame1.Visible = True
+  '
+  frmStart.Frame1.Refresh
+  '
+  frmStart.PictureBox1.Visible = True
+  '
+  frmStart.PictureBox1.Refresh
+  '
+  ' MsgBox "Teste", vbOKOnly + vbCritical, App.Title
+  '
+  txtStatus.Top = 0
+  txtStatus.Left = 0
+  '
+  mHeigth = txtStatus.Height
+  mWidth = txtStatus.Width
+  '
+  txtStatus.Height = Me.ScaleHeight
+  txtStatus.Width = Me.ScaleWidth
+  '
+  Me.Refresh
+  '
+  ' MsgBox "Teste", vbOKOnly + vbCritical, App.Title
+  '
+  AddStatus "Verificando base de dados... Aguarde."
+  '
+  '=========================================================================================================
+  '
+  strNomeArquivo = strPath & "\I0000000.000"
+  '
+  ' kridez
+  '
+  mProcessa = 0
+  mExecutou = False
+  '
+  If FileSystem.Dir(strPath & "\base.cdb") = "" Then
+     '
+     If MsgBox("Banco de Dados Inexistente, Criar ?", vbYesNo + vbQuestion, App.Title) = vbYes Then
+        '
+        CriarBase
+        '
+        If LCase(Trim(frmLogin.txtUserName)) = "manutencao" Then
+           '
+           If FileSystem.Dir(strNomeArquivo) <> "" Then
+              '
+              If MsgBox("Arquivo de Implantação existente, Implantar ?", vbYesNo + vbQuestion, App.Title) = vbYes Then
+                 '
+                 mExecutou = True
+                 '
+                 AddStatus "Carregando informações do Arquivo: I0000000.000"
+                 '
+                 PegaLinha strNomeArquivo, 1
+                 '
+              End If
+              '
+           Else
+              '
+              MsgBox "Arquivo de Implantação Inexistente. Não é possível fazer a implantação.", vbOKOnly + vbCritical, App.Title
+              '
+              App.End
+              '
+           End If
+           '
+        Else
+           '
+           MsgBox "1 - Usuário não autorizado para implantação.", vbOKOnly + vbCritical, App.Title
+           '
+           App.End
+           '
+        End If
+        '
+     Else
+        '
+        If FileSystem.Dir(strNomeArquivo) <> "" Then
+           '
+           If LCase(Trim(frmLogin.txtUserName)) = "manutencao" Then
+              '
+              If MsgBox("Arquivo de Implantação existente, Implantar ?", vbYesNo + vbQuestion, App.Title) = vbYes Then
+                 '
+                 If FileSystem.Dir(strPath & "\base.cdb") = "" Then
+                    '
+                    If MsgBox("Banco de Dados Inexistente, Criar ?", vbYesNo + vbQuestion, App.Title) = vbYes Then
+                       '
+                       mExecutou = True
+                       '
+                       CriarBase
+                       '
+                       PegaLinha strNomeArquivo, 1
+                       '
+                    End If
+                    '
+                 Else
+                    '
+                    If MsgBox("Banco de Dados existente, Excluir e Recriar ?", vbYesNo + vbQuestion, App.Title) = vbYes Then
+                       '
+                       mExecutou = True
+                       '
+                       frmStart.FileSystem.Kill strPath & "\base.cdb"
+                       '
+                       CriarBase
+                       '
+                       PegaLinha strNomeArquivo, 1
+                       '
+                    Else
+                       '
+                       MsgBox "Não é possível utilizar o sistema.", vbOKOnly + vbCritical, App.Title
+                       '
+                       App.End
+                       '
+                    End If
+                    '
+                 End If
+                 '
+              End If
+              '
+           Else
+              '
+              MsgBox "2 - Usuário não autorizado para implantação.", vbOKOnly + vbCritical, App.Title
+              '
+              App.End
+              '
+           End If
+           '
+        End If
+        '
+     End If
+     '
+  Else
+     '
+     If FileSystem.Dir(strNomeArquivo) <> "" Then
+        '
+        If LCase(Trim(frmLogin.txtUserName)) = "manutencao" Then
+           '
+           If MsgBox("Arquivo de Implantação existente, Implantar ?", vbYesNo + vbQuestion, App.Title) = vbYes Then
+              '
+              If MsgBox("Banco de Dados existente, Excluir e Recriar ?", vbYesNo + vbQuestion, App.Title) = vbYes Then
+                 '
+                 mExecutou = True
+                 '
+                 frmStart.FileSystem.Kill strPath & "\base.cdb"
+                 '
+                 CriarBase
+                 '
+              End If
+              '
+              PegaLinha strNomeArquivo, 1
+              '
+           End If
+           '
+        End If
+        '
+     End If
+     '
+  End If
+  '
+  '=========================================================================================================
+  '
+  SHFullScreen Me.hwnd, 8
+  SHFullScreen Me.hwnd, 12
+  '
+  frmStart.SIPVisible = True
+  frmStart.SIPVisible = False
+  '
+  txtStatus.Height = mHeigth
+  txtStatus.Width = mWidth
+  '
+  If bolModoManutencao = False Then
+     '
+     frmStart.txtStatus.Visible = True
+     '
+     ' Vermelho = &H000000FF&
+     '
+     frmStart.txtStatus.ForeColor = &HFF&
+     frmStart.txtStatus.Font.Bold = True
+     '
+     ' &H80000005&
+     '
+     If Len(usrTempoConectar) > 0 And IsNumeric(usrTempoConectar) Then
+        If CInt(usrTempoConectar) = 1 Then
+           AddStatus "Você deve se conectar em " & usrTempoConectar & " dia."
+        Else
+           AddStatus "Você deve se conectar em " & usrTempoConectar & " dias."
+        End If
+     End If
+     '
+     frmStart.Frame1.Visible = False
+     '
+     frmStart.Frame1.Refresh
+     '
+     frmStart.PictureBox1.Visible = False
+     '
+     frmStart.PictureBox1.Refresh
+     '
+     frmStart.txtMensagem.Visible = True
+     '
+     cmdOK.Visible = True
+     '
+     Screen.MousePointer = 11
+     '
+     '================================================================================
+     '
+     connOpen
+     '
+     '
+     If 1 = 0 Then
+        '
+     '
+     'MsgBox "0 - Inicio:" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     ' MsgBox "1 - EncheComboClientes frmClientes.cboCodigo, 1" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     EncheComboClientes frmClientes.cboCodigo, 1
+     '
+     ' MsgBox "2 - EncheComboClientes frmClientes.cboFantasia, 2" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     EncheComboClientes frmClientes.cboFantasia, 2
+     '
+     ' MsgBox "3 - EncheComboClientes frmClientes.cboRSocial, 3" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     EncheComboClientes frmClientes.cboRSocial, 3
+     '
+     ' MsgBox "4 - EncheComboCidade frmClientes.cboCidade, 2" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     EncheComboCidade
+     '
+     ' MsgBox "5 - EncheComboAtividade frmClientes.cboAtividade" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     EncheComboAtividade
+     '
+     '
+     EncheComboClientes frmHistorico.cboFantasia, 2
+     '
+     ' MsgBox "5 - EncheComboClientes frmRoteiro.cboCliente, 2" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     EncheComboClientes frmRoteiro.cboCliente, 2
+     '
+     ' EncheComboClientes frmClientes.cboCodigo, 1
+     '
+     ' EncheComboClientes frmClientes.cboFantasia, 2
+     '
+     ' EncheComboClientes frmClientes.cboRSocial, 3
+     '
+     ' MsgBox "6 - EncheComboClientes frmEstoque.cboClientes, 2" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     '======================================================
+     '
+     EncheComboClientes frmEstoque.cboClientes, 2
+     '
+     '  EncheComboClientes Clientes.cboCodigo, 1
+     '
+     ' MsgBox "7 - EncheComboClientes frmContas.cboFantasia, 2" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     EncheComboClientes frmContas.cboFantasia, 2
+     '
+     ' MsgBox "8 - EncheComboClientes frmPedido.cboPedidoCliente, 2" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     EncheComboClientes frmPedido.cboPedidoCliente, 2
+     '
+     ' EncheComboClientes frmClientes.cboCodigo, 1
+     '
+     ' EncheComboClientes frmClientes.cboFantasia, 2
+     '
+     ' EncheComboClientes frmClientes.cboRSocial, 3
+     '
+     ' EncheComboClientes frmClientes.cboCodigo, 1
+     '
+     ' EncheComboClientes frmClientes.cboFantasia, 2
+     '
+     ' EncheComboClientes frmClientes.cboRSocial, 3
+     '
+     ' EncheComboClientes frmPedido.cboPedidoCliente, 2
+     '
+     ' EncheComboClientes frmClientes.cboCodigo, 1
+     '
+     ' EncheComboClientes frmClientes.cboFantasia, 2
+     '
+     ' EncheComboClientes frmClientes.cboRSocial, 3
+     '
+     ' EncheComboClientes frmClientes.cboCodigo, 1
+     '
+     ' EncheComboClientes frmClientes.cboFantasia, 2
+     '
+     ' EncheComboClientes frmClientes.cboRSocial, 3
+     '
+     ' MsgBox "9 - EncheComboCidade" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     '
+     '
+     ' MsgBox "11 - frmPedido.cboProdutos.AddItem rs()" & CStr(rs.RecordCount), vbOKOnly + vbCritical, App.Title
+     '
+     Set rs = CreateObject("ADOCE.Recordset.3.0")
+     '
+     rs.Open "SELECT * from produtos ORDER BY descricao;", CONN, adOpenForwardOnly, adLockReadOnly
+     '
+     If rs.RecordCount > 0 Then
+        frmPedido.cboProdutos.Clear
+        Do Until rs.EOF
+           frmPedido.cboProdutos.AddItem rs("descricao")
+           rs.MoveNext
+        Loop
+     End If
+     '
+     If rs.State = 1 Then rs.Close
+     '
+     Set rs = Nothing
+       '
+     End If
+     '
+     connClose
+     '
+     Screen.MousePointer = 0
+     '
+     '================================================================================
+     '
+     ' MsgBox "Final" & Now, vbOKOnly + vbCritical, App.Title
+     '
+     '================================================================================
+     '
+  Else
+     '
+     frmStart.txtStatus.Visible = True
+     '
+     AddStatus "Manutenção concluída com sucesso."
+     '
+     intProgress = 1
+     intPassagem = 100
+     intComprimento = intTamanho
+     '
+     Progresso intProgress, intComprimento, intTamanho, intPassagem
+     '
+     '
+     '
+     '
+     frmStart.txtStatus.Visible = True
+     frmStart.txtMensagem.Visible = False
+     cmdOK.Visible = False
+     '
+     '
+     '
+     '
+     frmStart.PictureBox1.ForeColor = &H80000005
+     '
+     frmStart.PictureBox1.DrawText CStr(intPassagem) & " %", 1600, 0
+     '
+     frmStart.Frame1.Refresh
+     '
+     frmStart.PictureBox1.Refresh
+     '
+     frmStart.txtMensagem.Visible = False
+     '
+     cmdOK.Visible = False
+     '
+     '
+     '
+     '
+     '
+     If mExecutou = True Then
+        '
+        frmStart.txtStatus.Visible = True
+        frmStart.txtMensagem.Visible = False
+        cmdOK.Visible = False
+        '
+        frmStart.Frame1.Visible = True
+        '
+        frmStart.Frame1.Refresh
+        '
+        frmStart.PictureBox1.Visible = True
+        '
+        frmStart.PictureBox1.Refresh
+        '
+     Else
+        '
+        cmdOK.Visible = False
+        '
+        frmStart.Frame1.Visible = False
+        '
+        frmStart.Frame1.Refresh
+        '
+        frmStart.PictureBox1.Visible = False
+        '
+        frmStart.PictureBox1.Refresh
+        '
+     End If
+     '
+     ' MsgBox "Teste", vbOKOnly + vbCritical, App.Title
+     '
+     '======== Apaga o input panel
+     '
+     SHFullScreen Me.hwnd, 8
+     SHFullScreen Me.hwnd, 12
+     '
+     frmLogin.SIPVisible = True
+     frmLogin.SIPVisible = False
+     '
+     If 1 = 0 Then
+        '
+     '
+     frmValidaCliente.txtCodigoClienteAtual.Text = "123"
+     frmValidaCliente.txtCodigoVendedorAtual.Text = "050"
+     frmValidaCliente.txtDataAtual.Text = Mid(RetornaDataString(Now), 1, 4) + Mid(RetornaDataString(Now), 7, 2)
+     frmValidaCliente.txtNumeroPedido.Text = "12345"
+     '
+     frmValidarVendedor.txtCodigoClienteAtual.Text = "12345"
+     frmValidarVendedor.txtCodigoVendedorAtual.Text = "050"
+     frmValidarVendedor.txtNumeroPedido.Text = "005"
+     frmValidarVendedor.txtDataAtual.Text = Mid(RetornaDataString(Now), 1, 4) + Mid(RetornaDataString(Now), 7, 2)
+     '
+     frmValidarVendedor.Show
+     '
+     End If
+     '
+  End If
+  '
+  Screen.MousePointer = 0
+  '
+  setamenu MenuBar, Me
+  '
+End Sub
+
+Private Sub MenuBar_MenuClick(ByVal Item As MenuBarLib.Item)
+    ExecutaMenu Item.Caption, Me
+End Sub

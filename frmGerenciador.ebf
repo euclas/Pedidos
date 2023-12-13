@@ -1,0 +1,1156 @@
+VERSION 5.00
+Object = "{F7DEA2C9-BA8F-446E-A292-B4840F3BD661}#1.0#0"; "mscemenubar.dll"
+Object = "{338D5EA5-4BBD-11D1-9A7D-00C04FAD5AEC}#1.0#0"; "mscepicture.dll"
+Begin VB.Form frmGerenciador 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   Caption         =   "Gerenciador de Arquivos"
+   ClientHeight    =   4410
+   ClientLeft      =   3150
+   ClientTop       =   1905
+   ClientWidth     =   3600
+   ForeColor       =   &H80000008&
+   ScaleHeight     =   4410
+   ScaleWidth      =   3600
+   Begin VBCE.Frame Frame2 
+      Height          =   2370
+      Left            =   30
+      TabIndex        =   3
+      Top             =   525
+      Width           =   1680
+      _cx             =   2963
+      _cy             =   4180
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   "Recebidos:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.CommandButton lblR09 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   13
+         Top             =   2080
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "9"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblR08 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   12
+         Top             =   1880
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "8"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblR07 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   11
+         Top             =   1670
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "7"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblR06 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   10
+         Top             =   1450
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "6"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblR05 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   9
+         Top             =   1240
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "5"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblR04 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   8
+         Top             =   1030
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "4"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblR03 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   7
+         Top             =   820
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "3"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblR02 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   6
+         Top             =   620
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "2"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblR01 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   5
+         Top             =   400
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblR00 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   4
+         Top             =   200
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "0"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+   End
+   Begin VBCE.Frame FreData 
+      Height          =   540
+      Left            =   60
+      TabIndex        =   0
+      Top             =   -15
+      Width           =   2000
+      _cx             =   3528
+      _cy             =   952
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   "Data:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.CommandButton Command3 
+         Height          =   270
+         Left            =   1040
+         TabIndex        =   29
+         Top             =   210
+         Width           =   300
+         _cx             =   529
+         _cy             =   476
+         BackColor       =   12632256
+         Caption         =   "*"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command2 
+         Height          =   270
+         Left            =   1610
+         TabIndex        =   28
+         Top             =   210
+         Width           =   300
+         _cx             =   529
+         _cy             =   476
+         BackColor       =   255
+         Caption         =   "+"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command1 
+         Height          =   270
+         Left            =   1320
+         TabIndex        =   27
+         Top             =   210
+         Width           =   300
+         _cx             =   529
+         _cy             =   476
+         BackColor       =   65280
+         Caption         =   "-"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.TextBox txtData 
+         Height          =   270
+         Left            =   60
+         TabIndex        =   1
+         Top             =   210
+         Width           =   1000
+         _cx             =   1764
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+   End
+   Begin MenuBarLib.MenuBar MenuBar 
+      Left            =   0
+      Top             =   3960
+      _cx             =   6165
+      _cy             =   661
+      Enabled         =   -1  'True
+      NewButton       =   0   'False
+   End
+   Begin VBCE.Frame Frame3 
+      Height          =   2370
+      Left            =   1770
+      TabIndex        =   14
+      Top             =   525
+      Width           =   1680
+      _cx             =   2963
+      _cy             =   4180
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   "Enviados:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.CommandButton lblE00 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   24
+         Top             =   200
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "0"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblE01 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   23
+         Top             =   400
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblE02 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   22
+         Top             =   620
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "2"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblE03 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   21
+         Top             =   820
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "3"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblE04 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   20
+         Top             =   1030
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "4"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblE05 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   19
+         Top             =   1240
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "5"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblE06 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   18
+         Top             =   1450
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "6"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblE07 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   17
+         Top             =   1670
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "7"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblE08 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   16
+         Top             =   1880
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "8"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton lblE09 
+         Height          =   180
+         Left            =   150
+         TabIndex        =   15
+         Top             =   2080
+         Visible         =   0   'False
+         Width           =   1410
+         _cx             =   2487
+         _cy             =   317
+         BackColor       =   12632256
+         Caption         =   "9"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+   End
+   Begin VBCE.Frame Frame1 
+      Height          =   600
+      Left            =   60
+      TabIndex        =   30
+      Top             =   3350
+      Width           =   3500
+      _cx             =   6174
+      _cy             =   1058
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   "Processamento"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin PictureBoxCtl.PictureBox PictureBox1 
+         Height          =   350
+         Left            =   60
+         TabIndex        =   31
+         Top             =   200
+         Width           =   3400
+         _cx             =   6006
+         _cy             =   635
+         AutoSize        =   0   'False
+         BackColor       =   255
+         BorderStyle     =   1
+         DrawMode        =   13
+         DrawStyle       =   0
+         DrawWidth       =   1
+         FillColor       =   -2147483640
+         FillStyle       =   1
+         ForeColor       =   16711680
+         FontBold        =   0   'False
+         FontItalic      =   0   'False
+         FontStrikethru  =   0   'False
+         FontUnderline   =   0   'False
+         FontName        =   "Tahoma"
+         FontSize        =   10
+         FontTransparent =   -1  'True
+         Object.Height          =   24
+         Object.Width           =   227
+         Object.Left            =   4
+         Object.Top             =   13
+         Picture         =   ""
+         ScaleHeight     =   360
+         ScaleWidth      =   3405
+         ScaleLeft       =   0
+         ScaleTop        =   0
+         ScaleMode       =   1
+         Enabled         =   -1  'True
+      End
+   End
+   Begin VBCE.CommandButton cmdQuestion 
+      Height          =   400
+      Left            =   3075
+      TabIndex        =   26
+      Top             =   120
+      Width           =   375
+      _cx             =   661
+      _cy             =   714
+      BackColor       =   8438015
+      Caption         =   "?"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.TextBox txtStatus 
+      Height          =   250
+      Left            =   60
+      TabIndex        =   25
+      Top             =   3000
+      Width           =   3360
+      _cx             =   5927
+      _cy             =   441
+      BackColor       =   -2147483643
+      BorderStyle     =   0
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16711680
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   -1  'True
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.CommandButton cmdProcessar 
+      Height          =   400
+      Left            =   2100
+      TabIndex        =   2
+      Top             =   120
+      Width           =   900
+      _cx             =   1587
+      _cy             =   706
+      BackColor       =   8454016
+      Caption         =   "Processar"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+End
+Attribute VB_Name = "frmGerenciador"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub cmdProcessar_Click()
+    Screen.MousePointer = 11
+    '
+    GerenciaArquivos
+    '
+    Screen.MousePointer = 0
+End Sub
+
+Private Sub cmdQuestion_Click()
+    MsgBox "Recebidos: " & vbCrLf & "Vermelho: Não Lido" & vbCrLf & "Azul: Lido" & vbCrLf & "Verde: Lido e Excluido" & vbCrLf & vbCrLf & "Enviados:" & vbCrLf & "Azul: Gerado" & vbCrLf & "Verde: Gerado e Enviado", vbOKOnly, App.Title
+End Sub
+
+Private Sub Command1_Click()
+
+   IntIncrDataGer = IntIncrDataGer - 1
+
+   TxtDataGer = CDate(Now) + IntIncrDataGer
+
+   txtData.Text = Mid(Trim(TxtDataGer) + "          ", 1, 10)
+   
+   ' Frame1.Caption = TxtDataGer
+      
+End Sub
+
+Private Sub Command2_Click()
+
+   IntIncrDataGer = IntIncrDataGer + 1
+   
+   TxtDataGer = CDate(Now) + IntIncrDataGer
+
+   txtData.Text = Mid(Trim(TxtDataGer) + "          ", 1, 10)
+   
+   ' Frame1.Caption = TxtDataGer
+
+End Sub
+
+Private Sub Command3_Click()
+    
+    IntIncrDataGer = 0
+    
+    txtData.Text = Mid(RetornaDataString(Now), 1, 2) & "/" & Mid(RetornaDataString(Now), 3, 2) & "/" & Mid(RetornaDataString(Now), 5, 4)
+   
+    ' Frame1.Caption = TxtDataGer
+
+End Sub
+
+Private Sub form_activate()
+    '
+    txtData.Text = Trim(Mid(RetornaDataString(Now), 1, 2)) & "/" & Trim(Mid(RetornaDataString(Now), 3, 2)) & "/" & Trim(Mid(RetornaDataString(Now), 5, 4))
+    txtStatus.Text = vbNullString
+    Screen.MousePointer = 0
+    '
+End Sub
+
+Private Sub Form_Load()
+  '
+  setamenu MenuBar, Me
+  '
+End Sub
+
+Private Sub lblE00_Click()
+    '
+    strNomeArquivo = MontaNomeGerenciador("10")
+    '
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha CStr(strNomeArquivo), 2
+        '
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+    '
+End Sub
+
+Private Sub lblE01_Click()
+    strNomeArquivo = MontaNomeGerenciador("11")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblE02_Click()
+    strNomeArquivo = MontaNomeGerenciador("12")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblE03_Click()
+    strNomeArquivo = MontaNomeGerenciador("13")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblE04_Click()
+    strNomeArquivo = MontaNomeGerenciador("14")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblE05_Click()
+    strNomeArquivo = MontaNomeGerenciador("15")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblE06_Click()
+    strNomeArquivo = MontaNomeGerenciador("16")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblE07_Click()
+    strNomeArquivo = MontaNomeGerenciador("17")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblE08_Click()
+    strNomeArquivo = MontaNomeGerenciador("18")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblE09_Click()
+    strNomeArquivo = MontaNomeGerenciador("19")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR00_Click()
+    '
+    strNomeArquivo = MontaNomeGerenciador("0")
+    '
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+       '
+       Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+       PegaLinha strNomeArquivo, 2
+       Screen.MousePointer = 0
+       '
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR01_Click()
+    strNomeArquivo = MontaNomeGerenciador("1")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR02_Click()
+    strNomeArquivo = MontaNomeGerenciador("2")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR03_Click()
+    strNomeArquivo = MontaNomeGerenciador("3")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR04_Click()
+    strNomeArquivo = MontaNomeGerenciador("4")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR05_Click()
+    strNomeArquivo = MontaNomeGerenciador("5")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR06_Click()
+    strNomeArquivo = MontaNomeGerenciador("6")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR07_Click()
+    strNomeArquivo = MontaNomeGerenciador("7")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR08_Click()
+    strNomeArquivo = MontaNomeGerenciador("8")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub lblR09_Click()
+    strNomeArquivo = MontaNomeGerenciador("9")
+    If frmStart.FileSystem.Dir(strNomeArquivo) <> "" Then
+        Screen.MousePointer = 11
+        '
+        Frame1.Visible = True
+        '
+        PegaLinha strNomeArquivo, 2
+        Screen.MousePointer = 0
+    Else
+        MsgBox "Arquivo " & strNomeArquivo & " não existe.", vbOKOnly + vbCritical, App.Title
+    End If
+End Sub
+
+Private Sub MenuBar_MenuClick(ByVal Item As MenuBarLib.Item)
+    ExecutaMenu Item.Caption, Me
+End Sub
+
+Private Sub txtData_Change()
+
+End Sub
+
+Private Sub txtData_GotFocus()
+    On Error Resume Next
+    Foco txtData
+End Sub
+
+Private Sub txtStatus_Change()
+
+End Sub

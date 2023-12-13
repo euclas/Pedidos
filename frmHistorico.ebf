@@ -1,0 +1,243 @@
+VERSION 5.00
+Object = "{532C2BF5-6B55-11D1-9AA5-00C04FAD5AEC}#1.0#0"; "MSCEGRID.DLL"
+Object = "{F7DEA2C9-BA8F-446E-A292-B4840F3BD661}#1.0#0"; "mscemenubar.dll"
+Begin VB.Form frmHistorico 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   Caption         =   "Cliente - Histórico de Pedidos"
+   ClientHeight    =   3615
+   ClientLeft      =   2955
+   ClientTop       =   2475
+   ClientWidth     =   3480
+   ForeColor       =   &H80000008&
+   ScaleHeight     =   3615
+   ScaleWidth      =   3480
+   Begin GRIDLibCtl.GridCtrl GridCtrl 
+      Height          =   2385
+      Left            =   45
+      TabIndex        =   0
+      Top             =   465
+      Width           =   3390
+      _cx             =   5980
+      _cy             =   4207
+      BackColor       =   16777215
+      BackColorBkg    =   8421504
+      BackColorSel    =   8388608
+      Cols            =   4
+      FillStyle       =   0
+      FocusRect       =   1
+      ForeColor       =   0
+      ForeColorSel    =   16777215
+      GridColor       =   12632256
+      GridLines       =   1
+      GridLineWidth   =   1
+      HighLight       =   1
+      Redraw          =   -1  'True
+      RowHeightMin    =   0
+      Rows            =   2
+      ScrollBars      =   3
+      ScrollTrack     =   0   'False
+      SelectionMode   =   1
+      TextStyle       =   0
+      WordWrap        =   0   'False
+      Enabled         =   -1  'True
+   End
+   Begin MenuBarLib.MenuBar MenuBar 
+      Left            =   0
+      Top             =   3255
+      _cx             =   6165
+      _cy             =   661
+      Enabled         =   -1  'True
+      NewButton       =   0   'False
+   End
+   Begin VBCE.CommandButton cmdDetalhesPedido 
+      Height          =   255
+      Left            =   45
+      TabIndex        =   3
+      Top             =   2955
+      Width           =   1770
+      _cx             =   3122
+      _cy             =   450
+      BackColor       =   8438015
+      Caption         =   "Detalhes do Pedido"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.Label Label1 
+      Height          =   195
+      Left            =   60
+      TabIndex        =   2
+      Top             =   135
+      Width           =   585
+      _cx             =   1032
+      _cy             =   344
+      AutoSize        =   -1  'True
+      BackColor       =   -2147483643
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Cliente:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.ComboBox cboFantasia 
+      Height          =   300
+      Left            =   645
+      TabIndex        =   1
+      Top             =   75
+      Width           =   2775
+      List            =   "frmHistorico.frx":0000
+      ItemData        =   "frmHistorico.frx":0028
+      _cx             =   4895
+      _cy             =   529
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmHistorico"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub cboFantasia_Click()
+  '
+  ' Passa para ultimo cliente a seleção corrente
+  '
+  mUltimoCliente = cboFantasia.List(cboFantasia.ListIndex)
+  '
+  EncheHistoricoPedidos cboFantasia.List(cboFantasia.ListIndex)
+  '
+End Sub
+
+Private Sub cmdDetalhesPedido_Click()
+  '
+  If GridCtrl.Rows <= 1 Then
+     '
+     MsgBox "Não há pedidos para exibir detalhes.", vbOKOnly + vbCritical, App.Title
+     '
+     Exit Sub
+     '
+  End If
+  '
+  EnchePedidoVelho GridCtrl.TextMatrix(GridCtrl.Row, 0)
+  '
+End Sub
+
+Private Sub form_activate()
+  '
+  Screen.MousePointer = 0
+  '
+  connOpen
+  '
+  EncheComboClientes frmHistorico.cboFantasia, 2
+  '
+  ' Se ultimo cliente for diferente de vazio mostra os pedidos dele
+  '
+  connClose
+  '
+  If Trim(mUltimoCliente) <> "" Then
+     '
+     cboFantasia.Text = mUltimoCliente
+     '
+  End If
+  '
+End Sub
+
+Private Sub Form_Load()
+  '
+  setamenu MenuBar, Me
+  '
+  SetaGridCaption
+  '
+End Sub
+
+Private Sub form_resize()
+  '
+  On Error Resume Next
+  '
+  GridCtrl.Top = cboFantasia.Top + cboFantasia.Height + 50
+  GridCtrl.Left = 5
+  GridCtrl.Height = Me.ScaleHeight - (cboFantasia.Top + cboFantasia.Height + 70 + cmdDetalhesPedido.Height)
+  GridCtrl.Width = Me.ScaleWidth - 10
+  '
+  cmdDetalhesPedido.Top = GridCtrl.Top + GridCtrl.Height + 10
+  cmdDetalhesPedido.Left = GridCtrl.Left
+  '
+End Sub
+
+Private Sub MenuBar_MenuClick(ByVal Item As MenuBarLib.Item)
+  '
+  ExecutaMenu Item.Caption, Me
+  '
+End Sub
+
+Sub SetaGridCaption()
+    '
+    GridCtrl.Rows = 1
+    GridCtrl.Row = 0
+    GridCtrl.Col = 0
+    GridCtrl.CellBackColor = &HC0C0C0
+    GridCtrl.CellFontBold = True
+    GridCtrl.Row = 0
+    GridCtrl.Col = 1
+    GridCtrl.CellBackColor = &HC0C0C0
+    GridCtrl.CellFontBold = True
+    GridCtrl.Row = 0
+    GridCtrl.Col = 2
+    GridCtrl.CellBackColor = &HC0C0C0
+    GridCtrl.CellFontBold = True
+    GridCtrl.Row = 0
+    GridCtrl.Col = 3
+    GridCtrl.CellBackColor = &HC0C0C0
+    GridCtrl.CellFontBold = True
+    '
+    GridCtrl.ColWidth(0) = 800 ' 1300
+    GridCtrl.ColWidth(1) = 900 ' 1800
+    GridCtrl.ColWidth(2) = 1000 ' 1800
+    GridCtrl.ColWidth(3) = 1500 ' 1800
+    '
+    GridCtrl.TextMatrix(0, 0) = "Pedido"
+    GridCtrl.TextMatrix(0, 1) = "Data"
+    GridCtrl.TextMatrix(0, 2) = "Vl. Líquido"
+    GridCtrl.TextMatrix(0, 3) = "Status"
+    '
+    GridCtrl.Col = 0
+    '
+End Sub

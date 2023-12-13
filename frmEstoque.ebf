@@ -1,0 +1,4746 @@
+VERSION 5.00
+Object = "{01FC4473-8DE5-11D1-91B7-00C04FA87A04}#1.0#0"; "mscetabstrip.dll"
+Object = "{532C2BF5-6B55-11D1-9AA5-00C04FAD5AEC}#1.0#0"; "MSCEGRID.DLL"
+Object = "{F7DEA2C9-BA8F-446E-A292-B4840F3BD661}#1.0#0"; "mscemenubar.dll"
+Begin VB.Form frmEstoque 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   Caption         =   "Estoque"
+   ClientHeight    =   8250
+   ClientLeft      =   3150
+   ClientTop       =   1995
+   ClientWidth     =   7785
+   ForeColor       =   &H80000008&
+   KeyPreview      =   -1  'True
+   ScaleHeight     =   8250
+   ScaleWidth      =   7785
+   Begin VBCE.Frame fraDMPP 
+      Height          =   2580
+      Left            =   3720
+      TabIndex        =   46
+      Top             =   4350
+      Width           =   3585
+      _cx             =   6324
+      _cy             =   4551
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   "Cliente:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.CommandButton Command19 
+         Height          =   240
+         Left            =   1245
+         TabIndex        =   48
+         Top             =   2310
+         Width           =   990
+         _cx             =   1746
+         _cy             =   423
+         BackColor       =   65280
+         Caption         =   "Pedido"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.TextBox txtDMPP 
+         Height          =   2100
+         Left            =   75
+         TabIndex        =   47
+         Top             =   195
+         Width           =   3450
+         _cx             =   6085
+         _cy             =   3704
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   -1  'True
+         PasswordChar    =   ""
+         ScrollBars      =   2
+      End
+   End
+   Begin VBCE.Frame fraPedido 
+      Height          =   2580
+      Left            =   -15
+      TabIndex        =   15
+      Top             =   4335
+      Width           =   3585
+      _cx             =   6324
+      _cy             =   4551
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   " "
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.TextBox txtEmissao 
+         Height          =   255
+         Left            =   2550
+         TabIndex        =   50
+         Top             =   525
+         Width           =   1005
+         _cx             =   1773
+         _cy             =   450
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   0   'False
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label3 
+         Height          =   195
+         Left            =   2565
+         TabIndex        =   49
+         Top             =   330
+         Width           =   990
+         _cx             =   1746
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Data Emissão"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.ComboBox cboTMovto 
+         Height          =   300
+         Left            =   630
+         TabIndex        =   28
+         Top             =   1425
+         Visible         =   0   'False
+         Width           =   2925
+         List            =   "frmEstoque.frx":0000
+         ItemData        =   "frmEstoque.frx":0028
+         _cx             =   5159
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.ComboBox cboFPagto 
+         Height          =   300
+         Left            =   630
+         TabIndex        =   30
+         Top             =   1110
+         Visible         =   0   'False
+         Width           =   2925
+         List            =   "frmEstoque.frx":0050
+         ItemData        =   "frmEstoque.frx":0078
+         _cx             =   5159
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.ComboBox cboCPagto 
+         Height          =   300
+         Left            =   630
+         TabIndex        =   29
+         Top             =   795
+         Visible         =   0   'False
+         Width           =   2925
+         List            =   "frmEstoque.frx":00A0
+         ItemData        =   "frmEstoque.frx":00C8
+         _cx             =   5159
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         IntegralHeight  =   0   'False
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.CommandButton Command15 
+         Height          =   255
+         Left            =   1860
+         TabIndex        =   42
+         Top             =   2295
+         Width           =   1695
+         _cx             =   2990
+         _cy             =   450
+         BackColor       =   255
+         Caption         =   "Cancela Contagem"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command13 
+         Height          =   255
+         Left            =   660
+         TabIndex        =   41
+         Top             =   2295
+         Width           =   1155
+         _cx             =   2037
+         _cy             =   450
+         BackColor       =   65280
+         Caption         =   "Gera Pedido"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.TextBox txtTMovto 
+         Height          =   300
+         Left            =   630
+         TabIndex        =   40
+         Top             =   1425
+         Width           =   2925
+         _cx             =   5159
+         _cy             =   529
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtCPagto 
+         Height          =   300
+         Left            =   630
+         TabIndex        =   39
+         Top             =   795
+         Width           =   2925
+         _cx             =   5159
+         _cy             =   529
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtFPagto 
+         Height          =   300
+         Left            =   630
+         TabIndex        =   38
+         Top             =   1110
+         Width           =   2925
+         _cx             =   5159
+         _cy             =   529
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.TextBox txtNumeroPedido 
+         Height          =   270
+         Left            =   630
+         TabIndex        =   37
+         Top             =   225
+         Width           =   705
+         _cx             =   1235
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   1
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   6
+         MultiLine       =   -1  'True
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label2 
+         Height          =   195
+         Left            =   45
+         TabIndex        =   36
+         Top             =   225
+         Width           =   510
+         _cx             =   900
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Pedido"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label16 
+         Height          =   195
+         Left            =   30
+         TabIndex        =   35
+         Top             =   525
+         Width           =   600
+         _cx             =   1058
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Entrega"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label18 
+         Height          =   195
+         Left            =   45
+         TabIndex        =   34
+         Top             =   1140
+         Width           =   510
+         _cx             =   900
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "F.Pgto"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label19 
+         Height          =   195
+         Left            =   45
+         TabIndex        =   33
+         Top             =   840
+         Width           =   525
+         _cx             =   926
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "C.Pgto"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label21 
+         Height          =   195
+         Left            =   45
+         TabIndex        =   32
+         Top             =   1455
+         Width           =   480
+         _cx             =   847
+         _cy             =   344
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "T.Mov"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox txtEntrega 
+         Height          =   270
+         Left            =   630
+         TabIndex        =   31
+         Top             =   510
+         Width           =   1005
+         _cx             =   1764
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   1
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   10
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.CommandButton Command12 
+         Height          =   270
+         Left            =   1620
+         TabIndex        =   27
+         Top             =   510
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   255
+         Caption         =   "-"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "System"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command11 
+         Height          =   270
+         Left            =   1875
+         TabIndex        =   26
+         Top             =   510
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   65280
+         Caption         =   "+"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "System"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton cmdChamaPedidos 
+         Height          =   270
+         Left            =   1305
+         TabIndex        =   25
+         Top             =   225
+         Visible         =   0   'False
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   16744576
+         Caption         =   "..."
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton cmdDMPP 
+         Height          =   255
+         Left            =   45
+         TabIndex        =   24
+         Top             =   2295
+         Width           =   570
+         _cx             =   1005
+         _cy             =   450
+         BackColor       =   65280
+         Caption         =   "DMPP"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+   End
+   Begin VBCE.Frame fraHistorico 
+      Height          =   2580
+      Left            =   3720
+      TabIndex        =   1
+      Top             =   -135
+      Visible         =   0   'False
+      Width           =   3630
+      _cx             =   6403
+      _cy             =   4551
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   "-"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin GRIDLibCtl.GridCtrl GridHistoricoCab 
+         Height          =   210
+         Left            =   30
+         TabIndex        =   51
+         Top             =   180
+         Width           =   3585
+         _cx             =   6324
+         _cy             =   370
+         BackColor       =   16777215
+         BackColorBkg    =   8421504
+         BackColorSel    =   12632256
+         Cols            =   7
+         FillStyle       =   0
+         FocusRect       =   0
+         ForeColor       =   0
+         ForeColorSel    =   0
+         GridColor       =   12632256
+         GridLines       =   1
+         GridLineWidth   =   1
+         HighLight       =   1
+         Redraw          =   -1  'True
+         RowHeightMin    =   0
+         Rows            =   1
+         ScrollBars      =   0
+         ScrollTrack     =   0   'False
+         SelectionMode   =   1
+         TextStyle       =   0
+         WordWrap        =   0   'False
+         Enabled         =   -1  'True
+      End
+      Begin GRIDLibCtl.GridCtrl GridCtrl 
+         Height          =   1935
+         Left            =   30
+         TabIndex        =   2
+         Top             =   360
+         Width           =   3585
+         _cx             =   6324
+         _cy             =   3413
+         BackColor       =   16777215
+         BackColorBkg    =   8421504
+         BackColorSel    =   8388608
+         Cols            =   7
+         FillStyle       =   0
+         FocusRect       =   1
+         ForeColor       =   0
+         ForeColorSel    =   16777215
+         GridColor       =   12632256
+         GridLines       =   1
+         GridLineWidth   =   1
+         HighLight       =   1
+         Redraw          =   -1  'True
+         RowHeightMin    =   195
+         Rows            =   8
+         ScrollBars      =   0
+         ScrollTrack     =   0   'False
+         SelectionMode   =   0
+         TextStyle       =   0
+         WordWrap        =   0   'False
+         Enabled         =   -1  'True
+      End
+      Begin VBCE.Label Label5 
+         Height          =   165
+         Left            =   1140
+         TabIndex        =   58
+         Top             =   2340
+         Width           =   765
+         _cx             =   1349
+         _cy             =   291
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Quantidade:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label6 
+         Height          =   165
+         Left            =   2640
+         TabIndex        =   55
+         Top             =   2340
+         Width           =   315
+         _cx             =   556
+         _cy             =   291
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "/Dia:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label4 
+         Height          =   165
+         Left            =   45
+         TabIndex        =   53
+         Top             =   2340
+         Width           =   345
+         _cx             =   609
+         _cy             =   291
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Dias:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label lblDias 
+         Height          =   195
+         Left            =   390
+         TabIndex        =   57
+         Top             =   2340
+         Width           =   390
+         _cx             =   688
+         _cy             =   344
+         AutoSize        =   0   'False
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   1
+         Caption         =   "1234"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   1
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label lblQuantidade 
+         Height          =   195
+         Left            =   1905
+         TabIndex        =   54
+         Top             =   2340
+         Width           =   585
+         _cx             =   1032
+         _cy             =   344
+         AutoSize        =   0   'False
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   1
+         Caption         =   "123456"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   1
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label lblMediaDia 
+         Height          =   195
+         Left            =   2955
+         TabIndex        =   56
+         Top             =   2340
+         Width           =   615
+         _cx             =   1085
+         _cy             =   344
+         AutoSize        =   0   'False
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   1
+         Caption         =   "12345,6"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   1
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+   End
+   Begin CETabStripCtl.TabStrip TabStrip 
+      Height          =   300
+      Left            =   0
+      TabIndex        =   0
+      Top             =   3630
+      Width           =   3585
+      _cx             =   6324
+      _cy             =   529
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   "MS Sans Serif"
+      FontSize        =   8
+      MultiRow        =   0   'False
+      Style           =   0
+      TabFixedHeight  =   200
+      TabFixedWidth   =   700
+      TabWidthStyle   =   2
+      TabsPersist     =   $"frmEstoque.frx":00F0
+      Enabled         =   -1  'True
+   End
+   Begin MenuBarLib.MenuBar MenuBar 
+      Left            =   0
+      Top             =   3945
+      _cx             =   6324
+      _cy             =   661
+      Enabled         =   -1  'True
+      NewButton       =   0   'False
+   End
+   Begin VBCE.Frame fraProduto 
+      Height          =   3765
+      Left            =   0
+      TabIndex        =   3
+      Top             =   -135
+      Width           =   3645
+      _cx             =   6429
+      _cy             =   6641
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin GRIDLibCtl.GridCtrl GridCtrlProduto 
+         Height          =   2415
+         Left            =   45
+         TabIndex        =   4
+         Top             =   390
+         Width           =   3555
+         _cx             =   6271
+         _cy             =   4260
+         BackColor       =   16777215
+         BackColorBkg    =   8421504
+         BackColorSel    =   8388608
+         Cols            =   7
+         FillStyle       =   0
+         FocusRect       =   1
+         ForeColor       =   0
+         ForeColorSel    =   16777215
+         GridColor       =   12632256
+         GridLines       =   1
+         GridLineWidth   =   1
+         HighLight       =   0
+         Redraw          =   -1  'True
+         RowHeightMin    =   0
+         Rows            =   0
+         ScrollBars      =   3
+         ScrollTrack     =   0   'False
+         SelectionMode   =   0
+         TextStyle       =   0
+         WordWrap        =   0   'False
+         Enabled         =   0   'False
+      End
+      Begin GRIDLibCtl.GridCtrl GridCtrlCab 
+         Height          =   540
+         Left            =   45
+         TabIndex        =   12
+         Top             =   135
+         Width           =   3555
+         _cx             =   6271
+         _cy             =   952
+         BackColor       =   16777215
+         BackColorBkg    =   8421504
+         BackColorSel    =   8388608
+         Cols            =   7
+         FillStyle       =   0
+         FocusRect       =   1
+         ForeColor       =   0
+         ForeColorSel    =   16777215
+         GridColor       =   12632256
+         GridLines       =   1
+         GridLineWidth   =   1
+         HighLight       =   0
+         Redraw          =   -1  'True
+         RowHeightMin    =   0
+         Rows            =   2
+         ScrollBars      =   1
+         ScrollTrack     =   0   'False
+         SelectionMode   =   0
+         TextStyle       =   0
+         WordWrap        =   0   'False
+         Enabled         =   -1  'True
+      End
+      Begin VBCE.CommandButton Command20 
+         Height          =   270
+         Left            =   2505
+         TabIndex        =   52
+         Top             =   3165
+         Width           =   285
+         _cx             =   503
+         _cy             =   476
+         BackColor       =   16776960
+         Caption         =   ":"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Webdings"
+            Size            =   12
+            Charset         =   2
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command18 
+         Height          =   270
+         Left            =   615
+         TabIndex        =   45
+         Top             =   3465
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   16711935
+         Caption         =   "s"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Webdings"
+            Size            =   11.25
+            Charset         =   2
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command17 
+         Height          =   270
+         Left            =   1740
+         TabIndex        =   44
+         Top             =   3165
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   65535
+         Caption         =   "="
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Webdings"
+            Size            =   12
+            Charset         =   2
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command16 
+         Height          =   270
+         Left            =   2250
+         TabIndex        =   43
+         Top             =   3165
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   65280
+         Caption         =   "8"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Webdings"
+            Size            =   12
+            Charset         =   2
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command10 
+         Height          =   270
+         Left            =   1230
+         TabIndex        =   23
+         Top             =   3165
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   255
+         Caption         =   "7"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Webdings"
+            Size            =   12
+            Charset         =   2
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command9 
+         Height          =   270
+         Left            =   2805
+         TabIndex        =   22
+         Top             =   3165
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   65280
+         Caption         =   "-"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "System"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command8 
+         Height          =   270
+         Left            =   1995
+         TabIndex        =   21
+         Top             =   3165
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   8454016
+         Caption         =   "4"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Webdings"
+            Size            =   12
+            Charset         =   2
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command7 
+         Height          =   270
+         Left            =   1485
+         TabIndex        =   20
+         Top             =   3165
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   8421631
+         Caption         =   "3"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Webdings"
+            Size            =   12
+            Charset         =   2
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command6 
+         Height          =   270
+         Left            =   330
+         TabIndex        =   19
+         Top             =   3465
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   16711935
+         Caption         =   ":"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Webdings"
+            Size            =   12
+            Charset         =   2
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.TextBox txtDataCorrente 
+         Height          =   270
+         Left            =   330
+         TabIndex        =   18
+         Top             =   3165
+         Width           =   930
+         _cx             =   1640
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.Label Label1 
+         Height          =   165
+         Left            =   30
+         TabIndex        =   17
+         Top             =   3210
+         Width           =   330
+         _cx             =   582
+         _cy             =   291
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Data"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.CommandButton Command3 
+         Height          =   270
+         Left            =   1890
+         TabIndex        =   16
+         Top             =   3465
+         Width           =   900
+         _cx             =   1587
+         _cy             =   476
+         BackColor       =   16711680
+         Caption         =   "Ped = Sug"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command2 
+         Height          =   270
+         Left            =   930
+         TabIndex        =   14
+         Top             =   3465
+         Width           =   900
+         _cx             =   1587
+         _cy             =   476
+         BackColor       =   65535
+         Caption         =   "Recalcula"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command1 
+         Height          =   270
+         Left            =   45
+         TabIndex        =   13
+         Top             =   3465
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   16711935
+         Caption         =   "9"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Webdings"
+            Size            =   12
+            Charset         =   2
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.Label Label15 
+         Height          =   165
+         Left            =   30
+         TabIndex        =   5
+         Top             =   2895
+         Width           =   465
+         _cx             =   820
+         _cy             =   291
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Cliente"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.ComboBox cboClientes 
+         Height          =   300
+         Left            =   495
+         TabIndex        =   11
+         Top             =   2835
+         Width           =   2310
+         List            =   "frmEstoque.frx":0115
+         ItemData        =   "frmEstoque.frx":013D
+         _cx             =   4075
+         _cy             =   529
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   "MMMMMMMMMMMMMMMMMMMM"
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.TextBox Text6 
+         Height          =   270
+         Left            =   3315
+         TabIndex        =   10
+         Top             =   3165
+         Width           =   285
+         _cx             =   503
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   "7"
+         Alignment       =   1
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   3
+         MultiLine       =   -1  'True
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+      Begin VBCE.CommandButton Command4 
+         Height          =   270
+         Left            =   3060
+         TabIndex        =   8
+         Top             =   3165
+         Width           =   270
+         _cx             =   476
+         _cy             =   476
+         BackColor       =   255
+         Caption         =   "+"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "System"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.CommandButton Command5 
+         Height          =   270
+         Left            =   2805
+         TabIndex        =   6
+         Top             =   3465
+         Width           =   795
+         _cx             =   1402
+         _cy             =   476
+         BackColor       =   65280
+         Caption         =   "Atualiza"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   1
+      End
+      Begin VBCE.Label Label14 
+         Height          =   165
+         Left            =   3315
+         TabIndex        =   9
+         Top             =   2910
+         Width           =   315
+         _cx             =   556
+         _cy             =   291
+         AutoSize        =   -1  'True
+         BackColor       =   -2147483643
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Dias"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.TextBox Text7 
+         Height          =   270
+         Left            =   3090
+         TabIndex        =   7
+         Top             =   2850
+         Visible         =   0   'False
+         Width           =   240
+         _cx             =   423
+         _cy             =   476
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Small Fonts"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   1
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   6
+         MultiLine       =   0   'False
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+   End
+End
+Attribute VB_Name = "frmEstoque"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+'
+' &H006A240A& - backcolorsel
+' &H00FFFFFF& - forecolorsel
+'
+Dim mColuna As Integer
+Dim mLinha1 As Integer
+Dim mLinha2 As Integer
+Dim mCorCorrenteVerde As Integer
+Dim mCorCorrenteVermelho As Integer
+Dim mTrocouData As Boolean
+Dim mNovaData As Boolean
+Dim mClaro As Boolean
+'
+'Private Sub cboClientes_Change()
+'End Sub
+'
+'Private Sub cboClientes_Gotfocus()
+'End Sub
+'
+Private Sub cboClientes_Click()
+  '
+  carregagridestoque
+  '
+End Sub
+
+Private Sub cmdDMPP_Click()
+  '
+  Screen.MousePointer = 0
+  '
+  fraProduto.Visible = False
+  fraHistorico.Visible = False
+  fraPedido.Visible = False
+  '
+  ' frmEstoque.TabStrip.Tabs.Item(3).Selected = True
+  '
+  fraDMPP.Caption = " Cliente: " & Trim(frmEstoque.cboClientes.Text) & " "
+  '
+  fraDMPP.Visible = True
+  '
+  fraDMPP.ZOrder vbBringToFront ' vbSendToBack
+  '
+  frmPedido.txtDMPP.Visible = True
+  '
+  frmPedido.txtDMPP.ZOrder vbBringToFront ' vbSendToBack
+  '
+End Sub
+
+Private Sub Command1_Click()
+  '
+  ' MsgBox "TopRow:" & CStr(frmEstoque.GridCtrlProduto.TopRow) & " " & CStr(frmEstoque.GridCtrlProduto.LeftCol), vbOKOnly + vbInformation, App.Title
+  '
+  If (frmEstoque.GridCtrlProduto.TopRow + frmEstoque.GridCtrlProduto.LeftCol) <> 0 Then frmEstoque.GridCtrlProduto.Col = 0
+  '
+End Sub
+
+Private Sub Command10_Click()
+  '
+  Dim rsClientes, rsHistorico
+  Dim mDataCorrente As String
+  Dim strCodigoCliente As String
+  '
+  Screen.MousePointer = 0
+  '
+  If IsDate(txtDataCorrente.Text) Then
+     '
+     mDataCorrente = Mid(RetornaDataString(txtDataCorrente.Text), 5, 4) + Mid(RetornaDataString(txtDataCorrente.Text), 3, 2) + Mid(RetornaDataString(txtDataCorrente.Text), 1, 2)
+     '
+  Else
+     '
+     mDataCorrente = Mid(RetornaDataString(Now), 5, 4) + Mid(RetornaDataString(Now), 3, 2) + Mid(RetornaDataString(Now), 1, 2)
+     '
+  End If
+  '
+  connOpen
+  '
+  Set rsClientes = CreateObject("ADOCE.Recordset.3.0")
+  Set rsHistorico = CreateObject("ADOCE.Recordset.3.0")
+  '
+  If rsClientes.State = 1 Then rsClientes.Close
+  '
+  rsClientes.Open "SELECT * FROM clientes WHERE nome_fantasia='" & Trim(frmEstoque.cboClientes.Text) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+  '
+  If rsClientes.RecordCount > 0 Then
+     '
+     strCodigoCliente = rsClientes("codigo_cliente")
+     '
+  Else
+     '
+     MsgBox "Cliente inválido ou não cadastrado.", vbOKOnly + vbCritical, App.Title
+     '
+     Screen.MousePointer = 0
+     '
+     Exit Sub
+     '
+  End If
+  '
+  If rsClientes.State = 1 Then rsClientes.Close
+  '
+  ' MsgBox "Mensagem:" & Now, vbOKOnly + vbInformation, App.Title
+  '
+  If rsHistorico.State = 1 Then rsHistorico.Close
+  '
+  rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data <'" & mDataCorrente & "' ORDER BY data Desc;", CONN, adOpenForwardOnly, adLockReadOnly
+  '
+  '================================================================ Zera campos em Tabela
+  '
+  If rsHistorico.RecordCount > 0 Then
+     '
+     txtDataCorrente.Text = Mid(rsHistorico("data"), 7, 2) & "/" & Mid(rsHistorico("data"), 5, 2) & "/" & Mid(rsHistorico("data"), 1, 4)
+     '
+     IntIncrDataEst = CDate(Trim(txtDataCorrente.Text)) - Now
+     '
+  Else
+     '
+     MsgBox "Visita inicial.", vbOKOnly + vbCritical, App.Title
+     '
+     If mProcessa = False Then
+        '
+        carregagridestoque
+        '
+     End If
+     '
+     'IntIncrDataEst = IntIncrDataEst + 1
+     '
+     'txtDataCorrente.Text = Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 1, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 3, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 5, 4))
+     '
+  End If
+  '
+  If rsHistorico.State = 1 Then rsHistorico.Close
+  '
+  Set rsHistorico = Nothing
+  '
+  connClose
+  '
+  Screen.MousePointer = 0
+  '
+  If mProcessa = True Then
+     '
+     carregagridestoque
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command11_Click()
+  '
+  IntIncrDataPed = IntIncrDataPed + 1
+  '
+  txtEntrega.Text = Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataPed), 1, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataPed), 3, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataPed), 5, 4))
+  '
+End Sub
+
+Private Sub Command12_Click()
+  '
+  IntIncrDataPed = IntIncrDataPed - 1
+  '
+  txtEntrega.Text = Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataPed), 1, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataPed), 3, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataPed), 5, 4))
+  '
+End Sub
+
+Private Sub Command14_Click()
+End Sub
+
+Private Sub Command16_Click()
+  '
+  Dim rsClientes, rsHistorico
+  Dim mDataCorrente As String
+  Dim strCodigoCliente As String
+  '
+  Screen.MousePointer = 0
+  '
+  If IsDate(txtDataCorrente.Text) Then
+     '
+     mDataCorrente = Mid(RetornaDataString(txtDataCorrente.Text), 5, 4) + Mid(RetornaDataString(txtDataCorrente.Text), 3, 2) + Mid(RetornaDataString(txtDataCorrente.Text), 1, 2)
+     '
+  Else
+     '
+     mDataCorrente = Mid(RetornaDataString(Now), 5, 4) + Mid(RetornaDataString(Now), 3, 2) + Mid(RetornaDataString(Now), 1, 2)
+     '
+  End If
+  '
+  connOpen
+  '
+  Set rsClientes = CreateObject("ADOCE.Recordset.3.0")
+  Set rsHistorico = CreateObject("ADOCE.Recordset.3.0")
+  '
+  If rsClientes.State = 1 Then rsClientes.Close
+  '
+  rsClientes.Open "SELECT * FROM clientes WHERE nome_fantasia='" & Trim(frmEstoque.cboClientes.Text) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+  '
+  If rsClientes.RecordCount > 0 Then
+     '
+     strCodigoCliente = rsClientes("codigo_cliente")
+     '
+  Else
+     '
+     MsgBox "Cliente inválido ou não cadastrado.", vbOKOnly + vbCritical, App.Title
+     '
+     Screen.MousePointer = 0
+     '
+     Exit Sub
+     '
+  End If
+  '
+  If rsClientes.State = 1 Then rsClientes.Close
+  '
+  ' MsgBox "Mensagem:" & Now, vbOKOnly + vbInformation, App.Title
+  '
+  If rsHistorico.State = 1 Then rsHistorico.Close
+  '
+  rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data >'" & mDataCorrente & "' ORDER BY data;", CONN, adOpenForwardOnly, adLockReadOnly
+  '
+  '================================================================ Zera campos em Tabela
+  '
+  If rsHistorico.RecordCount > 0 Then
+     '
+     txtDataCorrente.Text = Mid(rsHistorico("data"), 7, 2) & "/" & Mid(rsHistorico("data"), 5, 2) & "/" & Mid(rsHistorico("data"), 1, 4)
+     '
+     IntIncrDataEst = CDate(Trim(txtDataCorrente.Text)) - Now
+     '
+  Else
+     '
+     MsgBox "Visita final.", vbOKOnly + vbCritical, App.Title
+     '
+     If mProcessa = False Then
+        '
+        carregagridestoque
+        '
+     End If
+     '
+     'IntIncrDataEst = IntIncrDataEst + 1
+     '
+     'txtDataCorrente.Text = Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 1, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 3, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 5, 4))
+     '
+  End If
+  '
+  If rsHistorico.State = 1 Then rsHistorico.Close
+  '
+  Set rsHistorico = Nothing
+  '
+  connClose
+  '
+  Screen.MousePointer = 0
+  '
+  If mProcessa = True Then
+     '
+     carregagridestoque
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command17_Click()
+  '
+  Dim rsClientes, rsHistorico
+  Dim mDataCorrente As String
+  Dim strCodigoCliente As String
+  '
+  Screen.MousePointer = 0
+  '
+  If IsDate(txtDataCorrente.Text) Then
+     '
+     mDataCorrente = Mid(RetornaDataString(txtDataCorrente.Text), 5, 4) + Mid(RetornaDataString(txtDataCorrente.Text), 3, 2) + Mid(RetornaDataString(txtDataCorrente.Text), 1, 2)
+     '
+  Else
+     '
+     mDataCorrente = Mid(RetornaDataString(Now), 5, 4) + Mid(RetornaDataString(Now), 3, 2) + Mid(RetornaDataString(Now), 1, 2)
+     '
+  End If
+  '
+  connOpen
+  '
+  Set rsClientes = CreateObject("ADOCE.Recordset.3.0")
+  Set rsHistorico = CreateObject("ADOCE.Recordset.3.0")
+  '
+  If rsClientes.State = 1 Then rsClientes.Close
+  '
+  rsClientes.Open "SELECT * FROM clientes WHERE nome_fantasia='" & Trim(frmEstoque.cboClientes.Text) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+  '
+  If rsClientes.RecordCount > 0 Then
+     '
+     strCodigoCliente = rsClientes("codigo_cliente")
+     '
+  Else
+     '
+     MsgBox "Cliente inválido ou não cadastrado.", vbOKOnly + vbCritical, App.Title
+     '
+     Screen.MousePointer = 0
+     '
+     Exit Sub
+     '
+  End If
+  '
+  If rsClientes.State = 1 Then rsClientes.Close
+  '
+  ' MsgBox "Mensagem:" & Now, vbOKOnly + vbInformation, App.Title
+  '
+  If rsHistorico.State = 1 Then rsHistorico.Close
+  '
+  rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data ='" & mDataCorrente & "';", CONN, adOpenForwardOnly, adLockReadOnly
+  '
+  '================================================================ Zera campos em Tabela
+  '
+  If rsHistorico.RecordCount > 0 Then
+     '
+     txtDataCorrente.Text = Mid(rsHistorico("data"), 7, 2) & "/" & Mid(rsHistorico("data"), 5, 2) & "/" & Mid(rsHistorico("data"), 1, 4)
+     '
+     IntIncrDataEst = CDate(Trim(txtDataCorrente.Text)) - Now
+     '
+  End If
+  '
+  If rsHistorico.State = 1 Then rsHistorico.Close
+  '
+  Set rsHistorico = Nothing
+  '
+  connClose
+  '
+  Screen.MousePointer = 0
+  '
+  carregagridestoque
+  '
+End Sub
+
+Private Sub Command19_Click()
+  '
+  ' frmEstoque.TabStrip.Tabs.Item(3).Selected = True
+  '
+  fraDMPP.Visible = False
+  fraProduto.Visible = False
+  fraHistorico.Visible = False
+  '
+  fraPedido.Visible = True
+  '
+End Sub
+
+Private Sub Command2_Click()
+  '
+  Dim strFormataNumero As String
+  '
+  If GridCtrlProduto.Enabled = True Then
+     '
+     If mCorCorrenteVermelho = Vermelho Then
+        mCorCorrenteVermelho = VermelhoClaro
+        mClaro = True
+     Else
+        mCorCorrenteVermelho = Vermelho
+        mClaro = False
+     End If
+     '
+     If mCorCorrenteVerde = Verde Then
+        mCorCorrenteVerde = VerdeClaro
+        mClaro = True
+     Else
+        mCorCorrenteVerde = Verde
+        mClaro = False
+     End If
+     '
+     mLinha1 = frmEstoque.GridCtrlProduto.Row
+     '
+     For I = 0 To frmEstoque.GridCtrlProduto.Rows - 1
+         '
+         '===============================================================================
+         ' MsgBox "Coluna:" & CStr(CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 0)) - CDbl(Text7.Text)), vbOKOnly + vbInformation, App.Title
+         '===============================================================================
+         '
+         If IsNumeric(GridCtrlProduto.TextMatrix(I, 6)) And IsNumeric(Text6.Text) Then
+            '
+            strFormataNumero = CStr(CDbl(GridCtrlProduto.TextMatrix(I, 6)) * CDbl(Text6.Text))
+            '
+            If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+               '
+               strFormataNumero = Trim(strFormataNumero) & ",0"
+               '
+            Else
+               '
+               strFormataNumero = strFormataNumero & "0"
+               '
+               strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+               '
+            End If
+            '
+            While Mid(Trim(strFormataNumero), 1, 1) = "0"
+               '
+               strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+               '
+            Wend
+            '
+            If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+            '
+            GridCtrlProduto.TextMatrix(I, 0) = strFormataNumero
+            '
+            '===========================================================================
+            '
+         End If
+         '
+         '===========================================================================
+         ' MsgBox "Coluna:" & CStr(CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 0)) - CDbl(Text7.Text)), vbOKOnly + vbInformation, App.Title
+         '===========================================================================
+         '
+         If IsNumeric(GridCtrlProduto.TextMatrix(I, 0)) And IsNumeric(GridCtrlProduto.TextMatrix(I, 1)) Then
+            '
+            strFormataNumero = CStr(CDbl(GridCtrlProduto.TextMatrix(I, 0)) - CDbl(GridCtrlProduto.TextMatrix(I, 1)))
+            '
+            If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+               '
+               strFormataNumero = Trim(strFormataNumero) & ",0"
+               '
+            Else
+               '
+               strFormataNumero = strFormataNumero & "0"
+               '
+               strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+               '
+            End If
+            '
+            While Mid(Trim(strFormataNumero), 1, 1) = "0"
+               '
+               strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+               '
+            Wend
+            '
+            If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+            '
+            GridCtrlProduto.TextMatrix(I, 2) = strFormataNumero
+            '
+            GridCtrlProduto.Row = I
+            GridCtrlProduto.Col = 2
+            '
+            If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+               '
+               frmEstoque.GridCtrlProduto.CellBackColor = mCorCorrenteVermelho
+               '
+            Else
+               '
+               frmEstoque.GridCtrlProduto.CellBackColor = mCorCorrenteVerde
+               '
+            End If
+            '
+         End If
+         '
+     Next
+     '
+     frmEstoque.GridCtrlProduto.Row = mLinha1
+     '
+  Else
+     '
+     MsgBox "Não Há dados para calcular.", vbOKOnly + vbCritical, App.Title
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command20_Click()
+  '
+  Dim rsClientes, rsHistorico
+  Dim mDataCorrente As String
+  Dim strCodigoCliente As String
+  '
+  Screen.MousePointer = 0
+  '
+  If IsDate(txtDataCorrente.Text) Then
+     '
+     mDataCorrente = Mid(RetornaDataString(txtDataCorrente.Text), 5, 4) + Mid(RetornaDataString(txtDataCorrente.Text), 3, 2) + Mid(RetornaDataString(txtDataCorrente.Text), 1, 2)
+     '
+  Else
+     '
+     mDataCorrente = Mid(RetornaDataString(Now), 5, 4) + Mid(RetornaDataString(Now), 3, 2) + Mid(RetornaDataString(Now), 1, 2)
+     '
+  End If
+  '
+  connOpen
+  '
+  Set rsClientes = CreateObject("ADOCE.Recordset.3.0")
+  Set rsHistorico = CreateObject("ADOCE.Recordset.3.0")
+  '
+  If rsClientes.State = 1 Then rsClientes.Close
+  '
+  rsClientes.Open "SELECT * FROM clientes WHERE nome_fantasia='" & Trim(frmEstoque.cboClientes.Text) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+  '
+  If rsClientes.RecordCount > 0 Then
+     '
+     strCodigoCliente = rsClientes("codigo_cliente")
+     '
+  Else
+     '
+     MsgBox "Cliente inválido ou não cadastrado.", vbOKOnly + vbCritical, App.Title
+     '
+     Screen.MousePointer = 0
+     '
+     Exit Sub
+     '
+  End If
+  '
+  If rsClientes.State = 1 Then rsClientes.Close
+  '
+  ' MsgBox "Mensagem:" & Now, vbOKOnly + vbInformation, App.Title
+  '
+  If rsHistorico.State = 1 Then rsHistorico.Close
+  '
+  rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data >'" & mDataCorrente & "' ORDER BY data DESC;", CONN, adOpenForwardOnly, adLockReadOnly
+  '
+  '================================================================ Zera campos em Tabela
+  '
+  If rsHistorico.RecordCount > 0 Then
+     '
+     txtDataCorrente.Text = Mid(rsHistorico("data"), 7, 2) & "/" & Mid(rsHistorico("data"), 5, 2) & "/" & Mid(rsHistorico("data"), 1, 4)
+     '
+     IntIncrDataEst = CDate(Trim(txtDataCorrente.Text)) - Now
+     '
+  Else
+     '
+     MsgBox "Visita final.", vbOKOnly + vbCritical, App.Title
+     '
+  End If
+  '
+  If rsHistorico.State = 1 Then rsHistorico.Close
+  '
+  Set rsHistorico = Nothing
+  '
+  connClose
+  '
+  Screen.MousePointer = 0
+  '
+  carregagridestoque
+  '
+End Sub
+
+Private Sub Command3_Click()
+  '
+  Dim strFormataNumero As String
+  '
+  If GridCtrlProduto.Enabled = True Then
+     '
+     'If mClaro Then mCorCorrenteVermelho = VermelhoClaro
+     'If mClaro Then mCorCorrenteVerde = VerdeClaro
+     '
+     If mCorCorrenteVermelho = Vermelho Then
+        mCorCorrenteVermelho = VermelhoClaro
+        mClaro = True
+     Else
+        mCorCorrenteVermelho = Vermelho
+        mClaro = False
+     End If
+     '
+     If mCorCorrenteVerde = Verde Then
+        mCorCorrenteVerde = VerdeClaro
+        mClaro = True
+     Else
+        mCorCorrenteVerde = Verde
+        mClaro = False
+     End If
+     '
+     mLinha1 = frmEstoque.GridCtrlProduto.Row
+     '
+     For I = 0 To frmEstoque.GridCtrlProduto.Rows - 1
+         '
+         If IsNumeric(GridCtrlProduto.TextMatrix(I, 2)) Then
+            '
+            If CDbl(GridCtrlProduto.TextMatrix(I, 2)) >= 0 Then
+               '
+               strFormataNumero = CStr(CDbl(GridCtrlProduto.TextMatrix(I, 2)))
+               '
+               If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+                  '
+                  strFormataNumero = Trim(strFormataNumero) & ",0"
+                  '
+               Else
+                  '
+                  strFormataNumero = strFormataNumero & "0"
+                  '
+                  strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+                  '
+               End If
+               '
+               While Mid(Trim(strFormataNumero), 1, 1) = "0"
+                  '
+                  strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+                  '
+               Wend
+               '
+               If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+               '
+               GridCtrlProduto.TextMatrix(I, 3) = strFormataNumero
+               '
+            Else
+               '
+               GridCtrlProduto.TextMatrix(I, 3) = "0,0"
+               '
+            End If
+            '
+            GridCtrlProduto.Row = I
+            GridCtrlProduto.Col = 3
+            '
+            If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+               '
+               frmEstoque.GridCtrlProduto.CellBackColor = mCorCorrenteVermelho
+               '
+            Else
+               '
+               frmEstoque.GridCtrlProduto.CellBackColor = mCorCorrenteVerde
+               '
+            End If
+            '
+            '
+         End If
+         '
+     Next
+     '
+     frmEstoque.GridCtrlProduto.Row = mLinha1
+     '
+  Else
+     '
+     MsgBox "Não Há dados para transportar.", vbOKOnly + vbCritical, App.Title
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command5_Click()
+   '
+   ' MsgBox "Click:" & CStr(mLinha1) & "," & CStr(mColuna), vbOKOnly + vbInformation, App.Title
+   '
+   Dim rsClientes
+   Dim rsEstoque
+   Dim rsHistorico
+   '
+   Dim strCodigoCliente As String
+   Dim strCodigoProduto As String
+   Dim bolPrimeiro As String
+   Dim mValor As String
+   Dim mDataCorrente As String
+   '
+   Dim mSQL As String
+   '
+   '============== grava dados atuais de estoque
+   '
+   If Len(frmEstoque.cboClientes.Text) <= 0 Then
+      '
+      MsgBox "Selecione um cliente para poder cadastrar.", vbOKOnly + vbCritical, App.Title
+      '
+      Exit Sub
+      '
+   End If
+   '
+   'If frmEstoque.GridCtrlProduto.Row = 0 Then
+   '   '
+   '   MsgBox "Selecione um produto para poder cadastrar.", vbOKOnly + vbCritical, App.Title
+   '   '
+   '   Exit Sub
+   '   '
+   'End If
+   '
+   '============== Analisa o conteudo da célula ( frmEstoque.txtHe.Text )
+   '
+   If Not IsNumeric(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 1)) Then
+      '
+      MsgBox "Digite um valor válido para o estoque atual.", vbOKOnly + vbCritical, App.Title
+      '
+      Exit Sub
+      '
+   End If
+   '
+   Screen.MousePointer = 11
+   '
+   If IsDate(txtDataCorrente.Text) Then
+      '
+      mDataCorrente = Mid(RetornaDataString(txtDataCorrente.Text), 5, 4) + Mid(RetornaDataString(txtDataCorrente.Text), 3, 2) + Mid(RetornaDataString(txtDataCorrente.Text), 1, 2)
+      '
+   Else
+      '
+      mDataCorrente = Mid(RetornaDataString(Now), 5, 4) + Mid(RetornaDataString(Now), 3, 2) + Mid(RetornaDataString(Now), 1, 2)
+      '
+   End If
+   '
+   ' MsgBox "Data Corrente:" & mDataCorrente, vbOKOnly + vbCritical, App.Title
+   '
+   connOpen
+   '
+   Set rsClientes = CreateObject("ADOCE.Recordset.3.0")
+   Set rsEstoque = CreateObject("ADOCE.Recordset.3.0")
+   Set rsHistorico = CreateObject("ADOCE.Recordset.3.0")
+   '
+   rsClientes.Open "SELECT * FROM clientes WHERE nome_fantasia='" & Trim(frmEstoque.cboClientes.Text) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+   '
+   If rsClientes.RecordCount > 0 Then
+      '
+      strCodigoCliente = rsClientes("codigo_cliente")
+      '
+   Else
+      '
+      MsgBox "Cliente inválido ou não cadastrado.", vbOKOnly + vbCritical, App.Title
+      '
+      Screen.MousePointer = 0
+      '
+      Exit Sub
+      '
+   End If
+   '
+   If rsClientes.State = 1 Then rsClientes.Close
+   '
+   ' historico
+   '
+   ' codigo_cliente VARCHAR(5)
+   ' codigo_produto VARCHAR(6)
+   ' data VARCHAR(8)
+   ' dias VARCHAR(3)
+   ' media_diaria VARCHAR(12)
+   ' media VARCHAR(8)
+   ' estoque VARCHAR(8)
+   ' sugestao VARCHAR(8)
+   ' pedido VARCHAR(8));"
+   '
+'   connOpen
+'   '
+'   Set rs = CreateObject("ADOCE.Recordset.3.0")
+'   '
+'   mSQL = "DELETE * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data = '" & mDataCorrente & "';"
+'   '
+'   MsgBox "SQL:" & mSQL, vbOKOnly + vbCritical, App.Title
+'   '
+'   ' "DELETE * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data = '" & mDataCorrente & "';"
+'   '
+'   ExecSQL mSQL
+'   '
+'   connClose
+   '
+   '
+   '
+   If rsHistorico.State = 1 Then rsHistorico.Close
+   '
+   rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data = '" & mDataCorrente & "';", CONN, adOpenDynamic, adLockOptimistic
+   '
+   Do While rsHistorico.RecordCount > 0
+      '
+      rsHistorico.MoveFirst
+      rsHistorico.Delete
+      '
+   Loop
+   '
+   If rsHistorico.State = 1 Then rsHistorico.Close
+   '
+   '
+   For I = 0 To frmEstoque.GridCtrlProduto.Rows - 1
+       '
+       ' strCodigoProduto = frmEstoque.GridCtrlProduto.TextMatrix(frmEstoque.GridCtrlProduto.Row, 5)
+       '
+       strCodigoProduto = frmEstoque.GridCtrlProduto.TextMatrix(I, 5)
+       '
+       ' MsgBox "Produto:" & strCodigoProduto, vbOKOnly + vbCritical, App.Title
+       '
+       If rsEstoque.State = 1 Then rsEstoque.Close
+       '
+       '==================================== ATUALIZA ESTOQUE ==============================
+       '
+       rsEstoque.Open "SELECT * FROM estoque WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND codigo_produto='" & strCodigoProduto & "' ORDER BY data;", CONN, adOpenDynamic, adLockOptimistic
+       '
+       If rsEstoque.RecordCount = 0 Then
+          '
+          rsEstoque.AddNew
+          '
+          bolPrimeiro = True
+          '
+       Else
+          '
+          bolPrimeiro = False
+          '
+       End If
+       '
+       rsEstoque("codigo_cliente") = strCodigoCliente
+       rsEstoque("codigo_produto") = strCodigoProduto
+       '
+       rsEstoque("data") = mDataCorrente
+       '
+       rsEstoque("dias") = Trim(Text6.Text)
+       '
+       If Trim(frmEstoque.GridCtrlProduto.TextMatrix(I, 6)) = "" Then
+          mValor = rsEstoque("media")
+       Else
+          mValor = Trim(CDbl(frmEstoque.GridCtrlProduto.TextMatrix(I, 0)) * 100)
+          If InStr(1, mValor, ",", vbTextCompare) > 1 Then mValor = Mid(mValor, 1, InStr(1, mValor, ",", vbTextCompare) - 1)
+       End If
+       '
+       rsEstoque("media") = mValor
+       '
+       If Trim(frmEstoque.GridCtrlProduto.TextMatrix(I, 1)) = "" Then
+          mValor = "0000000000"
+       Else
+          mValor = Trim(CDbl(frmEstoque.GridCtrlProduto.TextMatrix(I, 1)) * 100)
+          If InStr(1, mValor, ",", vbTextCompare) > 1 Then mValor = Mid(mValor, 1, InStr(1, mValor, ",", vbTextCompare) - 1)
+       End If
+       '
+       rsEstoque("estoque") = mValor
+       '
+       If Trim(frmEstoque.GridCtrlProduto.TextMatrix(I, 2)) = "" Then
+          mValor = "0000000000"
+       Else
+          '
+          mValor = Trim(CDbl(frmEstoque.GridCtrlProduto.TextMatrix(I, 2)) * 100)
+          If InStr(1, mValor, ",", vbTextCompare) > 1 Then mValor = Mid(mValor, 1, InStr(1, mValor, ",", vbTextCompare) - 1)
+          '
+       End If
+       '
+       rsEstoque("sugestao") = mValor
+       '
+       If Trim(frmEstoque.GridCtrlProduto.TextMatrix(I, 3)) = "" Then
+          mValor = "0000000000"
+       Else
+          '
+          mValor = Trim(CDbl(frmEstoque.GridCtrlProduto.TextMatrix(I, 3)) * 100)
+          If InStr(1, mValor, ",", vbTextCompare) > 1 Then mValor = Mid(mValor, 1, InStr(1, mValor, ",", vbTextCompare) - 1)
+          '
+       End If
+       '
+       rsEstoque("pedido") = mValor
+       '
+       rsEstoque.Update
+       '
+       '==================================== ATUALIZA HISTORICO ==============================
+       '
+       If rsHistorico.State = 1 Then rsHistorico.Close
+       '
+       ' rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND codigo_produto='" & strCodigoProduto & "' AND data = '" & Mid(RetornaDataString(Now), 5, 4) + Mid(RetornaDataString(Now), 3, 2) + Mid(RetornaDataString(Now), 1, 2) & "' ORDER BY data;", CONN, adOpenDynamic, adLockOptimistic
+       '
+       rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND codigo_produto='" & strCodigoProduto & "' AND data = '" & mDataCorrente & "';", CONN, adOpenDynamic, adLockOptimistic
+       '
+       If rsHistorico.RecordCount = 0 Then
+          '
+          rsHistorico.AddNew
+          '
+          bolPrimeiro = True
+          '
+       Else
+          '
+          bolPrimeiro = False
+          '
+       End If
+       '
+       ' historico
+       '
+       ' codigo_cliente VARCHAR(5)
+       ' codigo_produto VARCHAR(6)
+       ' data VARCHAR(8)
+       ' dias VARCHAR(3)
+       ' media_diaria VARCHAR(12)
+       ' media VARCHAR(8)
+       ' estoque VARCHAR(8)
+       ' sugestao VARCHAR(8)
+       ' pedido VARCHAR(8));"
+       '
+       '
+       rsHistorico("codigo_cliente") = strCodigoCliente
+       rsHistorico("codigo_produto") = strCodigoProduto
+       '
+       rsHistorico("data") = mDataCorrente
+       '
+       rsHistorico("dias") = rsEstoque("dias")
+       rsHistorico("media_diaria") = rsEstoque("media_diaria")
+       rsHistorico("media") = rsEstoque("media")
+       rsHistorico("estoque") = rsEstoque("estoque")
+       rsHistorico("sugestao") = rsEstoque("sugestao")
+       rsHistorico("pedido") = rsEstoque("pedido")
+       '
+       rsHistorico.Update
+       '
+   Next
+   '
+   If rsEstoque.State = 1 Then rsEstoque.Close
+   If rsHistorico.State = 1 Then rsHistorico.Close
+   '
+   connClose
+   '
+   Set rsEstoque = Nothing
+   Set rsHistorico = Nothing
+   '
+   Screen.MousePointer = 0
+   '
+   MsgBox "Dados atualizados com sucesso.", vbOKOnly + vbInformation, App.Title
+   '
+End Sub
+
+Private Sub Command6_Click()
+  '
+  ' MsgBox "TopRow:" & CStr(frmEstoque.GridCtrlProduto.TopRow) & " " & CStr(frmEstoque.GridCtrlProduto.LeftCol), vbOKOnly + vbInformation, App.Title
+  '
+  ' If (frmEstoque.GridCtrlProduto.TopRow + frmEstoque.GridCtrlProduto.LeftCol) <> 0 Then frmEstoque.GridCtrlProduto.Col = 0
+  '
+  ' If frmEstoque.GridCtrlProduto.LeftCol <> 0 Then frmEstoque.GridCtrlProduto.LeftCol = 4
+  '
+  frmEstoque.GridCtrlProduto.LeftCol = 4
+  '
+End Sub
+
+Private Sub Command7_Click()
+  '
+  IntIncrDataEst = IntIncrDataEst - 1
+  '
+  txtDataCorrente.Text = Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 1, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 3, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 5, 4))
+  '
+  If mProcessa = True Then
+     '
+     carregagridestoque
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command8_Click()
+  '
+  IntIncrDataEst = IntIncrDataEst + 1
+  '
+  txtDataCorrente.Text = Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 1, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 3, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataEst), 5, 4))
+  '
+  If mProcessa = True Then
+     '
+     carregagridestoque
+     '
+  End If
+  '
+End Sub
+
+Private Sub Command9_Click()
+    '
+    If CInt(Text6.Text) > 1 Then
+       '
+       Text6.Text = CStr(CInt(Text6.Text) - 1)
+       '
+    Else
+       '
+       Text6.Text = "1"
+       '
+    End If
+    '
+    If CInt(Text6.Text) > 0 Then Text6.BackColor = Amarelo
+    If CInt(Text6.Text) >= 7 Then Text6.BackColor = Verde
+    If CInt(Text6.Text) >= 16 Then Text6.BackColor = Vermelho
+    '
+End Sub
+
+Private Sub fraHistorico_MouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+
+End Sub
+
+Private Sub fraPedido_MouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+
+End Sub
+
+Private Sub Text6_KeyPress(KeyAscii As Integer)
+    KeyAscii = OnlyNumericKeys(KeyAscii)
+End Sub
+
+Private Sub form_activate()
+  '
+  Screen.MousePointer = 0
+  '
+  mCorCorrenteVerde = Verde
+  mCorCorrenteVermelho = Vermelho
+  '
+  IntIncrDataEst = 0
+  mTrocouData = False
+  '
+  mProcessa = False
+  '
+  txtDataCorrente.BackColor = Branco
+  '
+  txtDataCorrente.Text = Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataPed), 1, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataPed), 3, 2)) & "/" & Trim(Mid(RetornaDataString(CDate(Now) + IntIncrDataPed), 5, 4))
+  '
+  frmEstoque.GridCtrlProduto.Enabled = False
+  '
+  IntIncrDataPed = 0
+  '
+  mClaro = False
+  '
+End Sub
+
+Private Sub Form_Load()
+  '
+  setamenu MenuBar, Me
+  '
+  frmEstoque.fraProduto.Top = -120
+  frmEstoque.fraProduto.Left = 0
+  '
+  frmEstoque.fraHistorico.Top = -120
+  frmEstoque.fraHistorico.Left = 0
+  '
+  frmEstoque.fraPedido.Top = -120
+  frmEstoque.fraPedido.Left = 0
+  '
+  frmEstoque.fraDMPP.Top = 0
+  frmEstoque.fraDMPP.Left = 0
+  '
+  frmEstoque.fraProduto.Visible = True
+  '
+  frmEstoque.fraProduto.ZOrder vbBringToFront ' vbSendToBack
+  '
+  connOpen
+  '
+  EncheComboClientes frmEstoque.cboClientes, 2
+  '
+  connClose
+  '
+  SetaGridCaptionProduto
+  SetaGridCaptionHistorico
+  '
+End Sub
+
+Private Sub form_resize()
+    '
+    On Error Resume Next
+    '
+    TabStrip.Top = 0
+    TabStrip.Left = 0
+    '
+    TabStrip.Height = Me.ScaleHeight
+    TabStrip.Width = Me.ScaleWidth
+    '
+    fraHistorico.Move (Me.ScaleWidth - fraHistorico.Width) / 2, 0
+    fraProduto.Move (Me.ScaleWidth - fraProduto.Width) / 2, 0
+    fraPedido.Move (Me.ScaleWidth - fraPedido.Width) / 2, 0
+    fraDMPP.Move (Me.ScaleWidth - fraDMPP.Width) / 2, 0
+    '
+End Sub
+
+Private Sub fraProduto_MouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+End Sub
+
+Private Sub GridCtrl_click()
+  '
+  mTrocouData = False
+  '
+  If fraHistorico.Visible = True And Trim(GridCtrl.TextMatrix(GridCtrl.Row, 1)) <> "" And IsDate(GridCtrl.TextMatrix(GridCtrl.Row, 1)) Then
+     '
+     If (Trim(Mid(txtDataCorrente.Text, 1, 6) & Mid(txtDataCorrente.Text, 9, 2)) <> Trim(GridCtrl.TextMatrix(GridCtrl.Row, 1))) Then
+        '
+        IntIncrDataEst = CDate(Trim(GridCtrl.TextMatrix(GridCtrl.Row, 1))) - Now
+        '
+        ' MsgBox "Dias de hoje:" & Trim(Mid(txtDataCorrente.Text, 1, 6) & Mid(txtDataCorrente.Text, 9, 2)) & " - " & Trim(GridCtrl.TextMatrix(GridCtrl.Row, 1)), vbOKOnly + vbInformation, App.Title
+        '
+        mTrocouData = True
+        '
+        txtDataCorrente.Text = Mid(GridCtrl.TextMatrix(GridCtrl.Row, 1), 1, 6) & Mid(txtDataCorrente.Text, 7, 2) & Mid(GridCtrl.TextMatrix(GridCtrl.Row, 1), 7, 2)
+        '
+     End If
+     '
+  End If
+  '
+End Sub
+
+Private Sub GridCtrlProduto_rowcolchange()
+
+End Sub
+
+Private Sub GridCtrlProduto_Click()
+  '
+  fraHistorico.Caption = UCase(Mid(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 4), 1, 1)) & LCase(Mid(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 4), 2, 39))
+  '
+End Sub
+
+Private Sub MenuBar_MenuClick(ByVal Item As MenuBarLib.Item)
+    ExecutaMenu Item.Caption, Me
+End Sub
+
+Private Sub TabStrip_Click()
+  '
+  Dim rsClientes, rsPedidos, rsProdutos, rsHistorico, rsObservacao
+  '
+  Dim strCodigoCliente As String
+  Dim strCodigoProduto As String
+  Dim strNumeroPedido As String
+  Dim intVisita As Integer
+  '
+  Dim strFormataNumero As String
+  Dim mqtd_pedida As String
+  Dim mqtd_faturada As String
+  '
+  Dim mMaiorData As String
+  Dim mMenorData As String
+  Dim mDias As Integer
+  Dim mQuantidade As Double
+  '
+  Select Case LCase(TabStrip.SelectedItem.Caption)
+  Case "produto"
+       '
+       If mTrocouData = True Then
+          '
+          carregagridestoque
+          '
+          mTrocouData = False
+          '
+       End If
+       '
+       fraDMPP.Visible = False
+       '
+       fraHistorico.Visible = False
+       '
+       fraPedido.Visible = False
+       '
+       fraProduto.Visible = True
+       '
+  Case "histórico"
+       '
+       fraDMPP.Visible = False
+       '
+       fraProduto.Visible = False
+       '
+       fraPedido.Visible = False
+       '
+       fraHistorico.Visible = True
+       '
+       frmEstoque.GridCtrl.Visible = False
+       '
+       SetaGridCaptionHistorico
+       '
+       GridCtrlProduto.Visible = True
+       '
+       '======================================== ENCHE HISTORICO
+       '
+       Screen.MousePointer = 11
+       '
+       connOpen
+       '
+       Set rsClientes = CreateObject("ADOCE.Recordset.3.0")
+       Set rsPedidos = CreateObject("ADOCE.Recordset.3.0")
+       Set rsProdutos = CreateObject("ADOCE.Recordset.3.0")
+       Set rsHistorico = CreateObject("ADOCE.Recordset.3.0")
+       '
+       rsClientes.Open "SELECT * FROM clientes WHERE nome_fantasia='" & Trim(frmEstoque.cboClientes.Text) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+       '
+       If rsClientes.RecordCount > 0 Then
+          '
+          strCodigoCliente = rsClientes("codigo_cliente")
+          '
+       Else
+          '
+          frmEstoque.GridCtrl.Visible = True
+          '
+          MsgBox "Selecione um cliente para consultar Histórico.", vbOKOnly + vbCritical, App.Title
+          '
+          Screen.MousePointer = 0
+          '
+          frmEstoque.TabStrip.Tabs.Item(1).Selected = True
+          '
+          Exit Sub
+       End If
+       '
+       If rsClientes.State = 1 Then rsClientes.Close
+       '
+       strCodigoProduto = frmEstoque.GridCtrlProduto.TextMatrix(frmEstoque.GridCtrlProduto.Row, 5)
+       '
+       If rsProdutos.State = 1 Then rsProdutos.Close
+       '
+       rsProdutos.Open "SELECT * FROM produtos WHERE codigo_produto='" & Trim(strCodigoProduto) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+       '
+       If rsProdutos.RecordCount < 1 Then
+          '
+          frmEstoque.GridCtrl.Visible = True
+          '
+          MsgBox "Selecione um produto para consultar Histórico.", vbOKOnly + vbCritical, App.Title
+          '
+          Screen.MousePointer = 0
+          '
+          frmEstoque.TabStrip.Tabs.Item(1).Selected = True
+          '
+          Exit Sub
+       End If
+       '
+       fraHistorico.Caption = UCase(Mid(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 4), 1, 1)) & LCase(Mid(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 4), 2, 39))
+       '
+       ' MsgBox "Produto:" & strCodigoProduto & " = " & CStr(frmEstoque.GridCtrlProduto.Row), vbOKOnly + vbCritical, App.Title
+       '
+       ' rs.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND codigo_produto='" & strCodigoProduto & "' AND data='" & Mid(RetornaDataString(Now), 5, 4) + Mid(RetornaDataString(Now), 3, 2) + Mid(RetornaDataString(Now), 1, 2) & "' ORDER BY data DESC;", CONN, adOpenForwardOnly, adLockReadOnly
+       '
+       rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND codigo_produto='" & strCodigoProduto & "' ORDER BY data DESC;", CONN, adOpenForwardOnly, adLockReadOnly
+       '
+       mLinha2 = 0
+       '
+       If rsHistorico.RecordCount > 0 Then
+           '
+           intVisita = 0
+           '
+           Do Until rsHistorico.EOF
+              '
+              GridCtrl.Rows = GridCtrl.Rows + 1
+              '
+              frmEstoque.GridCtrl.Row = intVisita
+              frmEstoque.GridCtrl.Col = 0
+              frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+              frmEstoque.GridCtrl.CellFontSize = 7
+              '
+              frmEstoque.GridCtrl.TextMatrix(intVisita, 0) = intVisita + 1
+              '
+              frmEstoque.GridCtrl.Row = intVisita
+              frmEstoque.GridCtrl.Col = 1
+              frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+              frmEstoque.GridCtrl.CellFontSize = 7
+              '
+              frmEstoque.GridCtrl.TextMatrix(intVisita, 1) = Mid(rsHistorico("data"), 7, 2) & "/" & Mid(rsHistorico("data"), 5, 2) & "/" & Mid(rsHistorico("data"), 3, 2)
+              '
+              If (Mid(rsHistorico("data"), 7, 2) & "/" & Mid(rsHistorico("data"), 5, 2) & "/" & Mid(rsHistorico("data"), 1, 4)) = txtDataCorrente.Text Then
+                 '
+                 mLinha2 = intVisita
+                 '
+              End If
+              '
+              '========================== FORMATA NUMERO (ESTOQUE) ==========================
+              '
+              strFormataNumero = Trim(CDbl(rsHistorico("estoque")) / 100)
+              '
+              If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+                 '
+                 strFormataNumero = Trim(strFormataNumero) & ",0"
+                 '
+              Else
+                 '
+                 strFormataNumero = strFormataNumero & "0"
+                 '
+                 strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+                 '
+              End If
+              '
+              While Mid(Trim(strFormataNumero), 1, 1) = "0"
+                 '
+                 strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+                 '
+              Wend
+              '
+              If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+              '
+              If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+                 '
+                 frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+                 '
+              End If
+              '
+              frmEstoque.GridCtrl.Row = intVisita
+              frmEstoque.GridCtrl.Col = 2
+              frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+              frmEstoque.GridCtrl.CellFontSize = 7
+              '
+              frmEstoque.GridCtrl.TextMatrix(intVisita, 2) = strFormataNumero
+              '
+              '========================================================================
+              '
+              '========================== FORMATA NUMERO (SUGESTAO) ===================
+              '
+              strFormataNumero = Trim(CDbl(rsHistorico("sugestao")) / 100)
+              '
+              If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+                 '
+                 strFormataNumero = Trim(strFormataNumero) & ",0"
+                 '
+              Else
+                 '
+                 strFormataNumero = strFormataNumero & "0"
+                 '
+                 strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+                 '
+              End If
+              '
+              While Mid(Trim(strFormataNumero), 1, 1) = "0"
+                 '
+                 strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+                 '
+              Wend
+              '
+              If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+              '
+              If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+                 '
+                 frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+                 '
+              End If
+              '
+              frmEstoque.GridCtrl.Row = intVisita
+              frmEstoque.GridCtrl.Col = 3
+              frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+              frmEstoque.GridCtrl.CellFontSize = 7
+              '
+              frmEstoque.GridCtrl.TextMatrix(intVisita, 3) = strFormataNumero
+              '
+              '========================================================================
+              '
+              '========================== FORMATA NUMERO (PEDIDO) =====================
+              '
+              strFormataNumero = Trim(CDbl(rsHistorico("pedido")) / 100)
+              '
+              If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+                 '
+                 strFormataNumero = Trim(strFormataNumero) & ",0"
+                 '
+              Else
+                 '
+                 strFormataNumero = strFormataNumero & "0"
+                 '
+                 strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+                 '
+              End If
+              '
+              While Mid(Trim(strFormataNumero), 1, 1) = "0"
+                 '
+                 strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+                 '
+              Wend
+              '
+              If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+              '
+              If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+                 '
+                 frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+                 '
+              End If
+              '
+              frmEstoque.GridCtrl.Row = intVisita
+              frmEstoque.GridCtrl.Col = 4
+              frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+              frmEstoque.GridCtrl.CellFontSize = 7
+              '
+              frmEstoque.GridCtrl.TextMatrix(intVisita, 4) = strFormataNumero
+              '
+              mqtd_pedida = strFormataNumero
+              mqtd_faturada = "0,0"
+              '
+              '========================================================================
+              '
+              If rsPedidos.State = 1 Then rsPedidos.Close
+              '
+              ' rsPedidos.Open "SELECT * FROM pedido WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data_emissao='" & Trim(rs("data")) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+              '
+              rsPedidos.Open "SELECT * FROM pedido WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data_emissao='" & Mid(rsHistorico("data"), 7, 2) & Mid(rsHistorico("data"), 5, 2) & Mid(rsHistorico("data"), 1, 4) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+              '
+              If rsPedidos.RecordCount > 0 Then
+                  '
+                  If Len(rsPedidos("numero_pedido_interno")) > 0 Then
+                      strNumeroPedido = rsPedidos("numero_pedido_interno")
+                  Else
+                      strNumeroPedido = rsPedidos("numero_pedido_externo")
+                  End If
+                  '
+                  rsPedidos.Close
+                  '
+                  rsPedidos.Open "SELECT * FROM itens_pedido WHERE numero_pedido='" & Trim(strNumeroPedido) & "' AND codigo_produto='" & Trim(strCodigoProduto) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+                  '
+                  ' MsgBox "Produto:" & strCodigoProduto & "   " & rsPedidos("codigo_produto"), vbOKOnly + vbCritical, App.Title
+                  '
+                  If rsPedidos.RecordCount > 0 Then
+                      '
+                      If IsNumeric(rsPedidos("qtd_pedida")) Then
+                         '
+                         ' MsgBox "Qtd. Pedida:" & rsPedidos("qtd_pedida") & "   " & mqtd_pedida, vbOKOnly + vbCritical, App.Title
+                         '
+                         If (CDbl(rsPedidos("qtd_pedida"))) > (CDbl(mqtd_pedida) / 100) Then
+                            '
+                            strFormataNumero = Trim(CDbl(rsPedidos("qtd_pedida")))
+                            '
+                         End If
+                         '
+                         '========================== FORMATA NUMERO (PEDIDO) =====================
+                         '
+                         If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+                            '
+                            strFormataNumero = Trim(strFormataNumero) & ",0"
+                            '
+                         Else
+                            '
+                            strFormataNumero = strFormataNumero & "0"
+                            '
+                            strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+                            '
+                         End If
+                         '
+                         While Mid(Trim(strFormataNumero), 1, 1) = "0"
+                            '
+                            strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+                            '
+                         Wend
+                         '
+                         If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+                         '
+                         If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+                            '
+                            frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+                            '
+                         End If
+                         '
+                         frmEstoque.GridCtrl.Row = intVisita
+                         frmEstoque.GridCtrl.Col = 4
+                         frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+                         frmEstoque.GridCtrl.CellFontSize = 7
+                         '
+                         mqtd_pedida = strFormataNumero
+                         '
+                         '========================================================================
+                         '
+                      End If
+                      '
+                      If IsNumeric(rsPedidos("qtd_faturada")) Then
+                         '
+                         '========================== FORMATA NUMERO (PEDIDO) =====================
+                         '
+                         strFormataNumero = Trim(CDbl(rsPedidos("qtd_faturada")))
+                         '
+                         If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+                            '
+                            strFormataNumero = Trim(strFormataNumero) & ",0"
+                            '
+                         Else
+                            '
+                            strFormataNumero = strFormataNumero & "0"
+                            '
+                            strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+                            '
+                         End If
+                         '
+                         While Mid(Trim(strFormataNumero), 1, 1) = "0"
+                            '
+                            strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+                            '
+                         Wend
+                         '
+                         If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+                         '
+                         If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+                            '
+                            frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+                            '
+                         End If
+                         '
+                         frmEstoque.GridCtrl.Row = intVisita
+                         frmEstoque.GridCtrl.Col = 4
+                         frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+                         frmEstoque.GridCtrl.CellFontSize = 7
+                         '
+                         '========================================================================
+                         '
+                         mqtd_faturada = strFormataNumero
+                         '
+                      End If
+                      '
+                  End If
+                  '
+              End If
+              '
+              frmEstoque.GridCtrl.Row = intVisita
+              frmEstoque.GridCtrl.Col = 4
+              frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+              frmEstoque.GridCtrl.CellFontSize = 7
+              '
+              frmEstoque.GridCtrl.TextMatrix(intVisita, 4) = mqtd_pedida
+              '
+              frmEstoque.GridCtrl.Row = intVisita
+              frmEstoque.GridCtrl.Col = 5
+              frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+              frmEstoque.GridCtrl.CellFontSize = 7
+              '
+              frmEstoque.GridCtrl.TextMatrix(intVisita, 5) = mqtd_faturada
+              '
+              frmEstoque.GridCtrl.Row = intVisita
+              frmEstoque.GridCtrl.Col = 6
+              frmEstoque.GridCtrl.CellFontName = "Small Fonts"
+              frmEstoque.GridCtrl.CellFontSize = 7
+              '
+              frmEstoque.GridCtrl.TextMatrix(intVisita, 6) = "0,0"
+              '
+              rsPedidos.Close
+              '
+              intVisita = intVisita + 1
+              '
+              If intVisita > 8 Then Exit Do
+              '
+              rsHistorico.MoveNext
+              '
+              ' MsgBox "Próximo", vbOKOnly + vbCritical, App.Title
+              '
+           Loop
+           '
+       End If
+       '
+       If rsClientes.State = 1 Then rsClientes.Close
+       If rsPedidos.State = 1 Then rsPedidos.Close
+       If rsProdutos.State = 1 Then rsProdutos.Close
+       If rsHistorico.State = 1 Then rsHistorico.Close
+       '
+       connClose
+       '
+       Set rsClientes = Nothing
+       Set rsHistorico = Nothing
+       Set rsPedidos = Nothing
+       Set rsProdutos = Nothing
+       '
+       frmEstoque.GridCtrl.Row = mLinha2
+       '
+       For I = 0 To 6
+           '
+           frmEstoque.GridCtrl.Col = I
+           '
+           ' &H00FFFFFF& - Branco
+           ' &H0080FF80& - VerdeClaro
+           ' &H0080FFFF& - AmareloClaro
+           ' &H0080C0FF& - VermelhoClaro
+           '
+           frmEstoque.GridCtrl.CellBackColor = VerdeClaro
+           '
+           ' &HFF00&
+           '
+       Next
+       '
+       frmEstoque.GridCtrl.Col = 0
+       '
+       frmEstoque.GridCtrl.Visible = True
+       '
+       '====================================================================
+       '
+       mLinha2 = frmEstoque.GridCtrl.Row
+       '
+       If fraHistorico.Visible = True And Trim(GridCtrl.TextMatrix(0, 1)) <> "" And IsDate(GridCtrl.TextMatrix(0, 1)) Then
+          '
+          mMaiorData = Trim(GridCtrl.TextMatrix(0, 1))
+          '
+       End If
+       '
+       mQuantidade = 0
+       '
+       For I = 0 To frmEstoque.GridCtrl.Rows - 1
+           '
+           If fraHistorico.Visible = True And Trim(GridCtrl.TextMatrix(I, 1)) <> "" And IsDate(GridCtrl.TextMatrix(I, 1)) Then
+              '
+              mMenorData = Trim(GridCtrl.TextMatrix(I, 1))
+              '
+              mQuantidade = mQuantidade + CDbl(GridCtrl.TextMatrix(I, 4))
+           Else
+              '
+              Exit For
+              '
+           End If
+           '
+       Next
+       '
+       mDias = CDate(Trim(mMaiorData)) - CDate(Trim(mMenorData))
+       '
+       If mDias = 0 Then mDias = 1
+       '
+       ' MsgBox "Datas:" & mMenorData & " - " & mMaiorData & " = " & CStr(mDias) & CStr(mQuantidade) & " Média=" & CStr(mQuantidade / mDias), vbOKOnly + vbInformation, App.Title
+       '
+       lblDias.Caption = CStr(mDias)
+       lblQuantidade.Caption = CStr(mQuantidade)
+       lblMediaDia.Caption = CStr(mQuantidade / mDias)
+       '
+       frmEstoque.GridCtrl.Row = mLinha2
+       '
+       '====================================================================
+       '
+       CalculaGridProdutos
+       '
+       Screen.MousePointer = 0
+       '
+  Case "pedido"
+       '
+       fraDMPP.Visible = False
+       '
+       frmEstoque.fraProduto.Visible = False
+       '
+       frmEstoque.fraHistorico.Visible = False
+       '
+       frmEstoque.fraPedido.Visible = True
+       '
+       frmEstoque.fraPedido.ZOrder vbBringToFront ' vbSendToBack
+       '
+       connOpen
+       '
+       Set rsClientes = CreateObject("ADOCE.Recordset.3.0")
+       Set rsObservacao = CreateObject("ADOCE.Recordset.3.0")
+       '
+       rsClientes.Open "SELECT * FROM clientes WHERE nome_fantasia='" & Trim(frmEstoque.cboClientes.Text) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+       '
+       If rsClientes.RecordCount > 0 Then
+          '
+          strCodigoCliente = rsClientes("codigo_cliente")
+          '
+       Else
+          '
+          frmEstoque.GridCtrl.Visible = True
+          '
+          MsgBox "Selecione um cliente para fazer Pedido.", vbOKOnly + vbCritical, App.Title
+          '
+          Screen.MousePointer = 0
+          '
+          frmEstoque.TabStrip.Tabs.Item(1).Selected = True
+          '
+          Exit Sub
+       End If
+       '
+       frmEstoque.fraPedido.Caption = UCase(Mid(rsClientes("razao_social"), 1, 1)) & LCase(Mid(rsClientes("razao_social"), 2, 39))
+       '
+       If rsObservacao.State = 1 Then rsObservacao.Close
+       '
+       rsObservacao.Open "SELECT * FROM observacoes_clientes WHERE cliente='" & Trim(strCodigoCliente) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+       '
+       If rsObservacao.RecordCount > 0 Then
+          '
+          frmEstoque.txtDMPP.Text = rsObservacao("observacao")
+          '
+          frmEstoque.txtDMPP.ZOrder vbBringToFront ' vbSendToBack
+          '
+       End If
+       '
+       If rsObservacao.State = 1 Then rsObservacao.Close
+       '
+       If rsClientes.State = 1 Then rsClientes.Close
+       '
+       connClose
+       '
+       Set rsClientes = Nothing
+       '
+       connOpen
+       '
+       EncheCombosEstoque
+       '
+       connClose
+       '
+       LimpaFormularioPedEstoque
+       '
+       frmEstoque.cboCPagto.Visible = True
+       frmEstoque.cboFPagto.Visible = True
+       frmEstoque.cboTMovto.Visible = True
+       '
+       usrCodigoPedido = usrCodigoPedido + 1
+       '
+       Screen.MousePointer = 0
+       '
+       frmEstoque.txtNumeroPedido.Text = usrCodigoPedido
+       '
+       frmEstoque.txtEntrega.Text = Mid(RetornaDataString(CDate(Now)), 1, 2) & "/" & Mid(RetornaDataString(CDate(Now)), 3, 2) & "/" & Mid(RetornaDataString(CDate(Now)), 5, 4)
+       '
+       frmEstoque.txtEmissao.Text = frmEstoque.txtDataCorrente.Text
+       '
+       Screen.MousePointer = 0
+       '
+  End Select
+  '
+End Sub
+
+Sub SetaGridCaptionProduto()
+  '
+  GridCtrlCab.Clear
+  '
+  GridCtrlCab.Rows = 1
+  '
+  GridCtrlCab.Row = 0
+  GridCtrlCab.Col = 0
+  GridCtrlCab.CellFontSize = 7
+  GridCtrlCab.CellBackColor = &HC0C0C0
+  GridCtrlCab.CellFontBold = True
+  '
+  GridCtrlCab.Row = 0
+  GridCtrlCab.Col = 1
+  GridCtrlCab.CellFontSize = 7
+  GridCtrlCab.CellBackColor = &HC0C0C0
+  GridCtrlCab.CellFontBold = True
+  '
+  GridCtrlCab.Row = 0
+  GridCtrlCab.Col = 2
+  GridCtrlCab.CellFontSize = 7
+  GridCtrlCab.CellBackColor = &HC0C0C0
+  GridCtrlCab.CellFontBold = True
+  '
+  GridCtrlCab.Row = 0
+  GridCtrlCab.Col = 3
+  GridCtrlCab.CellFontSize = 7
+  GridCtrlCab.CellBackColor = &HC0C0C0
+  GridCtrlCab.CellFontBold = True
+  '
+  GridCtrlCab.Row = 0
+  GridCtrlCab.Col = 4
+  GridCtrlCab.CellFontSize = 7
+  GridCtrlCab.CellBackColor = &HC0C0C0
+  GridCtrlCab.CellFontBold = True
+  GridCtrlCab.CellFontBold = True
+  '
+  GridCtrlCab.Row = 0
+  GridCtrlCab.Col = 5
+  GridCtrlCab.CellFontSize = 7
+  GridCtrlCab.CellBackColor = &HC0C0C0
+  GridCtrlCab.CellFontBold = True
+  '
+  GridCtrlCab.Row = 0
+  GridCtrlCab.Col = 6
+  GridCtrlCab.CellFontSize = 7
+  GridCtrlCab.CellBackColor = &HC0C0C0
+  GridCtrlCab.CellFontBold = True
+  '
+  GridCtrlCab.ColWidth(0) = 540
+  GridCtrlCab.ColWidth(1) = 540
+  GridCtrlCab.ColWidth(2) = 540
+  GridCtrlCab.ColWidth(3) = 540
+  GridCtrlCab.ColWidth(4) = 3500
+  GridCtrlCab.ColWidth(5) = 400
+  GridCtrlCab.ColWidth(6) = 800
+  '
+  GridCtrlCab.TextMatrix(0, 0) = "Méd."
+  GridCtrlCab.TextMatrix(0, 1) = "Est."
+  GridCtrlCab.TextMatrix(0, 2) = "Sug."
+  GridCtrlCab.TextMatrix(0, 3) = "Ped."
+  GridCtrlCab.TextMatrix(0, 4) = "Produto"
+  GridCtrlCab.TextMatrix(0, 5) = "Cód."
+  GridCtrlCab.TextMatrix(0, 6) = "M.Dia"
+  '
+  frmEstoque.GridCtrlCab.Row = 0
+  frmEstoque.GridCtrlCab.Col = 0
+  '
+  GridCtrlProduto.Clear
+  '
+  If 1 = 0 Then
+     '
+  GridCtrlProduto.Rows = 1
+  '
+  GridCtrlProduto.Row = 0
+  GridCtrlProduto.Col = 0
+  GridCtrlProduto.CellFontSize = 7
+  GridCtrlProduto.CellBackColor = &HC0C0C0
+  GridCtrlProduto.CellFontBold = True
+  '
+  GridCtrlProduto.Row = 0
+  GridCtrlProduto.Col = 1
+  GridCtrlProduto.CellFontSize = 7
+  GridCtrlProduto.CellBackColor = &HC0C0C0
+  GridCtrlProduto.CellFontBold = True
+  '
+  GridCtrlProduto.Row = 0
+  GridCtrlProduto.Col = 2
+  GridCtrlProduto.CellFontSize = 7
+  GridCtrlProduto.CellBackColor = &HC0C0C0
+  GridCtrlProduto.CellFontBold = True
+  '
+  GridCtrlProduto.Row = 0
+  GridCtrlProduto.Col = 3
+  GridCtrlProduto.CellFontSize = 7
+  GridCtrlProduto.CellBackColor = &HC0C0C0
+  GridCtrlProduto.CellFontBold = True
+  '
+  GridCtrlProduto.Row = 0
+  GridCtrlProduto.Col = 4
+  GridCtrlProduto.CellFontSize = 7
+  GridCtrlProduto.CellBackColor = &HC0C0C0
+  GridCtrlProduto.CellFontBold = True
+  GridCtrlProduto.CellFontBold = True
+  '
+  GridCtrlProduto.Row = 0
+  GridCtrlProduto.Col = 5
+  GridCtrlProduto.CellFontSize = 7
+  GridCtrlProduto.CellBackColor = &HC0C0C0
+  GridCtrlProduto.CellFontBold = True
+  '
+  GridCtrlProduto.Row = 0
+  GridCtrlProduto.Col = 6
+  GridCtrlProduto.CellFontSize = 7
+  GridCtrlProduto.CellBackColor = &HC0C0C0
+  GridCtrlProduto.CellFontBold = True
+    '
+  End If
+  '
+  GridCtrlProduto.ColWidth(0) = 540
+  GridCtrlProduto.ColWidth(1) = 540
+  GridCtrlProduto.ColWidth(2) = 540
+  GridCtrlProduto.ColWidth(3) = 540
+  GridCtrlProduto.ColWidth(4) = 3500
+  GridCtrlProduto.ColWidth(5) = 400
+  GridCtrlProduto.ColWidth(6) = 800
+  '
+  If 1 = 0 Then
+     '
+  'GridCtrlProduto.TextMatrix(0, 0) = "Méd."
+  'GridCtrlProduto.TextMatrix(0, 1) = "Est."
+  'GridCtrlProduto.TextMatrix(0, 2) = "Sug."
+  'GridCtrlProduto.TextMatrix(0, 3) = "Ped."
+  'GridCtrlProduto.TextMatrix(0, 4) = "Produto"
+  'GridCtrlProduto.TextMatrix(0, 5) = "Código"
+  'GridCtrlProduto.TextMatrix(0, 6) = "M.D."
+  '
+  GridCtrlProduto.TextMatrix(0, 0) = ""
+  GridCtrlProduto.TextMatrix(0, 1) = ""
+  GridCtrlProduto.TextMatrix(0, 2) = ""
+  GridCtrlProduto.TextMatrix(0, 3) = ""
+  GridCtrlProduto.TextMatrix(0, 4) = ""
+  GridCtrlProduto.TextMatrix(0, 5) = ""
+  GridCtrlProduto.TextMatrix(0, 6) = ""
+  '
+  frmEstoque.GridCtrlProduto.Row = 0
+  frmEstoque.GridCtrlProduto.Col = 0
+  '
+  End If
+  '
+End Sub
+
+Sub SetaGridCaptionHistorico()
+  '
+  GridHistoricoCab.Clear
+  '
+  GridHistoricoCab.Row = 0
+  GridHistoricoCab.Col = 0
+  GridHistoricoCab.CellFontSize = 7
+  'GridHistoricoCab.CellBackColor = &HC0C0C0
+  GridHistoricoCab.CellFontBold = True
+  '
+  GridHistoricoCab.Row = 0
+  GridHistoricoCab.Col = 1
+  GridHistoricoCab.CellFontSize = 7
+  'GridHistoricoCab.CellBackColor = &HC0C0C0
+  GridHistoricoCab.CellFontBold = True
+  '
+  GridHistoricoCab.Row = 0
+  GridHistoricoCab.Col = 2
+  GridHistoricoCab.CellFontSize = 7
+  'GridHistoricoCab.CellBackColor = &HC0C0C0
+  GridHistoricoCab.CellFontBold = True
+  '
+  GridHistoricoCab.Row = 0
+  GridHistoricoCab.Col = 3
+  GridHistoricoCab.CellFontSize = 7
+  'GridHistoricoCab.CellBackColor = &HC0C0C0
+  GridHistoricoCab.CellFontBold = True
+  '
+  GridHistoricoCab.Row = 0
+  GridHistoricoCab.Col = 4
+  GridHistoricoCab.CellFontSize = 7
+  'GridHistoricoCab.CellBackColor = &HC0C0C0
+  GridHistoricoCab.CellFontBold = True
+  '
+  GridHistoricoCab.Row = 0
+  GridHistoricoCab.Col = 5
+  GridHistoricoCab.CellFontSize = 7
+  'GridHistoricoCab.CellBackColor = &HC0C0C0
+  GridHistoricoCab.CellFontBold = True
+  '
+  GridHistoricoCab.Row = 0
+  GridHistoricoCab.Col = 6
+  GridHistoricoCab.CellFontSize = 7
+  'GridHistoricoCab.CellBackColor = &HC0C0C0
+  GridHistoricoCab.CellFontBold = True
+  '
+  GridHistoricoCab.ColWidth(0) = 160
+  GridHistoricoCab.ColWidth(1) = 700
+  GridHistoricoCab.ColWidth(2) = 540
+  GridHistoricoCab.ColWidth(3) = 540
+  GridHistoricoCab.ColWidth(4) = 540
+  GridHistoricoCab.ColWidth(5) = 540
+  GridHistoricoCab.ColWidth(6) = 540
+  '
+  GridHistoricoCab.TextMatrix(0, 0) = ""
+  GridHistoricoCab.TextMatrix(0, 1) = ""
+  GridHistoricoCab.TextMatrix(0, 2) = "Est"
+  GridHistoricoCab.TextMatrix(0, 3) = "Sug"
+  GridHistoricoCab.TextMatrix(0, 4) = "Ped"
+  GridHistoricoCab.TextMatrix(0, 5) = "Fat"
+  GridHistoricoCab.TextMatrix(0, 6) = "Ven"
+  '
+  '
+  '
+  '
+  GridCtrl.Clear
+  '
+  If 1 = 0 Then
+     '
+  GridCtrl.Row = 0
+  GridCtrl.Col = 0
+  '
+  GridCtrl.CellFontSize = 7
+  GridCtrl.CellBackColor = &HC0C0C0
+  GridCtrl.CellFontBold = True
+  '
+  GridCtrl.Row = 0
+  GridCtrl.Col = 1
+  GridCtrl.CellFontSize = 7
+  GridCtrl.CellBackColor = &HC0C0C0
+  GridCtrl.CellFontBold = True
+  '
+  GridCtrl.Row = 0
+  GridCtrl.Col = 2
+  GridCtrl.CellFontSize = 7
+  GridCtrl.CellBackColor = &HC0C0C0
+  GridCtrl.CellFontBold = True
+  '
+  GridCtrl.Row = 0
+  GridCtrl.Col = 3
+  GridCtrl.CellFontSize = 7
+  GridCtrl.CellBackColor = &HC0C0C0
+  GridCtrl.CellFontBold = True
+  '
+  GridCtrl.Row = 0
+  GridCtrl.Col = 4
+  GridCtrl.CellFontSize = 7
+  GridCtrl.CellBackColor = &HC0C0C0
+  GridCtrl.CellFontBold = True
+  '
+  GridCtrl.Row = 0
+  GridCtrl.Col = 5
+  GridCtrl.CellFontSize = 7
+  GridCtrl.CellBackColor = &HC0C0C0
+  GridCtrl.CellFontBold = True
+  '
+  GridCtrl.Row = 0
+  GridCtrl.Col = 6
+  GridCtrl.CellFontSize = 7
+  GridCtrl.CellBackColor = &HC0C0C0
+  GridCtrl.CellFontBold = True
+     '
+  End If
+  '
+  GridCtrl.ColWidth(0) = 160
+  GridCtrl.ColWidth(1) = 700
+  GridCtrl.ColWidth(2) = 540
+  GridCtrl.ColWidth(3) = 540
+  GridCtrl.ColWidth(4) = 540
+  GridCtrl.ColWidth(5) = 540
+  GridCtrl.ColWidth(6) = 540
+  '
+  GridCtrl.Row = 0
+  GridCtrl.Col = 0
+  '
+End Sub
+
+Sub CalculaGridProdutos()
+    On Error Resume Next
+    GridCtrl.TextMatrix(2, 3) = (GridCtrl.TextMatrix(1, 2) + GridCtrl.TextMatrix(1, 5)) - GridCtrl.TextMatrix(2, 2)
+    GridCtrl.TextMatrix(3, 3) = (GridCtrl.TextMatrix(2, 2) + GridCtrl.TextMatrix(2, 5)) - GridCtrl.TextMatrix(3, 2)
+    GridCtrl.TextMatrix(4, 3) = (GridCtrl.TextMatrix(3, 2) + GridCtrl.TextMatrix(3, 5)) - GridCtrl.TextMatrix(4, 2)
+    GridCtrl.TextMatrix(5, 3) = (GridCtrl.TextMatrix(4, 2) + GridCtrl.TextMatrix(4, 5)) - GridCtrl.TextMatrix(5, 2)
+    GridCtrl.TextMatrix(6, 3) = (GridCtrl.TextMatrix(5, 2) + GridCtrl.TextMatrix(5, 5)) - GridCtrl.TextMatrix(6, 2)
+    GridCtrl.TextMatrix(7, 3) = (GridCtrl.TextMatrix(6, 2) + GridCtrl.TextMatrix(6, 5)) - GridCtrl.TextMatrix(7, 2)
+    GridCtrl.TextMatrix(8, 3) = (GridCtrl.TextMatrix(7, 2) + GridCtrl.TextMatrix(7, 5)) - GridCtrl.TextMatrix(8, 2)
+    GridCtrl.TextMatrix(2, 6) = (GridCtrl.TextMatrix(2, 2) + GridCtrl.TextMatrix(2, 5)) - GridCtrl.TextMatrix(3, 2)
+    GridCtrl.TextMatrix(3, 6) = (GridCtrl.TextMatrix(3, 2) + GridCtrl.TextMatrix(3, 5)) - GridCtrl.TextMatrix(4, 2)
+    GridCtrl.TextMatrix(4, 6) = (GridCtrl.TextMatrix(4, 2) + GridCtrl.TextMatrix(4, 5)) - GridCtrl.TextMatrix(5, 2)
+    GridCtrl.TextMatrix(5, 6) = (GridCtrl.TextMatrix(5, 2) + GridCtrl.TextMatrix(5, 5)) - GridCtrl.TextMatrix(6, 2)
+    GridCtrl.TextMatrix(6, 6) = (GridCtrl.TextMatrix(6, 2) + GridCtrl.TextMatrix(6, 5)) - GridCtrl.TextMatrix(7, 2)
+    GridCtrl.TextMatrix(7, 6) = (GridCtrl.TextMatrix(7, 2) + GridCtrl.TextMatrix(7, 5)) - GridCtrl.TextMatrix(8, 2)
+    GridCtrl.TextMatrix(8, 6) = (GridCtrl.TextMatrix(8, 2) + GridCtrl.TextMatrix(8, 5)) - GridCtrl.TextMatrix(8, 2)
+    On Error GoTo 0
+End Sub
+
+Private Sub Text6_DblClick()
+  '
+  If Command4.Caption = "+" Then
+     Command4.Caption = "-"
+     Command4.BackColor = &HFF00&
+  Else
+     Command4.Caption = "+"
+     Command4.BackColor = &HFF&
+  End If
+  '
+End Sub
+
+Private Sub Command4_Click()
+    '
+    If CInt(Text6.Text) < 50 Then
+       '
+       Text6.Text = CStr(CInt(Text6.Text) + 1)
+       '
+    Else
+       '
+       Text6.Text = "50"
+       '
+    End If
+    '
+    If CInt(Text6.Text) > 0 Then Text6.BackColor = Amarelo
+    If CInt(Text6.Text) >= 7 Then Text6.BackColor = Verde
+    If CInt(Text6.Text) >= 16 Then Text6.BackColor = Vermelho
+    '
+'    If Command4.Caption = "+" Then
+'       If CInt(Text6.Text) < 90 Then
+'          Text6.Text = CStr(CInt(Text6.Text) + 1)
+'       Else
+'          Text6.Text = "90"
+'       End If
+'    Else
+'       If CInt(Text6.Text) > 0 Then
+'          Text6.Text = CStr(CInt(Text6.Text) - 1)
+'       Else
+'          Text6.Text = "0"
+'       End If
+'    End If
+    '
+End Sub
+'
+'================================= ROTINAS DE EDIÇÃO NO MEIO DO GRID =================
+'
+'==================== parte 1
+'
+'Need an editable Gird?  You can do it by floating a text box over the grid.
+'
+'Setup:
+'------
+'
+'You will need a grid (GridCtrlProduto) with:
+'   * FocusRect = flexFocusLight or flexFocusHeavy
+'   * GridLines = FlexGridFlat
+'   * GridLinesWidth = 1
+'   * Hilight = flexHilightNever
+'   * SelectionMode = flexSelectionFree
+'
+'And a text box (Text7):
+'   * BorderStyle = vbFixedSingle
+'   * MaxLength = 255 (since a grid cell can hold only 255 chars)
+'   * Font = Arial (9 pt) or whatever matches best with the grid font
+'   * Visable = False
+'
+'The Code:
+'---------
+'
+Private Sub GridCtrlProduto_KeyPress(ByVal KeyAscii As Long)
+    '
+    ' MsgBox "Tecla:" & CStr(KeyAscii), vbOKOnly + vbCritical, App.Title
+    '
+    If KeyAscii = 13 Then
+       '
+       If GridCtrlProduto.Col = 1 Or GridCtrlProduto.Col = 3 Then
+          '
+          ' If GridCtrlProduto.Row > 0 Then
+          '
+          Call GridEditStart
+          '
+       End If
+       '
+    End If
+    '
+    If KeyAscii = 32 Then
+       '
+       ' Screen.MousePointer = 0
+       '
+       frmEstoque.TabStrip.Tabs.Item(2).Selected = True
+       '
+    End If
+     '
+End Sub
+'
+'==================== parte 2
+'
+Private Sub GridCtrlProduto_MouseUp(ByVal Button As Long, ByVal Shift As Long, ByVal X As Single, ByVal Y As Single)
+  '
+  Dim strFormataNumero As String
+  '
+  mLinha1 = frmEstoque.GridCtrlProduto.Row
+  mColuna = frmEstoque.GridCtrlProduto.Col
+  '
+  ' MsgBox "MouseDown:" & CStr(mLinha1) & "," & CStr(mColuna), vbOKOnly + vbInformation, App.Title
+  '
+  ' If clicked an area that is not a cell, then end edit
+  '
+  ' (frmEstoque.GridCtrlProduto.TopRow + frmEstoque.GridCtrlProduto.LeftCol) <> 0
+  '
+  If Y > GridCtrlProduto.RowPos(GridCtrlProduto.Rows - 1) + GridCtrlProduto.RowHeight(GridCtrlProduto.Rows - 1) Or _
+     X > GridCtrlProduto.ColPos(GridCtrlProduto.Cols - 1) + GridCtrlProduto.ColWidth(GridCtrlProduto.Cols - 1) Then
+         '
+         ' If a single cell was selected (not multiple cells), edit the cell
+         '
+         Call GridEditEnd
+         '
+         Exit Sub
+         '
+  ElseIf GridCtrlProduto.Col = GridCtrlProduto.ColSel Then
+     '
+     If GridCtrlProduto.Col = 0 Then
+        '
+        ' MsgBox "Coluna:" & CStr(CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 0)) - CDbl(Text7.Text)), vbOKOnly + vbInformation, App.Title
+        '
+        '===============================================================================
+        '
+        If IsNumeric(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 6)) And IsNumeric(Text6.Text) Then
+           '
+           strFormataNumero = CStr(CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 6)) * CDbl(Text6.Text))
+           '
+           If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+              '
+              strFormataNumero = Trim(strFormataNumero) & ",0"
+              '
+           Else
+              '
+              strFormataNumero = strFormataNumero & "0"
+              '
+              strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+              '
+           End If
+           '
+           While Mid(Trim(strFormataNumero), 1, 1) = "0"
+              '
+              strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+              '
+           Wend
+           '
+           If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+           '
+           GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 0) = strFormataNumero
+           '
+           '===========================================================================
+           '
+        End If
+        '
+        '
+        '
+        '
+     End If
+     '
+     'If frmEstoque.GridCtrlProduto.Row > 0 Then
+        '
+        frmEstoque.GridCtrlProduto.Visible = False
+        frmEstoque.GridCtrlCab.Visible = False
+        '
+        For I = 0 To 6
+            '
+            frmEstoque.GridCtrlProduto.Col = I
+            '
+            ' &H00FFFFFF& - Branco
+            ' &H0080FF80& - VerdeClaro
+            ' &H0080FFFF& - AmareloClaro
+            ' &H0080C0FF& - VermelhoClaro
+            '
+            If InStr(1, Trim(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, I)), "-", vbTextCompare) <> 0 Then
+               '
+               frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+               '
+            Else
+               '
+               frmEstoque.GridCtrlProduto.CellBackColor = VerdeClaro
+               '
+            End If
+            '
+            ' &HFF00&
+            '
+        Next
+        '
+        frmEstoque.GridCtrlProduto.Visible = True
+        frmEstoque.GridCtrlCab.Visible = True
+        '
+        frmEstoque.GridCtrlProduto.ZOrder vbBringToFront ' vbSendToBack
+        '
+     'End If
+     '
+     frmEstoque.GridCtrlProduto.Col = 0
+     '
+     frmEstoque.GridCtrlProduto.Col = mColuna
+     '
+     If GridCtrlProduto.Col = 1 Or GridCtrlProduto.Col = 3 Then
+        '
+        Call GridEditStart
+        '
+     End If
+     '
+     frmEstoque.GridCtrlProduto.RowSel = mLinha1
+     frmEstoque.GridCtrlProduto.ColSel = mColuna
+     '
+  End If
+  '
+End Sub
+
+Private Sub GridEditEnd()
+  '
+  Dim strFormataNumero As String
+  '
+  If IsNumeric(Text7.Text) Then
+     '
+     strFormataNumero = Text7.Text
+     '
+     If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+        '
+        strFormataNumero = Trim(strFormataNumero) & ",0"
+        '
+     Else
+        '
+        strFormataNumero = strFormataNumero & "0"
+        '
+        strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+        '
+     End If
+     '
+     While Mid(Trim(strFormataNumero), 1, 1) = "0"
+        '
+        strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+        '
+     Wend
+     '
+     If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+     '
+     Text7.Text = strFormataNumero
+     '
+  End If
+  '
+  GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, GridCtrlProduto.Col) = Text7.Text
+  '
+  Text7.Left = -50 - Text7.Width
+  Text7.Visible = False
+  '
+  If GridCtrlProduto.Col = 1 Then
+     '
+     ' MsgBox "Coluna:" & CStr(CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 0)) - CDbl(Text7.Text)), vbOKOnly + vbInformation, App.Title
+     '
+     '========================================================================================
+     '
+     If IsNumeric(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 0)) And IsNumeric(Text7.Text) Then
+        '
+        strFormataNumero = CStr(CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 0)) - CDbl(Text7.Text))
+        '
+        If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+           '
+           strFormataNumero = Trim(strFormataNumero) & ",0"
+           '
+        Else
+           '
+           strFormataNumero = strFormataNumero & "0"
+           '
+           strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+           '
+        End If
+        '
+        While Mid(Trim(strFormataNumero), 1, 1) = "0"
+           '
+           strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+           '
+        Wend
+        '
+        If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+        '
+        GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 2) = strFormataNumero
+        '
+        GridCtrlProduto.Col = 2
+        '
+        If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+           '
+           frmEstoque.GridCtrlProduto.CellBackColor = Vermelho ' Amarelo
+           '
+        Else
+           '
+           frmEstoque.GridCtrlProduto.CellBackColor = Verde
+           '
+        End If
+        '
+        '========================================================================================
+        '
+     End If
+     '
+  End If
+  '
+  '
+  '
+  If GridCtrlProduto.Col = 3 Then
+     '
+     ' MsgBox "Coluna:" & CStr(CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 0)) - CDbl(Text7.Text)), vbOKOnly + vbInformation, App.Title
+     '
+     '========================================================================================
+     '
+     If IsNumeric(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 3)) Then
+        '
+        strFormataNumero = CStr(CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 3)))
+        '
+        If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+           '
+           strFormataNumero = Trim(strFormataNumero) & ",0"
+           '
+        Else
+           '
+           strFormataNumero = strFormataNumero & "0"
+           '
+           strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+           '
+        End If
+        '
+        While Mid(Trim(strFormataNumero), 1, 1) = "0"
+           '
+           strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+           '
+        Wend
+        '
+        If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+        '
+        GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 3) = strFormataNumero
+        '
+        GridCtrlProduto.Col = 3
+        '
+        If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+           '
+           frmEstoque.GridCtrlProduto.CellBackColor = Vermelho ' Amarelo
+           '
+        Else
+           '
+           frmEstoque.GridCtrlProduto.CellBackColor = Verde
+           '
+        End If
+        '
+        '========================================================================================
+        '
+     End If
+     '
+  End If
+  '
+  frmEstoque.GridCtrlProduto.RowSel = mLinha1
+  frmEstoque.GridCtrlProduto.ColSel = mColuna
+  '
+End Sub
+'
+'==================== parte 3
+'
+Private Sub Text7_KeyDown(ByVal KeyAscii As Integer, Shift As Integer)
+  '
+  Const vbEqualsignal = 187
+  '
+  ' MsgBox "Caracter:" & KeyAscii, vbOKOnly + vbInformation, App.Title
+  '
+  If KeyAscii = vbEqualsignal Then
+     '
+     If GridCtrlProduto.Col = 3 Then
+        '
+        If CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 2)) >= 0 Then
+           '
+           Text7.Text = GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, 2)
+           '
+        Else
+           '
+           Text7.Text = "0,0"
+           '
+        End If
+        '
+        Call GridEditEnd
+        '
+        GridCtrlProduto.SetFocus
+        '
+     End If
+     '
+  End If
+  '
+End Sub
+'
+'
+'
+Private Sub Text7_KeyPress(ByVal KeyAscii As Integer)
+   '
+   Text7.Font.Size = 7
+   '
+   KeyAscii = OnlyNumericKeys(KeyAscii)
+   '
+   '===================< Inválidos >
+   '
+   If KeyAscii = 0 Then
+      '
+      ' Text7.Text = GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, GridCtrlProduto.Col)
+      '
+      If Len(Trim(Text7.Text)) > 0 Then
+         '
+         Select Case Asc(Mid(Trim(Text7.Text), 1, 1))
+         Case 8, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 187
+           '
+           'KeyAscii=8 is a Backspace
+           'KeyAscii=46 is a "."
+           'KeyAscii=61 is a "="
+           '
+         Case Else
+           '
+           Text7.Text = Mid(Trim(Text7.Text), 2, Len(Trim(Text7.Text)) - 1)
+           '
+         End Select
+         '
+      End If
+      '
+      Call GridEditEnd
+      '
+      GridCtrlProduto.SetFocus
+      '
+   End If
+   '
+   '===================< Enter >
+   '
+   If KeyAscii = 13 Then
+      '
+      Call GridEditEnd
+      '
+      GridCtrlProduto.SetFocus
+      '
+   End If
+   '
+   '===================< Escape >
+   '
+   If KeyAscii = 27 Then
+      Text7.Left = -50 - Text7.Width
+      Text7.Visible = False
+      GridCtrlProduto.SetFocus
+   End If
+   '
+End Sub
+
+
+Private Sub Text7_LostFocus()
+  '
+  ' When clicking away from any cell
+  '
+  mLinha1 = frmEstoque.GridCtrlProduto.Row
+  mColuna = frmEstoque.GridCtrlProduto.Col
+  '
+  'If frmEstoque.GridCtrlProduto.Row > 0 Then
+     '
+     frmEstoque.GridCtrlProduto.Visible = False
+     frmEstoque.GridCtrlCab.Visible = False
+     '
+     For I = 0 To 6
+         '
+         frmEstoque.GridCtrlProduto.Col = I
+         '
+         ' &H00FFFFFF& - Branco
+         ' &H0080FF80& - VerdeClaro
+         ' &H0080FFFF& - AmareloClaro
+         ' &H0080C0FF& - VermelhoClaro
+         '
+         If InStr(1, Trim(GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, I)), "-", vbTextCompare) <> 0 Then
+            '
+            frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+            '
+         Else
+            '
+            frmEstoque.GridCtrlProduto.CellBackColor = VerdeClaro
+            '
+         End If
+         '
+         ' &HFF00&
+         '
+     Next
+     '
+     frmEstoque.GridCtrlProduto.Visible = True
+     frmEstoque.GridCtrlCab.Visible = True
+     '
+     frmEstoque.GridCtrlProduto.ZOrder vbBringToFront ' vbSendToBack
+     '
+  ' End If
+  '
+  frmEstoque.GridCtrlProduto.Col = 0
+  '
+  frmEstoque.GridCtrlProduto.Col = mColuna
+  '
+  bolEntrada = True
+  '
+  Call GridEditEnd
+  '
+  GridCtrlProduto.SetFocus
+  '
+End Sub
+'
+'==================== parte 4
+'
+Private Sub GridEditStart()
+  '
+  '
+  Call GridShowTextbox
+  '
+  ' Load Text7 with contents of selected cell
+  '
+  Text7.Text = GridCtrlProduto.TextMatrix(GridCtrlProduto.Row, GridCtrlProduto.Col)
+  '
+  Text7.ZOrder
+  '
+  Text7.SetFocus
+  '
+  Text7.SelStart = 0                      '< these 2 lines highlight
+  '
+  Text7.SelLength = Len(Text7.Text) '< the current text
+  '
+End Sub
+
+Private Sub GridCtrlProduto_Scroll()
+  '
+  GridCtrlCab.ScrollBars = flexScrollBarHorizontal
+  '
+  GridCtrlCab.LeftCol = GridCtrlProduto.LeftCol
+  '
+  GridCtrlCab.ScrollBars = flexScrollBarNone
+  '
+  If Text7.Visible = True Then Call GridShowTextbox
+  '
+End Sub
+'
+'==================== parte 5
+'
+Private Sub GridShowTextbox()
+    
+    ' if slected column and row is visible, show the text box
+    If GridCtrlProduto.ColIsVisible(GridCtrlProduto.Col) = True And GridCtrlProduto.RowIsVisible(GridCtrlProduto.Row) = True Then
+        Text7.Visible = True
+    Else
+        ' otherwise allow focus retention but make invisible...
+        Text7.Left = -50 - Text7.Width
+        Text7.Visible = False
+    End If
+    
+    ' Set left, top, height, and width properties to match selected cell
+    Text7.Left = GridCtrlProduto.Left + GridCtrlProduto.ColPos(GridCtrlProduto.Col) + Screen.TwipsPerPixelX * 2
+    Text7.Top = GridCtrlProduto.Top + GridCtrlProduto.RowPos(GridCtrlProduto.Row) + Screen.TwipsPerPixelY * 2
+    Text7.Height = GridCtrlProduto.RowHeight(GridCtrlProduto.Row) + Screen.TwipsPerPixelY
+    Text7.Width = GridCtrlProduto.ColWidth(GridCtrlProduto.Col)
+
+End Sub
+
+Private Sub GridCtrlProduto_LeaveCell()
+End Sub
+
+Private Sub txtDataCorrente_dblClick()
+  '
+  If mProcessa = True Then
+     '
+     txtDataCorrente.BackColor = Branco
+     mProcessa = False
+     '
+  Else
+     txtDataCorrente.BackColor = Amarelo
+     mProcessa = True
+  End If
+  '
+End Sub
+
+Function carregagridestoque() As Boolean
+   '
+   ' MsgBox "Click:" & Trim(cboClientes.List(cboClientes.ListIndex)) & "*", vbOKOnly + vbInformation, App.Title
+   '
+   ' frmEstoque.GridCtrlProduto.Clear
+   '
+   frmEstoque.GridCtrlProduto.Enabled = False
+   '
+   frmEstoque.GridCtrlProduto.Rows = 0
+   '
+   On Error Resume Next
+   '
+   Dim rsClientes
+   Dim rsContadores
+   Dim rsEstoque
+   Dim rsProdutos
+   Dim rsHistorico
+   '
+   Dim nbrecords As Integer
+   Dim intRegistro As Integer
+   Dim mContadores As Integer
+   Dim strLine As String
+   Dim strCodigoCliente As String
+   '
+   Dim strFormataNumero As String
+   Dim strContadores As String
+   Dim mDataCorrente As String
+   '
+   carregagridestoque = False
+   '
+   Screen.MousePointer = 11
+   '
+   ' produtos(fabricante VARCHAR(3),
+   ' brand VARCHAR(3),
+   ' sub_brand VARCHAR(3),
+   ' codigo_produto VARCHAR(6),
+   ' descricao VARCHAR(50),
+   ' unidade VARCHAR(3),
+   ' qtd_disponivel VARCHAR(4),
+   ' aliquota_icms VARCHAR(5),
+   ' aliquota_ipi VARCHAR(5),
+   ' substituicao_tributaria VARCHAR(1),
+   ' quantidade_embalagem VARCHAR(4),
+   ' desconto_acrescimo VARCHAR(6),
+   ' peso VARCHAR(9),
+   ' volume VARCHAR(9),
+   ' desconto_maximo VARCHAR(6),
+   ' embalagem VARCHAR(10),
+   ' empresa VARCHAR(2),
+   ' filial VARCHAR(2),
+   '
+   ' rs("media_diaria") = "000000000000"
+   ' rs("estoque") = "0000000000"
+   ' rs("sugestao") = "0000000000"
+   ' rs("pedido") = "0000000000"
+   '
+   ' status VARCHAR(1));"
+   '
+   If IsDate(txtDataCorrente.Text) Then
+      '
+      mDataCorrente = Mid(RetornaDataString(txtDataCorrente.Text), 5, 4) + Mid(RetornaDataString(txtDataCorrente.Text), 3, 2) + Mid(RetornaDataString(txtDataCorrente.Text), 1, 2)
+      '
+   Else
+      '
+      mDataCorrente = Mid(RetornaDataString(Now), 5, 4) + Mid(RetornaDataString(Now), 3, 2) + Mid(RetornaDataString(Now), 1, 2)
+      '
+   End If
+   '
+   ' MsgBox "Data Corrente:" & mDataCorrente, vbOKOnly + vbCritical, App.Title
+   '
+   connOpen
+   '
+   ' MsgBox "Altera produtos:" & Now, vbOKOnly + vbInformation, App.Title
+   '
+   Set rsClientes = CreateObject("ADOCE.Recordset.3.0")
+   Set rsContadores = CreateObject("ADOCE.Recordset.3.0")
+   Set rsProdutos = CreateObject("ADOCE.Recordset.3.0")
+   Set rsEstoque = CreateObject("ADOCE.Recordset.3.0")
+   Set rsHistorico = CreateObject("ADOCE.Recordset.3.0")
+   '
+   rsClientes.Open "SELECT * FROM clientes WHERE nome_fantasia='" & Trim(cboClientes.List(cboClientes.ListIndex)) & "';", CONN, adOpenForwardOnly, adLockReadOnly
+   '
+   If rsClientes.RecordCount > 0 Then
+      '
+      strCodigoCliente = rsClientes("codigo_cliente")
+      '
+   Else
+      '
+      MsgBox "Cliente inválido ou não cadastrado.", vbOKOnly + vbCritical, App.Title
+      '
+      Screen.MousePointer = 0
+      '
+      Exit Function
+      '
+   End If
+   '
+   If rsClientes.State = 1 Then rsClientes.Close
+   '
+   '===============================================================================
+   '
+   rsContadores.Open "SELECT * FROM contadores WHERE contadores='000';", CONN, adOpenDynamic, adLockOptimistic
+   '
+   If rsContadores.RecordCount <= 0 Then
+      '
+      rsContadores.Add
+      '
+      rsContadores("contadores") = "000"
+      rsContadores("contador_filtro") = "000"
+      '
+      rsContadores.Update
+      '
+   End If
+   '
+   '============================================================== Preenche Grid
+   '
+   ' MsgBox "Altera produtos:" & rsContadores("contador_filtro"), vbOKOnly + vbInformation, App.Title
+   '
+   If IsNumeric(rsContadores("contador_filtro")) Then
+      '
+      mContadores = CInt(rsContadores("contador_filtro")) + 1
+      '
+   Else
+      '
+      mContadores = 0
+      '
+   End If
+   '
+   If mContadores > 999 Then
+      '
+      MsgBox "Após clicar em OK Será feita uma reestruturação dos dados, aguarde.", vbOKOnly + vbInformation, App.Title
+      '
+      rsProdutos.Open "SELECT * FROM produtos;", CONN, adOpenDynamic, adLockOptimistic
+      '
+      '================================================================ Zera campos em Tabela
+      '
+      If rsProdutos.RecordCount > 0 Then
+         '
+         '============================================================== Preenche Grid
+         '
+         intRegistro = 0
+         '
+         Do Until rsProdutos.EOF ' Or intRegistro > 650
+            '
+            rsProdutos("media_diaria") = "000000000000"
+            rsProdutos("estoque") = "00000000"
+            rsProdutos("sugestao") = "00000000"
+            rsProdutos("pedido") = "00000000"
+            rsProdutos("filtro") = "000"
+            '
+            rsProdutos.Update
+            '
+            rsProdutos.MoveNext
+            '
+            intRegistro = intRegistro + 1
+            '
+         Loop
+         '
+         '======================================================================
+         '
+         mContadores = 1
+         '
+         '
+      End If
+      '
+      If rsProdutos.State = 1 Then rsProdutos.Close
+      '
+      MsgBox "Reestruturação dos dados executada com sucesso.", vbOKOnly + vbInformation, App.Title
+      '
+   End If
+   '
+   strContadores = RetornaStringZeros(Trim(CStr(mContadores)), 3, 0, False)
+   '
+   ' MsgBox "Altera produtos:" & strContadores, vbOKOnly + vbInformation, App.Title
+   '
+   rsContadores("contador_filtro") = strContadores
+   '
+   rsContadores.Update
+   '
+   If rsContadores.State = 1 Then rsContadores.Close
+   '
+   '
+   '
+   '
+   '
+   '
+   '
+   '========================================================================
+   '
+   rsEstoque.Open "SELECT * FROM estoque WHERE codigo_cliente=" & strCodigoCliente & ";", CONN, adOpenForwardOnly, adLockReadOnly ' adOpenDynamic , adLockOptimistic
+   '
+   '================================================================ Zera campos em Tabela
+   '
+   If rsEstoque.RecordCount > 0 Then
+      '
+      intRegistro = 0
+      '
+      Text6.Text = CStr(CInt(rsEstoque("dias")))
+      '
+      rsEstoque.MoveFirst
+      '
+      Do Until rsEstoque.EOF ' Or intRegistro > 650
+         '
+         ' Estoque
+         '
+         ' codigo_cliente VARCHAR(5)
+         ' codigo_produto VARCHAR(6)
+         ' data VARCHAR(8)
+         ' dias VARCHAR(3)
+         ' estoque VARCHAR(8)
+         ' sugestao VARCHAR(8)
+         ' pedido VARCHAR(8)
+         '
+         If rsProdutos.State = 1 Then rsProdutos.Close
+         '
+         rsProdutos.Open "SELECT * FROM produtos WHERE codigo_produto='" & _
+         rsEstoque("codigo_produto") & "';", CONN, adOpenDynamic, adLockOptimistic
+         '
+         '================================================= Preenche campos em Tabela
+         '
+         If rsProdutos.RecordCount = 1 Then
+            '
+            ' MsgBox "Estoque:" & rsEstoque("codigo_produto") & " Produto:" & rsProdutos("codigo_produto"), vbOKOnly + vbInformation, App.Title
+            '
+            rsProdutos("media_diaria") = rsEstoque("media_diaria")
+            rsProdutos("estoque") = rsEstoque("estoque")
+            rsProdutos("sugestao") = rsEstoque("sugestao")
+            rsProdutos("pedido") = rsEstoque("pedido")
+            '
+            rsProdutos("filtro") = strContadores
+            '
+            rsProdutos.Update
+            '
+         End If
+         '
+         ' MsgBox "Altera produtos:" & Now, vbOKOnly + vbInformation, App.Title
+         '
+         rsEstoque.MoveNext
+         '
+         intRegistro = intRegistro + 1
+         '
+      Loop
+      '
+      '======================================================================
+      '
+   Else
+      '
+      SetaGridCaptionProduto
+      SetaGridCaptionHistorico
+      '
+      Screen.MousePointer = 0
+      '
+      MsgBox "Não foram encontrados itens em estoque para este Cliente.", vbOKOnly + vbInformation, App.Title
+      '
+      Exit Function
+      '
+   End If
+   '
+   '
+   '
+   '
+   '
+   '
+   '
+   ' rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND codigo_produto='" & strCodigoProduto & "' AND data = '" & mDataCorrente & "';", CONN, adOpenDynamic, adLockOptimistic
+   '
+   rsHistorico.Open "SELECT * FROM historico WHERE codigo_cliente='" & Trim(strCodigoCliente) & "' AND data = '" & mDataCorrente & "';", CONN, adOpenForwardOnly, adLockReadOnly
+   '
+   '================================================================ Zera campos em Tabela
+   '
+   mNovaData = False
+   '
+   If rsHistorico.RecordCount > 0 Then
+      '
+      intRegistro = 0
+      '
+      Text6.Text = CStr(CInt(rsHistorico("dias")))
+      '
+      rsHistorico.MoveFirst
+      '
+      Do Until rsHistorico.EOF ' Or intRegistro > 650
+         '
+         ' Estoque
+         '
+         ' codigo_cliente VARCHAR(5)
+         ' codigo_produto VARCHAR(6)
+         ' data VARCHAR(8)
+         ' dias VARCHAR(3)
+         ' estoque VARCHAR(8)
+         ' sugestao VARCHAR(8)
+         ' pedido VARCHAR(8)
+         '
+         If rsProdutos.State = 1 Then rsProdutos.Close
+         '
+         rsProdutos.Open "SELECT * FROM produtos WHERE codigo_produto='" & _
+         rsHistorico("codigo_produto") & "';", CONN, adOpenDynamic, adLockOptimistic
+         '
+         '================================================= Preenche campos em Tabela
+         '
+         If rsProdutos.RecordCount = 1 Then
+            '
+            ' MsgBox "Estoque:" & rsEstoque("codigo_produto") & " Produto:" & rsProdutos("codigo_produto"), vbOKOnly + vbInformation, App.Title
+            '
+            rsProdutos("media_diaria") = rsHistorico("media_diaria")
+            rsProdutos("estoque") = rsHistorico("estoque")
+            rsProdutos("sugestao") = rsHistorico("sugestao")
+            rsProdutos("pedido") = rsHistorico("pedido")
+            '
+            rsProdutos("filtro") = strContadores
+            '
+            rsProdutos.Update
+            '
+         End If
+         '
+         ' MsgBox "Altera produtos:" & Now, vbOKOnly + vbInformation, App.Title
+         '
+         rsHistorico.MoveNext
+         '
+         intRegistro = intRegistro + 1
+         '
+      Loop
+      '
+      '======================================================================
+      '
+      mNovaData = False
+      '
+   Else
+      '
+      mNovaData = True
+      '
+   End If
+   '
+   '
+   '
+   '
+   '
+   '
+   '
+   '
+   '=====================================================================
+   '
+   ' MsgBox "Altera produtos:" & Now, vbOKOnly + vbInformation, App.Title
+   '
+   '=====================================================================
+   '
+   If rsProdutos.State = 1 Then rsProdutos.Close
+   '
+   If rsHistorico.State = 1 Then rsHistorico.Close
+   '
+   If rsEstoque.State = 1 Then rsEstoque.Close
+   '
+   rsProdutos.Open "SELECT * FROM produtos WHERE filtro='" & strContadores & "' ORDER BY descricao;", _
+   CONN, adOpenDynamic, adLockOptimistic ' adOpenForwardOnly, adLockReadOnly
+   '
+   nbrecords = rsProdutos.RecordCount 'how many rows to display
+   '
+   '================================================================ Preenche Grid
+   '
+   rsProdutos.MoveFirst
+   '
+   ' MsgBox "Grid Inicio:" & Now & " Registros" & CStr(nbrecords), vbOKOnly + vbInformation, App.Title
+   '
+   SetaGridCaptionProduto
+   SetaGridCaptionHistorico
+   '
+   If rsProdutos.RecordCount > 0 Then
+      '
+      '============================================================== Preenche Grid
+      '
+      intRegistro = 0
+      '
+      frmEstoque.GridCtrlProduto.Visible = False ' True
+      frmEstoque.GridCtrlCab.Visible = False ' True
+      '
+      frmEstoque.GridCtrlProduto.Rows = 0
+      '
+      Do Until rsProdutos.EOF
+         '
+         GridCtrlProduto.Rows = GridCtrlProduto.Rows + 1
+         '
+         '=========================== PEENCHE ESTOQUE ============================
+         '
+         GridCtrlProduto.Row = GridCtrlProduto.Rows - 1
+         GridCtrlProduto.Col = 1
+         '
+         GridCtrlProduto.CellFontName = "Small Fonts"
+         GridCtrlProduto.CellFontSize = 7
+         '
+         '----------------------------- FORMATA NUMERO ---------------------------
+         '
+         strFormataNumero = Trim(CDbl(Mid(rsProdutos("estoque"), 1, 8) & "," & Mid(rsProdutos("estoque"), 9, 2)) / 100)
+         '
+         If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+            '
+            strFormataNumero = Trim(strFormataNumero) & ",0"
+            '
+         Else
+            '
+            strFormataNumero = strFormataNumero & "0"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+            '
+         End If
+         '
+         While Mid(Trim(strFormataNumero), 1, 1) = "0"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+            '
+         Wend
+         '
+         If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+         '
+         If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+            '
+            frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+            '
+         End If
+         '
+         GridCtrlProduto.TextMatrix(GridCtrlProduto.Rows - 1, 1) = strFormataNumero
+         '
+         '
+         '
+         '
+         '=============================== PREENCHE SUGESTÃO ===============================
+         '
+         GridCtrlProduto.Row = GridCtrlProduto.Rows - 1
+         GridCtrlProduto.Col = 2
+         '
+         GridCtrlProduto.CellFontName = "Small Fonts"
+         GridCtrlProduto.CellFontSize = 7
+         '
+         '----------------------------- FORMATA NUMERO ---------------------------
+         '
+         ' strFormataNumero = Mid(rsProdutos("sugestao"), 1, 8) & "," & Mid(rsProdutos("sugestao"), 9, 2)
+         '
+         strFormataNumero = Trim(CDbl(Mid(rsProdutos("sugestao"), 1, 8) & "," & Mid(rsProdutos("sugestao"), 9, 2)) / 100)
+         '
+         If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+            '
+            strFormataNumero = Trim(strFormataNumero) & ",0"
+            '
+         Else
+            '
+            strFormataNumero = strFormataNumero & "0"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+            '
+         End If
+         '
+         While Mid(Trim(strFormataNumero), 1, 1) = "0"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+            '
+         Wend
+         '
+         If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+         '
+         If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+            '
+            frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+            '
+         End If
+         '
+         GridCtrlProduto.TextMatrix(GridCtrlProduto.Rows - 1, 2) = strFormataNumero
+         '
+         '====================================== PREENCHE PEDIDO ==============================
+         '
+         GridCtrlProduto.Row = GridCtrlProduto.Rows - 1
+         GridCtrlProduto.Col = 3
+         '
+         GridCtrlProduto.CellFontName = "Small Fonts"
+         GridCtrlProduto.CellFontSize = 7
+         '
+         '----------------------------- FORMATA NUMERO ---------------------------
+         '
+         ' strFormataNumero = Mid(rsProdutos("pedido"), 1, 8) & "," & Mid(rsProdutos("pedido"), 9, 2)
+         '
+         strFormataNumero = Trim(CDbl(Mid(rsProdutos("pedido"), 1, 8) & "," & Mid(rsProdutos("pedido"), 9, 2)) / 100)
+         '
+         If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+            '
+            strFormataNumero = Trim(strFormataNumero) & ",0"
+            '
+         Else
+            '
+            strFormataNumero = strFormataNumero & "0"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+            '
+         End If
+         '
+         While Mid(Trim(strFormataNumero), 1, 1) = "0"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+            '
+         Wend
+         '
+         If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+         '
+         If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+            '
+            frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+            '
+         End If
+         '
+         GridCtrlProduto.TextMatrix(GridCtrlProduto.Rows - 1, 3) = strFormataNumero
+         '
+         '==================================== PEENCHE DESCRIÇÃO ============================
+         '
+         GridCtrlProduto.Row = GridCtrlProduto.Rows - 1
+         GridCtrlProduto.Col = 4
+         '
+         GridCtrlProduto.CellFontName = "Small Fonts"
+         '
+         GridCtrlProduto.CellFontBold = False
+         '
+         GridCtrlProduto.CellFontSize = 7
+         '
+         GridCtrlProduto.TextMatrix(GridCtrlProduto.Rows - 1, 4) = UCase(Mid(rsProdutos("descricao"), 1, 1)) & LCase(Mid(rsProdutos("descricao"), 2, 39))
+         '
+         '=================================== PEENCHE CÓDIGO ================================
+         '
+         GridCtrlProduto.Row = GridCtrlProduto.Rows - 1
+         GridCtrlProduto.Col = 5
+         '
+         'GridCtrlProduto.CellFontWidth
+         '
+         GridCtrlProduto.CellFontName = "Small Fonts"
+         GridCtrlProduto.CellFontSize = 7
+         '
+         ' GridCtrlProduto.CellFontBold = True
+         '
+         GridCtrlProduto.TextMatrix(GridCtrlProduto.Rows - 1, 5) = rsProdutos("codigo_produto")
+         '
+         '=============================== PEENCHE MÉDIA DIÁRIA ================================
+         '
+         GridCtrlProduto.Row = GridCtrlProduto.Rows - 1
+         GridCtrlProduto.Col = 6
+         '
+         GridCtrlProduto.CellFontName = "Small Fonts"
+         '
+         GridCtrlProduto.CellFontSize = 7
+         '
+         ' FORMATA NUMERO ------------------------------------------------------------
+         '
+         strFormataNumero = Mid(rsProdutos("media_diaria"), 1, 8) & "," & Mid(rsProdutos("media_diaria"), 9, 4)
+         '
+         ' strFormataNumero = Trim(CDbl(Mid(rsProdutos("media_diaria"), 1, 8) & "," & Mid(rsProdutos("media_diaria"), 9, 4)) / 100)
+         '
+         If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+            '
+            strFormataNumero = Trim(strFormataNumero) & ",0000"
+            '
+         Else
+            '
+            strFormataNumero = strFormataNumero & "0000"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 4)
+            '
+         End If
+         '
+         While Mid(Trim(strFormataNumero), 1, 1) = "0"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+            '
+         Wend
+         '
+         If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+         '
+         If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+            '
+            frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+            '
+         End If
+         '
+         GridCtrlProduto.TextMatrix(GridCtrlProduto.Rows - 1, 6) = strFormataNumero
+         '
+         '
+         '=============================== PREENCHE MÉDIA NOS DIAS ============================
+         '
+         GridCtrlProduto.Row = GridCtrlProduto.Rows - 1
+         GridCtrlProduto.Col = 0
+         '
+         GridCtrlProduto.CellFontName = "Small Fonts"
+         GridCtrlProduto.CellFontSize = 7
+         '
+         '=================================== FORMATA NUMERO =================================
+         '
+         strFormataNumero = CStr(CDbl(Text6.Text) * CDbl(GridCtrlProduto.TextMatrix(GridCtrlProduto.Rows - 1, 6)))
+         '
+         If InStr(1, Trim(strFormataNumero), ",", vbTextCompare) = 0 Then
+            '
+            strFormataNumero = Trim(strFormataNumero) & ",0"
+            '
+         Else
+            '
+            strFormataNumero = strFormataNumero & "0"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 1, InStr(1, Trim(strFormataNumero), ",", vbTextCompare) + 1)
+            '
+         End If
+         '
+         While Mid(Trim(strFormataNumero), 1, 1) = "0"
+            '
+            strFormataNumero = Mid(Trim(strFormataNumero), 2, Len(Trim(strFormataNumero)) - 1)
+            '
+         Wend
+         '
+         If Mid(Trim(strFormataNumero), 1, 1) = "," Then strFormataNumero = "0" & strFormataNumero
+         '
+         If InStr(1, Trim(strFormataNumero), "-", vbTextCompare) <> 0 Then
+            '
+            frmEstoque.GridCtrlProduto.CellBackColor = Vermelho
+            '
+         End If
+         '
+         GridCtrlProduto.TextMatrix(GridCtrlProduto.Rows - 1, 0) = strFormataNumero
+         '
+         '================================== Salta para próximo registro
+         '
+         rsProdutos.MoveNext
+         '
+         intRegistro = intRegistro + 1
+         '
+         '========================================
+         '
+      Loop
+      '
+      '======================================================================
+      '
+   End If
+   '
+   ' MsgBox "Grid Final:" & Now, vbOKOnly + vbInformation, App.Title
+   '
+   frmEstoque.GridCtrlProduto.Visible = True
+   frmEstoque.GridCtrlCab.Visible = True
+   '
+   frmEstoque.GridCtrlProduto.ZOrder vbBringToFront ' vbSendToBack
+   '
+   If rsProdutos.State = 1 Then rsProdutos.Close
+   If rsEstoque.State = 1 Then rsEstoque.Close
+   '
+   Set rsProdutos = Nothing
+   Set rsEstoque = Nothing
+   '
+   ' EncheComboClientes frmEstoque.cboClientes, 2
+   '
+   connClose
+   '
+   Screen.MousePointer = 0
+   '
+   If mNovaData Then
+      '
+      MsgBox "Nova data para lançamento de estoque.", vbOKOnly + vbInformation, App.Title
+      '
+   End If
+   '
+   bolEstoque = True
+   '
+   carregagridestoque = True
+   '
+   frmEstoque.GridCtrlProduto.Enabled = True
+   '
+   frmEstoque.GridCtrlProduto.Row = 0
+   frmEstoque.GridCtrlProduto.Col = 0
+   '
+End Function
